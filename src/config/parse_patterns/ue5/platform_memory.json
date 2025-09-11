@@ -1,0 +1,30 @@
+{
+  "id": "platform_memory",
+  "description": "Platform memory stats and basic memory information",
+  "tables": [
+    {
+      "name": "Platform Memory Stats",
+      "startPattern": "Platform Memory Stats",
+      "endPattern": "Physical Memory:",
+      "headers": false,
+      "separator": ":",
+      "numericColumns": [1]
+    },
+    {
+      "name": "Physical Memory",
+      "startPattern": "Physical Memory:",
+      "endPattern": "Virtual Memory:",
+      "headers": false,
+      "separator": ":",
+      "numericColumns": [1]
+    },
+    {
+      "name": "Virtual Memory",
+      "startPattern": "Virtual Memory:",
+      "endPattern": "\\n\\n",
+      "headers": false,
+      "separator": ":",
+      "numericColumns": [1]
+    }
+  ]
+}

@@ -1,0 +1,286 @@
+{
+  "version": "4.27",
+  "description": "Unreal Engine 4.27 settings",
+  "sections": [
+    {
+      "title": "Platform Memory Stats",
+      "start_mark": "Platform Memory Stats",
+      "end_mark": "\\n\\n",
+      "tables": [
+        {
+          "start_mark": "Process Physical Memory:",
+          "end_mark": "",
+          "headers": false,
+          "separator": ":\\s",
+          "split_format": "(.+?):\\s+(.+)",
+          "numeric": [1, 2, 3]
+        }
+      ]
+    },
+    {
+      "title": "Memory Stats",
+      "start_mark": "Memory Stats:",
+      "end_mark": "\\n\\n",
+      "tables": [
+        {
+          "start_mark": "\\d+\\s+-\\s",
+          "end_mark": "",
+          "headers": false,
+          "separator": "\\s+-\\s+",
+          "numeric": [0]
+        }
+      ]
+    },
+    {
+      "title": "Objects",
+      "start_mark": "Obj List: -alphasort",
+      "end_mark": "\\n\\n",
+      "tables": [
+        {
+          "start_mark": "^\\s*Class\\s+",
+          "end_mark": "^\\d+ Objects.+",
+          "headers": true,
+          "separator": "\\s+",
+          "numeric": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        }
+      ]
+    },
+    {
+      "title": "RHI resource memory",
+      "start_mark": "RHI resource memory",
+      "end_mark": "\\n\\n",
+      "tables": [
+        {
+          "start_mark": "\\d+\\s+-",
+          "end_mark": "^\\d+\\..+",
+          "headers": false,
+          "separator": "\\s+-\\s+",
+          "numeric": [0]
+        }
+      ]
+    },
+    {
+      "title": "Levels",
+      "start_mark": "Levels:",
+      "end_mark": "\\n\\n",
+      "tables": [
+        {
+          "start_mark": "^.+ \\t.*",
+          "end_mark": "\\n",
+          "headers": false,
+          "separator": "\\t+"
+        }
+      ]
+    },
+    {
+      "title": "Listing spawned actors in persistent level",
+      "start_mark": "Listing spawned actors in persistent level:",
+      "end_mark": "\\n\\n",
+      "tables": [
+        {
+          "start_mark": "TimeUnseen,",
+          "end_mark": "\\n",
+          "headers": true,
+          "separator": ",\\s*",
+          "numeric": [0, 1, 2]
+        }
+      ]
+    },
+    {
+      "title": "Particle Dynamic Memory Stats",
+      "start_mark": "Particle Dynamic Memory Stats",
+      "end_mark": "\\n\\n",
+      "tables": [
+        {
+          "start_mark": "Type,Count,",
+          "end_mark": "^ParticleData,Total.*",
+          "headers": true,
+          "separator": ",",
+          "numeric": [1, 2, 3, 4, 5, 6]
+        },
+        {
+          "start_mark": "ParticleData,Total",
+          "end_mark": "^Max wasted GT.*",
+          "headers": true,
+          "separator": ",",
+          "numeric": [1, 2]
+        },
+        {
+          "start_mark": "Max wasted GT",
+          "end_mark": "^Particle Order Pool Stats.*",
+          "headers": false,
+          "separator": ",",
+          "numeric": [1]
+        }
+      ]
+    },
+    {
+      "title": "Config cache memory usage",
+      "start_mark": "Config cache memory usage:",
+      "end_mark": "\\n\\n",
+      "tables": [
+        {
+          "start_mark": "FileName\\s+",
+          "end_mark": "\\n",
+          "headers": true,
+          "separator": "\\s+",
+          "numeric": [1, 2]
+        }
+      ]
+    },
+    {
+      "title": "Pooled Render Targets",
+      "start_mark": "Pooled Render Targets:",
+      "end_mark": "\\d+\\.\\d+MB total,.*?",
+      "tables": [
+        {
+          "start_mark": "\\d+\\.",
+          "end_mark": "^.+\\s+total.*",
+          "headers": false,
+          "separator": "",
+          "split_format": "(\\d+\\.\\d+MB)\\s+(\\d+x\\s*.+?)\\s+(\\d+mip.+?)\\s+(.+?)\\s+(Unused frames:.+)",
+          "numeric": [0]
+        }
+      ]
+    },
+    {
+      "title": "Deferred Render Targets",
+      "start_mark": "Deferred Render Targets:",
+      "end_mark": "\\n\\n",
+      "tables": []
+    },
+    {
+      "title": "Listing all textures",
+      "start_mark": "Listing all textures.",
+      "end_mark": "\\n\\n",
+      "tables": [
+        {
+          "start_mark": "MaxAllowedSize",
+          "end_mark": "Total size:.*",
+          "headers": true,
+          "separator": "",
+          "split_format": "(.+?) \\((.+?), (.+?)\\), (.+?) \\((.+)\\), (.+), (.+), (.+), (.+), (.+)",
+          "numeric": [1, 2, 4, 9]
+        },
+        {
+          "start_mark": "Total size:",
+          "end_mark": "\\n",
+          "headers": false,
+          "separator": ":\\s",
+          "split_format": "(.+?):\\s+(InMem=.+?)\\s+(OnDisk=.+)",
+          "numeric": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        }
+      ]
+    },
+    {
+      "title": "Listing all sounds",
+      "start_mark": "Listing all sounds:",
+      "end_mark": "\\n\\n",
+      "tables": []
+    },
+    {
+      "title": "ParticleSystems",
+      "start_mark": "ParticleSystems:",
+      "end_mark": "\\n\\n",
+      "tables": [
+        {
+          "start_mark": "Size,Name",
+          "end_mark": "",
+          "headers": true,
+          "separator": ",",
+          "numeric": [0, 2, 3, 4, 5, 6, 7]
+        }
+      ]
+    },
+    {
+      "title": "Obj List: class=SoundWave",
+      "start_mark": "Obj List: class=SoundWave -alphasort",
+      "end_mark": "\\n\\n",
+      "tables": []
+    },
+    {
+      "title": "Obj List: class=SkeletalMesh",
+      "start_mark": "Obj List: class=SkeletalMesh -alphasort",
+      "end_mark": "\\n\\n",
+      "tables": [
+        {
+          "start_mark": "Object\\s+",
+          "end_mark": "Class\\s+",
+          "headers": true,
+          "separator": "\\s{2,}",
+          "numeric": [1, 2, 3, 4, 5, 6, 7, 8]
+        },
+        {
+          "start_mark": "Class\\s+",
+          "end_mark": "^\\d+ Objects.+",
+          "headers": true,
+          "separator": "\\s+",
+          "numeric": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        }
+      ]
+    },
+    {
+      "title": "Obj List: class=StaticMesh",
+      "start_mark": "Obj List: class=StaticMesh -alphasort",
+      "end_mark": "\\n\\n",
+      "tables": [
+        {
+          "start_mark": "Object\\s+",
+          "end_mark": "Class\\s+",
+          "headers": true,
+          "separator": "\\s{2,}",
+          "numeric": [1, 2, 3, 4, 5, 6, 7, 8]
+        },
+        {
+          "start_mark": "Class\\s+",
+          "end_mark": "^\\d+ Objects.+",
+          "headers": true,
+          "separator": "\\s+",
+          "numeric": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        }
+      ]
+    },
+    {
+      "title": "Obj List: class=Level",
+      "start_mark": "Obj List: class=Level -alphasort",
+      "end_mark": "\\n\\n",
+      "tables": [
+        {
+          "start_mark": "Object\\s+",
+          "end_mark": "Class\\s+",
+          "headers": true,
+          "separator": "\\s{2,}",
+          "numeric": [1, 2, 3, 4, 5, 6, 7, 8]
+        },
+        {
+          "start_mark": "Class\\s+",
+          "end_mark": "^\\d+ Objects.+",
+          "headers": true,
+          "separator": "\\s+",
+          "numeric": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        }
+      ]
+    },
+    {
+      "title": "Obj List: class=StaticMeshComponent",
+      "start_mark": "Obj List: class=StaticMeshComponent -alphasort",
+      "end_mark": "\\n\\n",
+      "tables": [
+        {
+          "start_mark": "Object\\s+",
+          "end_mark": "Class\\s+",
+          "headers": true,
+          "separator": "\\s{2,}",
+          "numeric": [1, 2, 3, 4, 5, 6, 7, 8]
+        },
+        {
+          "start_mark": "Class\\s+",
+          "end_mark": "^\\d+ Objects.+",
+          "headers": true,
+          "separator": "\\s+",
+          "numeric": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        }
+      ]
+    }
+  ]
+}

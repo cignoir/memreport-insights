@@ -1,0 +1,78 @@
+{
+  "name": "memreport-insights",
+  "version": "1.0.0",
+  "description": "Transform Unreal Engine memory reports into beautiful, interactive visualizations. Analyze .memreport files with ease instead of struggling through raw text.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "memreport-insights": "./bin/cli.js"
+  },
+  "files": [
+    "bin/",
+    "dist/",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "unreal-engine",
+    "memreport",
+    "memory-analysis",
+    "visualization",
+    "react",
+    "typescript",
+    "game-development",
+    "memory-profiling",
+    "ue4",
+    "ue5",
+    "developer-tools",
+    "interactive",
+    "web-app",
+    "cli-tool",
+    "npx"
+  ],
+  "homepage": "https://github.com/yourusername/memreport-insights#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/memreport-insights.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/memreport-insights/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Memreport Insights Contributors",
+    "url": "https://github.com/yourusername/memreport-insights/graphs/contributors"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "open": "^10.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
+  }
+}

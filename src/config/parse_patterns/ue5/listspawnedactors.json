@@ -1,0 +1,14 @@
+{
+  "id": "listspawnedactors",
+  "description": "ListSpawnedActors command output",
+  "tables": [
+    {
+      "name": "Spawned Actors",
+      "startPattern": "TimeUnseen,",
+      "endPattern": "\\n",
+      "headers": true,
+      "separator": ",\\s*",
+      "numericColumns": [0, 1, 2]
+    }
+  ]
+}

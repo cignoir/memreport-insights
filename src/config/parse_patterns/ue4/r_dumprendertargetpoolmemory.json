@@ -1,0 +1,15 @@
+{
+  "name": "Render Target Pool Memory",
+  "description": "UE4 r.DumpRenderTargetPoolMemory command output",
+  "tables": [
+    {
+      "name": "Pooled Render Targets",
+      "startPattern": "Pooled Render Targets:",
+      "endPattern": "\\n\\d+\\.\\d+MB total,.*\\n.*Deferred Render Targets:.*\\n.*Deferred total",
+      "headers": false,
+      "separator": "",
+      "splitFormat": "^\\s*(\\d+\\.\\d+MB)\\s+(\\d+x\\d+)\\s*(?:\\[\\s*(\\d+)\\])?\\s+(\\d+mip\\(s\\))\\s+(.+?)\\s+\\(([^\\)]+)\\)\\s+Unused frames:\\s+(\\d+)",
+      "numericColumns": [0]
+    }
+  ]
+}

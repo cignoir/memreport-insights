@@ -1,0 +1,14 @@
+{
+  "id": "listparticlesystems_-alphasort",
+  "description": "ListParticleSystems -alphasort command output",
+  "tables": [
+    {
+      "name": "Particle Systems",
+      "startPattern": "Size,Name",
+      "endPattern": "^MemReport: End.+",
+      "headers": true,
+      "separator": ",",
+      "numericColumns": [0, 2, 3, 4, 5, 6, 7]
+    }
+  ]
+}

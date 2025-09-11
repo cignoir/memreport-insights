@@ -1,0 +1,13 @@
+{
+  "id": "particle_systems",
+  "description": "Particle systems list and analysis",
+  "tables": [
+    {
+      "startPattern": "MemReport: Begin command \"ListParticleSystems -alphasort\"|ParticleSystems:",
+      "endPattern": "MemReport: End command \"ListParticleSystems -alphasort\"|\\n\\n",
+      "headers": true,
+      "separator": "\\s{2,}",
+      "numericColumns": [1, 2, 3, 4]
+    }
+  ]
+}

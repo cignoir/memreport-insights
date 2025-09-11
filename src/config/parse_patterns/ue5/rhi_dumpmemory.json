@@ -1,0 +1,14 @@
+{
+  "id": "rhi_dumpmemory",
+  "description": "rhi.DumpMemory command output",
+  "tables": [
+    {
+      "name": "RHI Memory Usage",
+      "startPattern": "\\d+\\.\\d+MB\\s+-\\s",
+      "endPattern": "^\\d+\\.\\d+MB total",
+      "headers": false,
+      "separator": "\\s+-\\s+",
+      "numericColumns": [0]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "config_memory",
+  "description": "Configuration memory usage analysis",
+  "tables": [
+    {
+      "startPattern": "MemReport: Begin command \"ConfigMem\"|Config cache memory usage:",
+      "endPattern": "MemReport: End command \"ConfigMem\"|\\n\\n",
+      "headers": true,
+      "separator": "\\s{2,}",
+      "numericColumns": [1, 2, 3]
+    }
+  ]
+}

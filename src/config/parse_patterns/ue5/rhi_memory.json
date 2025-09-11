@@ -1,0 +1,13 @@
+{
+  "id": "rhi_memory",
+  "description": "RHI memory analysis and resource tracking",
+  "tables": [
+    {
+      "startPattern": "MemReport: Begin command \"rhi.DumpMemory\"",
+      "endPattern": "MemReport: End command \"rhi.DumpMemory\"",
+      "headers": true,
+      "separator": "\\s{2,}",
+      "numericColumns": [1, 2, 3, 4]
+    }
+  ]
+}

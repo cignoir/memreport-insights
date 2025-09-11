@@ -1,0 +1,13 @@
+{
+  "id": "object_list",
+  "description": "Object list with resource size sorting",
+  "tables": [
+    {
+      "startPattern": "Objects:|Obj List:",
+      "endPattern": "\\n\\n",
+      "headers": true,
+      "separator": "\\s{2,}",
+      "numericColumns": [1, 2, 3, 4, 5, 6, 7]
+    }
+  ]
+}

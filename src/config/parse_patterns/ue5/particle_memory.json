@@ -1,0 +1,13 @@
+{
+  "id": "particle_memory",
+  "description": "Particle system memory analysis",
+  "tables": [
+    {
+      "startPattern": "MemReport: Begin command \"DumpParticleMem\"|Particle Dynamic Memory Stats",
+      "endPattern": "MemReport: End command \"DumpParticleMem\"|\\n\\n",
+      "headers": true,
+      "separator": "\\s{2,}",
+      "numericColumns": [1, 2, 3, 4, 5]
+    }
+  ]
+}

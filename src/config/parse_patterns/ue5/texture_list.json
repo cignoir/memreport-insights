@@ -1,0 +1,13 @@
+{
+  "id": "texture_list",
+  "description": "Basic texture list analysis (UE 4.27 format)",
+  "tables": [
+    {
+      "startPattern": "Listing all textures.",
+      "endPattern": "\\n\\n",
+      "headers": true,
+      "separator": "\\s{2,}",
+      "numericColumns": [1, 2, 3, 4, 5, 6, 7]
+    }
+  ]
+}

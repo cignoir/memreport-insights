@@ -1,0 +1,32 @@
+{
+  "id": "mem_fromreport",
+  "description": "Mem FromReport command output",
+  "tables": [
+    {
+      "name": "Process Physical Memory",
+      "startPattern": "Process Physical Memory:",
+      "endPattern": "^Physical Memory",
+      "headers": false,
+      "separator": ":\\s",
+      "splitFormat": "(.+):\\s+(.+?),(.+)",
+      "numericColumns": [1, 2]
+    },
+    {
+      "name": "Physical Memory",
+      "startPattern": "Physical Memory:",
+      "endPattern": "",
+      "headers": false,
+      "separator": ":\\s",
+      "splitFormat": "(.+):\\s+(.+?),(.+),(.+)",
+      "numericColumns": [1, 3]
+    },
+    {
+      "name": "Memory Stats",
+      "startPattern": "\\d+\\.\\d+MB\\s+-\\s",
+      "endPattern": "",
+      "headers": false,
+      "separator": "\\s+-\\s+",
+      "numericColumns": [0]
+    }
+  ]
+}

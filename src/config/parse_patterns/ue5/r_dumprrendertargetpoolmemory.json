@@ -1,0 +1,15 @@
+{
+  "id": "r_dumprrendertargetpoolmemory",
+  "description": "r.DumpRenderTargetPoolMemory command output",
+  "tables": [
+    {
+      "name": "Render Target Pool",
+      "startPattern": "\\d+\\.",
+      "endPattern": "^.+\\s+total.*",
+      "headers": false,
+      "separator": "",
+      "splitFormat": "(\\d+\\.\\d+MB)\\s+(\\d+x\\s*.+?)\\s+(\\d+mip.+?)\\s+(.+?)\\s+(Unused frames:.+)",
+      "numericColumns": [0]
+    }
+  ]
+}

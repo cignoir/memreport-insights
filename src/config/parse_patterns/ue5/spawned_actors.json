@@ -1,0 +1,13 @@
+{
+  "id": "spawned_actors",
+  "description": "Spawned actors analysis in persistent level",
+  "tables": [
+    {
+      "startPattern": "MemReport: Begin command \"ListSpawnedActors\"",
+      "endPattern": "MemReport: End command \"ListSpawnedActors\"",
+      "headers": true,
+      "separator": "\\s{2,}",
+      "numericColumns": [1, 2, 3]
+    }
+  ]
+}

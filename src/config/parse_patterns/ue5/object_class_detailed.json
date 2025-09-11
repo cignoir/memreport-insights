@@ -1,0 +1,13 @@
+{
+  "id": "object_class_detailed",
+  "description": "Detailed object class analysis (SkeletalMesh, StaticMesh, etc.)",
+  "tables": [
+    {
+      "startPattern": "MemReport: Begin command \"obj list class=",
+      "endPattern": "MemReport: End command \"obj list class=",
+      "headers": true,
+      "separator": "\\s{2,}",
+      "numericColumns": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    }
+  ]
+}

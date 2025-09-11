@@ -1,0 +1,13 @@
+{
+  "id": "rhi_dumpresourcememory_summary_type=texturecube",
+  "description": "rhi.dumpresourcememory summary Type=TextureCube command output",
+  "tables": [
+    {
+      "startPattern": "MemReport: Begin command \"rhi.dumpresourcememory summary Type=TextureCube\"",
+      "endPattern": "MemReport: End command \"rhi.dumpresourcememory summary Type=TextureCube\"",
+      "headers": true,
+      "separator": "\\s{2,}",
+      "numericColumns": [2, 3, 4, 5, 6]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "obj_list_-resourcesizesort",
+  "description": "obj list -resourcesizesort command output",
+  "tables": [
+    {
+      "name": "Object List by Resource Size",
+      "startPattern": "^\\s*Class\\s+",
+      "endPattern": "^\\d+ Objects.+",
+      "headers": true,
+      "separator": "\\s+",
+      "numericColumns": [1, 2, 3, 4, 5, 6, 7]
+    }
+  ]
+}

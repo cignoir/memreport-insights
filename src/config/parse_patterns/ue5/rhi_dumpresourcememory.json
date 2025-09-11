@@ -1,0 +1,14 @@
+{
+  "id": "rhi_dumpresourcememory",
+  "description": "rhi.DumpResourceMemory command output",
+  "tables": [
+    {
+      "name": "RHI Resource Memory Details",
+      "startPattern": "Name:",
+      "endPattern": "^Shown.+",
+      "headers": false,
+      "separator": "\\s+-\\s+",
+      "numericColumns": []
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "obj_list_class=soundwave_-alphasort",
+  "description": "obj list class=SoundWave -alphasort command output",
+  "tables": [
+    {
+      "name": "Object Details",
+      "startPattern": "Object\\s+",
+      "endPattern": "Class\\s+",
+      "headers": true,
+      "separator": "\\s{2,}",
+      "numericColumns": [1, 2, 3, 4, 5, 6]
+    },
+    {
+      "name": "Class Summary",
+      "startPattern": "Class\\s+",
+      "endPattern": "^\\d+ Objects.+",
+      "headers": true,
+      "separator": "\\s+",
+      "numericColumns": [1, 2, 3, 4, 5, 6, 7]
+    }
+  ]
+}

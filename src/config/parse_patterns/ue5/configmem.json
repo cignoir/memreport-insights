@@ -1,0 +1,14 @@
+{
+  "id": "configmem",
+  "description": "ConfigMem command output",
+  "tables": [
+    {
+      "name": "Configuration File Memory",
+      "startPattern": "FileName\\s+",
+      "endPattern": "\\n",
+      "headers": true,
+      "separator": "\\s+",
+      "numericColumns": [1, 2]
+    }
+  ]
+}

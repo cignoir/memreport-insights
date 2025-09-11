@@ -1,0 +1,13 @@
+{
+  "id": "rhi_resource_memory",
+  "description": "RHI resource memory detailed breakdown",
+  "tables": [
+    {
+      "startPattern": "MemReport: Begin command \"rhi.DumpResourceMemory\"",
+      "endPattern": "MemReport: End command \"rhi.DumpResourceMemory\"",
+      "headers": true,
+      "separator": "\\s{2,}",
+      "numericColumns": [2, 3, 4, 5, 6]
+    }
+  ]
+}

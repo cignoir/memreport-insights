@@ -1,0 +1,13 @@
+{
+  "id": "streaming_sources",
+  "description": "World Partition streaming sources analysis",
+  "tables": [
+    {
+      "startPattern": "MemReport: Begin command \"wp.DumpStreamingSources\"",
+      "endPattern": "MemReport: End command \"wp.DumpStreamingSources\"",
+      "headers": true,
+      "separator": "\\s{2,}",
+      "numericColumns": [1, 2, 3, 4]
+    }
+  ]
+}

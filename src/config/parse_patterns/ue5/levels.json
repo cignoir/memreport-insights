@@ -1,0 +1,13 @@
+{
+  "id": "levels",
+  "description": "Level information and memory usage",
+  "tables": [
+    {
+      "startPattern": "Levels:",
+      "endPattern": "\\n\\n",
+      "headers": true,
+      "separator": "\\s{2,}",
+      "numericColumns": [1, 2, 3]
+    }
+  ]
+}

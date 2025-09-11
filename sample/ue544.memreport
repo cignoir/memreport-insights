@@ -1,0 +1,760 @@
+Changelist: 35576357
+Config: Development
+Device Name: WindowsEditor
+Device Profile: None
+CommandLine Options: -AUTH_LOGIN=unused -AUTH_PASSWORD=1894b2568d494df9b9cb7b48665b119f -AUTH_TYPE=exchangecode -epicapp=UE_5.4 -epicenv=Prod -EpicPortal -epicusername=guru2-share -epicuserid=e4c10281858d44c0a25d23f497fdd9fe -epiclocale=ja -epicsandboxid=ue
+Time Since Boot: 1486.75 Seconds
+Local PlayerController: PlayerController_0 View Location: X=500.000 Y=1110.000 Z=100.505 View Rotation: P=0.000000 Y=0.000000 R=0.000000
+
+MemReport: Begin command "DumpParticleMem"
+Particle Dynamic Memory Stats
+Type,Count,MaxCount,Mem(Bytes),MaxMem(Bytes),GTMem(Bytes),GTMemMax(Bytes)
+Total PSysComponents,0,0,0,0,0,0
+Total DynamicEmitters,0,0,0,0,0,0
+Sprite,0,0,0,0,0,0
+Mesh,0,0,0,0,0,0
+Beam,0,0,0,0,0,0
+Ribbon,0,0,0,0,0,0
+AnimTrail,0,0,0,0,0,0
+Untracked,0,0,0,0,0,0
+ParticleData,Total(Bytes),FMath::Max(Bytes)
+GameThread,0,0
+RenderThread,0,0
+Max wasted GT,0
+Largest single GT allocation,0
+Largest single RT allocation,0
+MemReport: End command "DumpParticleMem"
+
+MemReport: Begin command "ConfigMem"
+Config cache memory usage:
+                                                                                                 FileName          NumBytes          MaxBytes
+                                                                                               KnownFiles           1917034           2011066
+                                                 G:/UE5/MyProject54/Saved/Config/WindowsEditor/Editor.ini            301324            317716
+                           G:/UE5/MyProject54/Saved/Config/WindowsEditor/EditorPerProjectUserSettings.ini            250028            262036
+                                             G:/UE5/MyProject54/Saved/Config/WindowsEditor/ControlRig.ini            246564            247716
+                                                 G:/UE5/MyProject54/Saved/Config/WindowsEditor/Compat.ini            130820            131924
+                                                G:/UE5/MyProject54/Saved/Config/WindowsEditor/Niagara.ini             89234             93418
+               C:/Users/nagata/AppData/Local/UnrealEngine/5.4/Saved/Config/WindowsEditor/EditorLayout.ini             72856             76756
+                                              G:/UE5/MyProject54/Saved/Config/WindowsEditor/Lightmass.ini             62766             65630
+                                            G:/UE5/MyProject54/Saved/Config/WindowsEditor/Interchange.ini             56550             60798
+             C:/Users/nagata/AppData/Local/UnrealEngine/5.4/Saved/Config/WindowsEditor/EditorSettings.ini             56082             62302
+          C:/Users/nagata/AppData/Local/UnrealEngine/5.4/Saved/Config/WindowsEditor/EditorKeyBindings.ini             31290             32706
+                   G:/UE5/MyProject54/Saved/Config/WindowsEditor/UnrealInsightsSessionBrowserSettings.ini             29648             31128
+C:/Users/nagata/AppData/Local/UnrealEngine/5.4/Saved/Config/WindowsEditor/LocalizationServiceSettings.ini             27526             29006
+                            G:/UE5/MyProject54/Saved/Config/WindowsEditor/LocalizationServiceSettings.ini             27470             28950
+                             G:/UE5/MyProject54/Saved/Config/WindowsEditor/InternationalizationExport.ini             27228             28708
+                              G:/UE5/MyProject54/Saved/Config/WindowsEditor/ObjectMixerSerializedData.ini             26986             28466
+                              G:/UE5/MyProject54/Saved/Config/WindowsEditor/TranslationPickerSettings.ini             26986             28466
+                                 G:/UE5/MyProject54/Saved/Config/WindowsEditor/UnrealInsightsSettings.ini             26260             27740
+      C:/Users/nagata/AppData/Local/UnrealEngine/5.4/Saved/Config/WindowsEditor/SourceControlSettings.ini             26070             27550
+                                  G:/UE5/MyProject54/Saved/Config/WindowsEditor/SourceControlSettings.ini             26014             27494
+                                     G:/UE5/MyProject54/Saved/Config/WindowsEditor/TemplateCategories.ini             25292             26772
+                                     G:/UE5/MyProject54/Saved/Config/WindowsEditor/PIEPreviewSettings.ini             25292             26772
+                                       G:/UE5/MyProject54/Saved/Config/WindowsEditor/GameplayTagsList.ini             24808             26288
+                                           G:/UE5/MyProject54/Saved/Config/WindowsEditor/TemplateDefs.ini             23840             25320
+                                                 G:/UE5/MyProject54/Saved/Config/WindowsEditor/Crypto.ini             22388             23868
+                                       G:/UE5/MyProject54/Saved/Config/WindowsEditor/DatasmithContent.ini             19000             20072
+                                              G:/UE5/MyProject54/Saved/Config/WindowsEditor/Metasound.ini             15530             16602
+                               G:/UE5/MyProject54/Saved/Config/WindowsEditor/EditorScriptingUtilities.ini             10256             11328
+                                            G:/UE5/MyProject54/Saved/Config/WindowsEditor/ToolPresets.ini             10022             11094
+                                          G:/UE5/MyProject54/Saved/Config/WindowsEditor/EnhancedInput.ini              7822              8894
+                                                G:/UE5/MyProject54/Saved/Config/WindowsEditor/Paper2D.ini              7730              8802
+                                                                ../../../Templates/TemplateCategories.ini              6950              7022
+                                                              G:/UE5/MyProject54/Config/DefaultEngine.ini              6874              7114
+                                              G:/UE5/MyProject54/Saved/Config/WindowsEditor/Synthesis.ini              6806              7878
+                                            G:/UE5/MyProject54/Saved/Config/WindowsEditor/StructUtils.ini              6506              7642
+                                                  G:/UE5/MyProject54/Saved/Config/WindowsEditor/IKRig.ini              5938              7074
+                                  G:/UE5/MyProject54/Saved/Config/WindowsEditor/VariantManagerContent.ini              5930              7194
+                                       G:/UE5/MyProject54/Saved/Config/WindowsEditor/TraceDataFilters.ini              5616              6880
+                          G:/UE5/MyProject54/Saved/Config/WindowsEditor/ContentBrowserClassDataSource.ini              5478              6678
+                          G:/UE5/MyProject54/Saved/Config/WindowsEditor/ContentBrowserAssetDataSource.ini              5478              6678
+                       G:/UE5/MyProject54/Saved/Config/WindowsEditor/VisualStudioCodeSourceCodeAccess.ini              5448              6648
+                           G:/UE5/MyProject54/Saved/Config/WindowsEditor/ContentBrowserFileDataSource.ini              5424              6624
+                           G:/UE5/MyProject54/Saved/Config/WindowsEditor/PortableObjectFileDataSource.ini              5392              6592
+                           G:/UE5/MyProject54/Saved/Config/WindowsEditor/VisualStudioSourceCodeAccess.ini              5232              6432
+                                         G:/UE5/MyProject54/Saved/Config/WindowsEditor/TraceUtilities.ini              5232              6368
+                                           G:/UE5/MyProject54/Saved/Config/WindowsEditor/GLTFExporter.ini              5228              6492
+                                             G:/UE5/MyProject54/Saved/Config/WindowsEditor/FullBodyIK.ini              5200              6464
+                           G:/UE5/MyProject54/Saved/Config/WindowsEditor/ExampleDeviceProfileSelector.ini              5200              6400
+                           G:/UE5/MyProject54/Saved/Config/WindowsEditor/WindowsDeviceProfileSelector.ini              5200              6400
+                           G:/UE5/MyProject54/Saved/Config/WindowsEditor/AndroidDeviceProfileSelector.ini              5200              6400
+                                  G:/UE5/MyProject54/Saved/Config/WindowsEditor/BaseCharacterFXEditor.ini              5190              6390
+                              G:/UE5/MyProject54/Saved/Config/WindowsEditor/OnlineSubsystemGooglePlay.ini              5150              6350
+                            G:/UE5/MyProject54/Saved/Config/WindowsEditor/MobileLauncherProfileWizard.ini              5130              6330
+                            G:/UE5/MyProject54/Saved/Config/WindowsEditor/WorldPartitionHLODUtilities.ini              5130              6330
+                             G:/UE5/MyProject54/Saved/Config/WindowsEditor/LinuxDeviceProfileSelector.ini              5092              6292
+                               G:/UE5/MyProject54/Saved/Config/WindowsEditor/GeometryCollectionPlugin.ini              5064              6264
+                              G:/UE5/MyProject54/Saved/Config/WindowsEditor/LocationServicesBPLibrary.ini              5038              6238
+                               G:/UE5/MyProject54/Saved/Config/WindowsEditor/BlendSpaceMotionAnalysis.ini              5016              6216
+                               G:/UE5/MyProject54/Saved/Config/WindowsEditor/AnimationModifierLibrary.ini              5016              6216
+                               G:/UE5/MyProject54/Saved/Config/WindowsEditor/KDevelopSourceCodeAccess.ini              5016              6216
+                               G:/UE5/MyProject54/Saved/Config/WindowsEditor/CodeLiteSourceCodeAccess.ini              5016              6216
+                               G:/UE5/MyProject54/Saved/Config/WindowsEditor/IOSDeviceProfileSelector.ini              4984              6184
+                                G:/UE5/MyProject54/Saved/Config/WindowsEditor/SubversionSourceControl.ini              4962              6162
+                                 G:/UE5/MyProject54/Saved/Config/WindowsEditor/MeshModelingToolsetExp.ini              4956              6156
+                                G:/UE5/MyProject54/Saved/Config/WindowsEditor/ProceduralMeshComponent.ini              4930              6130
+                                G:/UE5/MyProject54/Saved/Config/WindowsEditor/ModelingToolsEditorMode.ini              4914              6114
+                                 G:/UE5/MyProject54/Saved/Config/WindowsEditor/EngineAssetDefinitions.ini              4860              6060
+                                 G:/UE5/MyProject54/Saved/Config/WindowsEditor/LauncherChunkInstaller.ini              4860              6060
+                                  G:/UE5/MyProject54/Saved/Config/WindowsEditor/PerforceSourceControl.ini              4854              6054
+                                  G:/UE5/MyProject54/Saved/Config/WindowsEditor/CLionSourceCodeAccess.ini              4854              6054
+                                  G:/UE5/MyProject54/Saved/Config/WindowsEditor/XCodeSourceCodeAccess.ini              4854              6054
+                                  G:/UE5/MyProject54/Saved/Config/WindowsEditor/RiderSourceCodeAccess.ini              4854              6054
+                                   G:/UE5/MyProject54/Saved/Config/WindowsEditor/NullSourceCodeAccess.ini              4800              6000
+                                   G:/UE5/MyProject54/Saved/Config/WindowsEditor/N10XSourceCodeAccess.ini              4800              6000
+                                   G:/UE5/MyProject54/Saved/Config/WindowsEditor/PlasticSourceControl.ini              4800              6000
+                                 G:/UE5/MyProject54/Saved/Config/WindowsEditor/EnvironmentQueryEditor.ini              4796              5996
+                                   G:/UE5/MyProject54/Saved/Config/WindowsEditor/GoogleCloudMessaging.ini              4768              5968
+                                   G:/UE5/MyProject54/Saved/Config/WindowsEditor/CameraShakePreviewer.ini              4768              5968
+                                    G:/UE5/MyProject54/Saved/Config/WindowsEditor/LevelSequenceEditor.ini              4762              5962
+                                   G:/UE5/MyProject54/Saved/Config/WindowsEditor/MacGraphicsSwitching.ini              4752              5952
+                                   G:/UE5/MyProject54/Saved/Config/WindowsEditor/OnlineSubsystemUtils.ini              4752              5952
+                                     G:/UE5/MyProject54/Saved/Config/WindowsEditor/PythonScriptPlugin.ini              4740              5940
+                                     G:/UE5/MyProject54/Saved/Config/WindowsEditor/LocalizableMessage.ini              4740              5940
+                                    G:/UE5/MyProject54/Saved/Config/WindowsEditor/MobilePatchingUtils.ini              4714              5914
+                                    G:/UE5/MyProject54/Saved/Config/WindowsEditor/ActorLayerUtilities.ini              4714              5914
+                                    G:/UE5/MyProject54/Saved/Config/WindowsEditor/MeshModelingToolset.ini              4714              5914
+                                    G:/UE5/MyProject54/Saved/Config/WindowsEditor/CustomMeshComponent.ini              4714              5914
+                                    G:/UE5/MyProject54/Saved/Config/WindowsEditor/SignificanceManager.ini              4714              5914
+                                     G:/UE5/MyProject54/Saved/Config/WindowsEditor/SequencerScripting.ini              4708              5908
+                                     G:/UE5/MyProject54/Saved/Config/WindowsEditor/OnlineSubsystemIOS.ini              4708              5908
+                                    G:/UE5/MyProject54/Saved/Config/WindowsEditor/OnlineSubsystemNull.ini              4698              5898
+                                    G:/UE5/MyProject54/Saved/Config/WindowsEditor/BlueprintHeaderView.ini              4698              5898
+                                     G:/UE5/MyProject54/Saved/Config/WindowsEditor/PropertyAccessNode.ini              4692              5892
+                                     G:/UE5/MyProject54/Saved/Config/WindowsEditor/TextureFormatOodle.ini              4692              5892
+                                      G:/UE5/MyProject54/Saved/Config/WindowsEditor/ChaosSolverPlugin.ini              4686              5886
+                                      G:/UE5/MyProject54/Saved/Config/WindowsEditor/SkeletalReduction.ini              4686              5886
+                                   G:/UE5/MyProject54/Saved/Config/WindowsEditor/PropertyAccessEditor.ini              4672              5872
+                                     G:/UE5/MyProject54/Saved/Config/WindowsEditor/AndroidMoviePlayer.ini              4660              5860
+                                     G:/UE5/MyProject54/Saved/Config/WindowsEditor/GeometryProcessing.ini              4660              5860
+                                     G:/UE5/MyProject54/Saved/Config/WindowsEditor/WindowsMoviePlayer.ini              4660              5860
+                                     G:/UE5/MyProject54/Saved/Config/WindowsEditor/AssetManagerEditor.ini              4644              5844
+                                     G:/UE5/MyProject54/Saved/Config/WindowsEditor/SequencerAnimTools.ini              4644              5844
+                                     G:/UE5/MyProject54/Saved/Config/WindowsEditor/GameplayTagsEditor.ini              4644              5844
+                                      G:/UE5/MyProject54/Saved/Config/WindowsEditor/ControlRigModules.ini              4638              5838
+                                       G:/UE5/MyProject54/Saved/Config/WindowsEditor/OpenImageDenoise.ini              4632              5832
+                                      G:/UE5/MyProject54/Saved/Config/WindowsEditor/AndroidPermission.ini              4606              5806
+                                      G:/UE5/MyProject54/Saved/Config/WindowsEditor/AndroidFileServer.ini              4606              5806
+                                       G:/UE5/MyProject54/Saved/Config/WindowsEditor/TemplateSequence.ini              4600              5800
+                                      G:/UE5/MyProject54/Saved/Config/WindowsEditor/SpeedTreeImporter.ini              4590              5790
+                                    G:/UE5/MyProject54/Saved/Config/WindowsEditor/RenderGraphInsights.ini              4586              5786
+                                    G:/UE5/MyProject54/Saved/Config/WindowsEditor/FastBuildController.ini              4586              5786
+                                       G:/UE5/MyProject54/Saved/Config/WindowsEditor/GitSourceControl.ini              4584              5784
+                                       G:/UE5/MyProject54/Saved/Config/WindowsEditor/AnimationSharing.ini              4584              5784
+                                       G:/UE5/MyProject54/Saved/Config/WindowsEditor/ControlRigSpline.ini              4584              5784
+                                        G:/UE5/MyProject54/Saved/Config/WindowsEditor/AutomationUtils.ini              4578              5778
+                                        G:/UE5/MyProject54/Saved/Config/WindowsEditor/ChaosUserDataPT.ini              4578              5778
+                                        G:/UE5/MyProject54/Saved/Config/WindowsEditor/StudioTelemetry.ini              4578              5778
+                                      G:/UE5/MyProject54/Saved/Config/WindowsEditor/MediaPlayerEditor.ini              4574              5774
+                                       G:/UE5/MyProject54/Saved/Config/WindowsEditor/ArchVisCharacter.ini              4552              5752
+                                       G:/UE5/MyProject54/Saved/Config/WindowsEditor/AudioSynesthesia.ini              4552              5752
+                                       G:/UE5/MyProject54/Saved/Config/WindowsEditor/AppleMoviePlayer.ini              4552              5752
+                                       G:/UE5/MyProject54/Saved/Config/WindowsEditor/MaterialAnalyzer.ini              4536              5736
+                                       G:/UE5/MyProject54/Saved/Config/WindowsEditor/ChangelistReview.ini              4536              5736
+                                       G:/UE5/MyProject54/Saved/Config/WindowsEditor/CurveEditorTools.ini              4536              5736
+                                       G:/UE5/MyProject54/Saved/Config/WindowsEditor/EditorDebugTools.ini              4536              5736
+                                        G:/UE5/MyProject54/Saved/Config/WindowsEditor/AlembicImporter.ini              4530              5730
+                                        G:/UE5/MyProject54/Saved/Config/WindowsEditor/RenderDocPlugin.ini              4530              5730
+                                        G:/UE5/MyProject54/Saved/Config/WindowsEditor/DumpGPUServices.ini              4530              5730
+                                      G:/UE5/MyProject54/Saved/Config/WindowsEditor/NiagaraSimCaching.ini              4526              5726
+                                         G:/UE5/MyProject54/Saved/Config/WindowsEditor/PlatformCrypto.ini              4524              5724
+                                       G:/UE5/MyProject54/Saved/Config/WindowsEditor/MediaCompositing.ini              4520              5720
+                                       G:/UE5/MyProject54/Saved/Config/WindowsEditor/InterchangeTests.ini              4520              5720
+                                        G:/UE5/MyProject54/Saved/Config/WindowsEditor/GameplayCameras.ini              4498              5698
+                                        G:/UE5/MyProject54/Saved/Config/WindowsEditor/WebMMoviePlayer.ini              4498              5698
+                                        G:/UE5/MyProject54/Saved/Config/WindowsEditor/ChunkDownloader.ini              4498              5698
+                                        G:/UE5/MyProject54/Saved/Config/WindowsEditor/AppleImageUtils.ini              4498              5698
+                                      G:/UE5/MyProject54/Saved/Config/WindowsEditor/InterchangeEditor.ini              4494              5694
+                                         G:/UE5/MyProject54/Saved/Config/WindowsEditor/VariantManager.ini              4492              5692
+                                        G:/UE5/MyProject54/Saved/Config/WindowsEditor/OnlineSubsystem.ini              4482              5682
+                                        G:/UE5/MyProject54/Saved/Config/WindowsEditor/FacialAnimation.ini              4482              5682
+                                           G:/UE5/MyProject54/Saved/Config/WindowsEditor/XInputDevice.ini              4464              5664
+                                            G:/UE5/MyProject54/Saved/Config/WindowsEditor/ObjectMixer.ini              4458              5658
+                                         G:/UE5/MyProject54/Saved/Config/WindowsEditor/InputDebugging.ini              4444              5644
+                                         G:/UE5/MyProject54/Saved/Config/WindowsEditor/CableComponent.ini              4444              5644
+                                         G:/UE5/MyProject54/Saved/Config/WindowsEditor/ResonanceAudio.ini              4444              5644
+                                          G:/UE5/MyProject54/Saved/Config/WindowsEditor/ActorSequence.ini              4438              5638
+                                         G:/UE5/MyProject54/Saved/Config/WindowsEditor/OnlineServices.ini              4428              5628
+                                         G:/UE5/MyProject54/Saved/Config/WindowsEditor/ProxyLODPlugin.ini              4428              5628
+                                         G:/UE5/MyProject54/Saved/Config/WindowsEditor/MeshLODToolset.ini              4428              5628
+                                         G:/UE5/MyProject54/Saved/Config/WindowsEditor/DataValidation.ini              4428              5628
+                                          G:/UE5/MyProject54/Saved/Config/WindowsEditor/AnimationData.ini              4422              5622
+                                          G:/UE5/MyProject54/Saved/Config/WindowsEditor/UObjectPlugin.ini              4422              5622
+                                           G:/UE5/MyProject54/Saved/Config/WindowsEditor/ChaosNiagara.ini              4416              5616
+                                           G:/UE5/MyProject54/Saved/Config/WindowsEditor/GeometryFlow.ini              4416              5616
+                                           G:/UE5/MyProject54/Saved/Config/WindowsEditor/ChaosCaching.ini              4416              5616
+                                             G:/UE5/MyProject54/Saved/Config/WindowsEditor/LightMixer.ini              4404              5604
+                                           G:/UE5/MyProject54/Saved/Config/WindowsEditor/OodleNetwork.ini              4400              5600
+                                          G:/UE5/MyProject54/Saved/Config/WindowsEditor/GeometryCache.ini              4390              5590
+                                          G:/UE5/MyProject54/Saved/Config/WindowsEditor/PluginBrowser.ini              4374              5574
+                                           G:/UE5/MyProject54/Saved/Config/WindowsEditor/UdpMessaging.ini              4368              5568
+                                           G:/UE5/MyProject54/Saved/Config/WindowsEditor/TcpMessaging.ini              4368              5568
+                                           G:/UE5/MyProject54/Saved/Config/WindowsEditor/PixWinPlugin.ini              4368              5568
+                                            G:/UE5/MyProject54/Saved/Config/WindowsEditor/CharacterAI.ini              4362              5562
+                                            G:/UE5/MyProject54/Saved/Config/WindowsEditor/BackChannel.ini              4362              5562
+                                            G:/UE5/MyProject54/Saved/Config/WindowsEditor/ChaosEditor.ini              4362              5562
+                                              G:/UE5/MyProject54/Saved/Config/WindowsEditor/PlanarCut.ini              4350              5550
+                                           G:/UE5/MyProject54/Saved/Config/WindowsEditor/AudioCapture.ini              4336              5536
+                                           G:/UE5/MyProject54/Saved/Config/WindowsEditor/AudioWidgets.ini              4336              5536
+                                           G:/UE5/MyProject54/Saved/Config/WindowsEditor/GeometryMode.ini              4320              5520
+                                            G:/UE5/MyProject54/Saved/Config/WindowsEditor/PluginUtils.ini              4314              5514
+                                           G:/UE5/MyProject54/Saved/Config/WindowsEditor/AndroidMedia.ini              4304              5504
+                                            G:/UE5/MyProject54/Saved/Config/WindowsEditor/SoundFields.ini              4282              5482
+                                          G:/UE5/MyProject54/Saved/Config/WindowsEditor/CmdLinkServer.ini              4262              5462
+                                          G:/UE5/MyProject54/Saved/Config/WindowsEditor/XGEController.ini              4262              5462
+                                             G:/UE5/MyProject54/Saved/Config/WindowsEditor/OnlineBase.ini              4212              5412
+                                             G:/UE5/MyProject54/Saved/Config/WindowsEditor/CryptoKeys.ini              4212              5412
+                                           G:/UE5/MyProject54/Saved/Config/WindowsEditor/WorldMetrics.ini              4208              5408
+                                           G:/UE5/MyProject54/Saved/Config/WindowsEditor/MeshPainting.ini              4208              5408
+                                              G:/UE5/MyProject54/Saved/Config/WindowsEditor/ACLPlugin.ini              4206              5406
+                                               G:/UE5/MyProject54/Saved/Config/WindowsEditor/Dataflow.ini              4200              5400
+                                               G:/UE5/MyProject54/Saved/Config/WindowsEditor/Fracture.ini              4200              5400
+                                             G:/UE5/MyProject54/Saved/Config/WindowsEditor/MediaPlate.ini              4196              5396
+                                              G:/UE5/MyProject54/Saved/Config/WindowsEditor/WaveTable.ini              4174              5374
+                                              G:/UE5/MyProject54/Saved/Config/WindowsEditor/AssetTags.ini              4174              5374
+                                              G:/UE5/MyProject54/Saved/Config/WindowsEditor/GooglePAD.ini              4174              5374
+                                              G:/UE5/MyProject54/Saved/Config/WindowsEditor/WebMMedia.ini              4142              5342
+                                                  G:/UE5/MyProject54/Saved/Config/WindowsEditor/Takes.ini              4118              5318
+                                               G:/UE5/MyProject54/Saved/Config/WindowsEditor/UVEditor.ini              4104              5304
+                                             G:/UE5/MyProject54/Saved/Config/WindowsEditor/ChaosCloth.ini              4100              5300
+                                              G:/UE5/MyProject54/Saved/Config/WindowsEditor/AISupport.ini              4094              5294
+                                               G:/UE5/MyProject54/Saved/Config/WindowsEditor/AvfMedia.ini              4088              5288
+                                               G:/UE5/MyProject54/Saved/Config/WindowsEditor/WmfMedia.ini              4088              5288
+                                               G:/UE5/MyProject54/Saved/Config/WindowsEditor/ImgMedia.ini              4088              5288
+                                                 G:/UE5/MyProject54/Saved/Config/WindowsEditor/MsQuic.ini              4012              5212
+                                                  G:/UE5/MyProject54/Saved/Config/WindowsEditor/RigVM.ini              3958              5158
+                                                G:/UE5/MyProject54/Saved/Config/WindowsEditor/ChaosVD.ini              3938              5138
+                                                              ../../../Engine/Config/ConsoleVariables.ini               642               714
+                                                        G:/UE5/MyProject54/Config/DefaultGameplayTags.ini               100               148
+                                                                                                    Total           4430814           4804370
+MemReport: End command "ConfigMem"
+
+MemReport: Begin command "r.DumpRenderTargetPoolMemory"
+Pooled Render Targets:
+   0.062MB    1x   1           1mip(s) HairLUT0 (B8G8R8A8) Unused frames: 0
+   0.008MB  768x   8           1mip(s) AsciiTexture (R8) Unused frames: 0
+  512.000MB 16384x4096    [  2]  1mip(s) Shadow.Virtual.PhysicalPagePool (R32_UINT) Unused frames: 0
+  85.375MB 8192x2048           7mip(s) Shadow.Virtual.HZBPhysicalPagePool (R32_FLOAT) Unused frames: 0
+   8.000MB 1024x1024x  8       1mip(s) DistanceFields.DistanceFieldBrickTexture (G8) Unused frames: 0
+   0.035MB   66x  64           1mip(s) SSProfiles (A16B16G16R16) Unused frames: 0
+   0.062MB  256x  64           1mip(s) SkyAtmosphere.TransmittanceLut (FloatRGB) Unused frames: 0
+   0.062MB   32x  32           1mip(s) SkyAtmosphere.MultiScatteredLuminanceLut (FloatRGB) Unused frames: 0
+   0.062MB    1x   1           1mip(s) SkyAtmosphere.DistantSkyLightLut (FloatRGB) Unused frames: 0
+   1.312MB   36x  36x144       1mip(s) GlobalDistanceField.PageTableMovableLayer (R32_UINT) Unused frames: 0
+   0.125MB   32x  32x 16       1mip(s) SkyAtmosphere.CameraAPVolume0 (FloatRGBA) Unused frames: 0
+   0.688MB 1044x 600    [  1]  1mip(s) Lumen.ScreenProbeGather.NumHistoryFramesAccumulated (R8) Unused frames: 1
+   2.625MB 1044x 600           1mip(s) Lumen.DepthHistory (R32_FLOAT) Unused frames: 0
+   0.562MB  128x 128cube       8mip(s) SkyLight.ConvolvedSkyRenderTarget0 (FloatR11G11B10) Unused frames: 0
+   0.562MB  128x 128cube       8mip(s) SkyLight.CapturedSkyRenderTarget (FloatR11G11B10) Unused frames: 0
+   0.562MB  128x 128cube       8mip(s) SkyLight.ConvolvedSkyRenderTarget1 (FloatR11G11B10) Unused frames: 0
+   0.688MB 1044x 600    [  1]  1mip(s) Lumen.Reflections.NumHistoryFramesAccumulated (G8) Unused frames: 0
+  32.000MB 4096x4096           1mip(s) Lumen.RadianceCache.DepthProbeAtlasTexture (PF_R16F) Unused frames: 0
+  64.000MB 4096x4096           1mip(s) Lumen.RadianceCache.RadianceProbeAtlasTextureSource (FloatRGB) Unused frames: 0
+  72.250MB 4352x4352           1mip(s) Lumen.RadianceCache.FinalRadianceAtlas (FloatRGB) Unused frames: 0
+   1.312MB 1044x 600    [  1]  1mip(s) Lumen.Reflections.AccumulatedResolveVariance (PF_R16F) Unused frames: 0
+   2.000MB 1024x1024           1mip(s) Lumen.RadianceCache.DepthProbeAtlasTexture (PF_R16F) Unused frames: 0
+   4.000MB 1024x1024           1mip(s) Lumen.RadianceCache.RadianceProbeAtlasTextureSource (FloatRGB) Unused frames: 0
+  21.000MB 2048x2048           3mip(s) Lumen.RadianceCache.FinalRadianceAtlas (FloatRGB) Unused frames: 0
+   5.125MB 1044x 600    [  1]  1mip(s) Lumen.Reflections.SpecularIndirect (FloatRGBA) Unused frames: 0
+   0.688MB 1044x 600    [  1]  1mip(s) Lumen.ScreenProbeGather.NumHistoryFramesAccumulated (R8) Unused frames: 0
+   0.688MB 1044x 600    [  1]  1mip(s) Lumen.ScreenProbeGather.FastUpdateMode (R8) Unused frames: 0
+   2.625MB 1044x 600    [  1]  1mip(s) Lumen.ScreenProbeGather.BackfaceDiffuseIndirect (FloatRGB) Unused frames: 0
+   2.625MB 1044x 600    [  1]  1mip(s) Lumen.ScreenProbeGather.RoughSpecularIndirect (FloatRGB) Unused frames: 0
+   0.062MB    1x   1           1mip(s) EyeAdaptationTexture (A32B32G32R32F) Unused frames: 0
+   0.125MB   32x  32x 32       1mip(s) CombineLUTs (A2B10G10R10) Unused frames: 0
+   5.125MB 1044x 600           1mip(s) SceneDepthZ (DepthStencil) Unused frames: 0
+  32.000MB 4096x4096           1mip(s) Lumen.SceneDepth (G16) Unused frames: 0
+  16.000MB 4096x4096           1mip(s) Lumen.SceneAlbedo (BC7) Unused frames: 0
+  16.000MB 4096x4096           1mip(s) Lumen.SceneOpacity (G8) Unused frames: 0
+  16.000MB 4096x4096           1mip(s) Lumen.SceneNormal (BC5) Unused frames: 0
+  16.000MB 4096x4096           1mip(s) Lumen.SceneEmissive (BC6H) Unused frames: 0
+  64.000MB 4096x4096           1mip(s) Lumen.SceneDirectLighting (FloatR11G11B10) Unused frames: 0
+  64.000MB 4096x4096           1mip(s) Lumen.SceneIndirectLighting (FloatR11G11B10) Unused frames: 0
+  16.000MB 4096x4096           1mip(s) Lumen.SceneNumFramesAccumulatedAtlas (R8) Unused frames: 0
+  64.000MB 4096x4096           1mip(s) Lumen.SceneFinalLighting (FloatR11G11B10) Unused frames: 0
+   5.125MB 1044x 600    [  1]  1mip(s) Lumen.ScreenProbeGather.DiffuseIndirect (FloatRGBA) Unused frames: 0
+   5.125MB 1044x 600           1mip(s) SceneColor (FloatRGBA) Unused frames: 0
+   0.312MB   33x  19x 26       1mip(s) Lumen.TranslucencyVolume.SHLightingNewHistory0 (FloatRGBA) Unused frames: 0
+   0.188MB   33x  19x 26       1mip(s) Lumen.TranslucencyVolume.SHLightingNewHistory0 (FloatRGB) Unused frames: 0
+   0.125MB   66x  57           1mip(s) Lumen.ScreenProbeGather.ScreenProbeTranslatedWorldPosition (A32B32G32R32F) Unused frames: 0
+   0.062MB   66x  57           1mip(s) Lumen.ScreenProbeGather.ScreenProbeSceneDepth (R32_UINT) Unused frames: 0
+   1.062MB  528x 456           1mip(s) Lumen.ScreenProbeGather.ScreenProbeFilteredRadiance (FloatRGB) Unused frames: 0
+   0.250MB   72x  24x 24       1mip(s) Lumen.RadianceCache.RadianceProbeIndirectionTexture (R32_UINT) Unused frames: 0
+   8.000MB 1024x1024           1mip(s) Lumen.Radiosity.ProbeSHBlueAtlas (FloatRGBA) Unused frames: 0
+   8.000MB 1024x1024           1mip(s) Lumen.Radiosity.ProbeSHGreenAtlas (FloatRGBA) Unused frames: 0
+   8.000MB 1024x1024           1mip(s) Lumen.Radiosity.ProbeSHRedAtlas (FloatRGBA) Unused frames: 0
+   2.250MB  192x  48x 48       1mip(s) Lumen.RadianceCache.RadianceProbeIndirectionTexture (R32_UINT) Unused frames: 0
+  64.000MB 4096x4096           1mip(s) Lumen.Radiosity.TraceRadianceAtlas (FloatRGB) Unused frames: 0
+   0.062MB    1x   1           1mip(s) EyeAdaptationTexture (A32B32G32R32F) Unused frames: 0
+  56.000MB 1024x1024x 56       1mip(s) GlobalDistanceField.PageAtlas (R8) Unused frames: 0
+   7.000MB  512x 512x 28       1mip(s) GlobalDistanceField.CoverageAtlas (R8) Unused frames: 0
+   1.312MB   36x  36x144       1mip(s) GlobalDistanceField.PageTableCombined (R32_UINT) Unused frames: 0
+   1.000MB   63x  63x252       1mip(s) GlobalDistanceField.MipTexture (R8) Unused frames: 0
+   1.312MB   36x  36x144       1mip(s) GlobalDistanceField.PageTableStationaryLayer (R32_UINT) Unused frames: 0
+   0.062MB    1x   1           1mip(s) Lumen.Radiosity.DummyTraceHitDistanceAtlas (PF_R16F) Unused frames: 0
+   0.125MB   32x  32x 16       1mip(s) SkyAtmosphere.RealTimeSkyCapCamera360APLut (FloatRGBA) Unused frames: 0
+   0.125MB  192x 104           1mip(s) SkyAtmosphere.SkyViewLut (FloatRGB) Unused frames: 0
+   0.688MB  521x 300           1mip(s) VolumetricRenderTarget.ReconstructDepth (G16R16F) Unused frames: 0
+   1.312MB  521x 300           1mip(s) VolumetricRenderTarget.Reconstruct (FloatRGBA) Unused frames: 0
+   0.688MB 1044x 600    [  1]  1mip(s) Lumen.ScreenProbeGather.FastUpdateMode (R8) Unused frames: 1
+   0.062MB    1x   1           1mip(s) Lumen.Radiosity.DummyTraceHitDistanceAtlas (PF_R16F) Unused frames: 1
+   3.375MB 1044x 600           2mip(s) TSR.Output (FloatR11G11B10) Unused frames: 0
+   0.062MB    1x   1           1mip(s) EyeAdaptationTexture (A32B32G32R32F) Unused frames: 0
+   0.688MB  521x 300           1mip(s) VolumetricRenderTarget.ReconstructDepth (G16R16F) Unused frames: 0
+   0.688MB  521x 300           1mip(s) VolumetricRenderTarget.ReconstructDepth (G16R16F) Unused frames: 0
+   1.312MB  521x 300           1mip(s) VolumetricRenderTarget.Reconstruct (FloatRGBA) Unused frames: 0
+   0.375MB  261x 150           1mip(s) VolumetricRenderTarget.SecondaryTracing (FloatRGBA) Unused frames: 0
+   0.375MB  261x 150           1mip(s) VolumetricRenderTarget.Tracing (FloatRGBA) Unused frames: 0
+   0.375MB  261x 150           1mip(s) VolumetricRenderTarget.TracingDepth (FloatRGBA) Unused frames: 0
+  512.000MB 16384x4096    [  2]  1mip(s) Shadow.Virtual.PhysicalPagePool (R32_UINT) Unused frames: 0
+  85.375MB 8192x2048           7mip(s) Shadow.Virtual.HZBPhysicalPagePool (R32_FLOAT) Unused frames: 0
+   8.000MB 1024x1024x  8       1mip(s) DistanceFields.DistanceFieldBrickTexture (G8) Unused frames: 0
+  56.000MB 1024x1024x 56       1mip(s) GlobalDistanceField.PageAtlas (R8) Unused frames: 0
+   7.000MB  512x 512x 28       1mip(s) GlobalDistanceField.CoverageAtlas (R8) Unused frames: 0
+   1.312MB   36x  36x144       1mip(s) GlobalDistanceField.PageTableCombined (R32_UINT) Unused frames: 0
+   1.000MB   63x  63x252       1mip(s) GlobalDistanceField.MipTexture (R8) Unused frames: 0
+   1.312MB   36x  36x144       1mip(s) GlobalDistanceField.PageTableStationaryLayer (R32_UINT) Unused frames: 0
+   1.312MB   36x  36x144       1mip(s) GlobalDistanceField.PageTableMovableLayer (R32_UINT) Unused frames: 0
+   0.062MB  256x  64           1mip(s) SkyAtmosphere.TransmittanceLut (FloatRGB) Unused frames: 0
+   0.062MB   32x  32           1mip(s) SkyAtmosphere.MultiScatteredLuminanceLut (FloatRGB) Unused frames: 0
+   0.062MB    1x   1           1mip(s) SkyAtmosphere.DistantSkyLightLut (FloatRGB) Unused frames: 0
+   0.125MB  192x 104           1mip(s) SkyAtmosphere.RealTimeSkyCapViewLut (FloatRGB) Unused frames: 0
+   0.125MB   32x  32x 16       1mip(s) SkyAtmosphere.CameraAPVolume0 (FloatRGBA) Unused frames: 0
+   0.125MB  192x 104           1mip(s) SkyAtmosphere.RealTimeSkyCapViewLut (FloatRGB) Unused frames: 1
+   0.125MB   32x  32x 16       1mip(s) SkyAtmosphere.RealTimeSkyCapCamera360APLut (FloatRGBA) Unused frames: 1
+   0.562MB  128x 128cube       8mip(s) SkyLight.ConvolvedSkyRenderTarget0 (FloatR11G11B10) Unused frames: 0
+   0.562MB  128x 128cube       8mip(s) SkyLight.CapturedSkyRenderTarget (FloatR11G11B10) Unused frames: 0
+   0.562MB  128x 128cube       8mip(s) SkyLight.ConvolvedSkyRenderTarget1 (FloatR11G11B10) Unused frames: 0
+   2.250MB  192x  48x 48       1mip(s) Lumen.RadianceCache.RadianceProbeIndirectionTexture (R32_UINT) Unused frames: 1
+  32.000MB 4096x4096           1mip(s) Lumen.RadianceCache.DepthProbeAtlasTexture (PF_R16F) Unused frames: 0
+  64.000MB 4096x4096           1mip(s) Lumen.RadianceCache.RadianceProbeAtlasTextureSource (FloatRGB) Unused frames: 0
+  72.250MB 4352x4352           1mip(s) Lumen.RadianceCache.FinalRadianceAtlas (FloatRGB) Unused frames: 0
+   0.250MB   72x  24x 24       1mip(s) Lumen.RadianceCache.RadianceProbeIndirectionTexture (R32_UINT) Unused frames: 1
+   2.000MB 1024x1024           1mip(s) Lumen.RadianceCache.DepthProbeAtlasTexture (PF_R16F) Unused frames: 0
+   4.000MB 1024x1024           1mip(s) Lumen.RadianceCache.RadianceProbeAtlasTextureSource (FloatRGB) Unused frames: 0
+  21.000MB 2048x2048           3mip(s) Lumen.RadianceCache.FinalRadianceAtlas (FloatRGB) Unused frames: 0
+   1.062MB  528x 456           1mip(s) Lumen.ScreenProbeGather.ScreenProbeFilteredRadiance (FloatRGB) Unused frames: 1
+   0.062MB   66x  57           1mip(s) Lumen.ScreenProbeGather.ScreenProbeSceneDepth (R32_UINT) Unused frames: 1
+   0.125MB   66x  57           1mip(s) Lumen.ScreenProbeGather.ScreenProbeTranslatedWorldPosition (A32B32G32R32F) Unused frames: 1
+   0.188MB   33x  19x 26       1mip(s) Lumen.TranslucencyVolume.SHLightingNewHistory0 (FloatRGB) Unused frames: 1
+   0.312MB   33x  19x 26       1mip(s) Lumen.TranslucencyVolume.SHLightingNewHistory0 (FloatRGBA) Unused frames: 1
+   0.375MB  261x 150           1mip(s) VolumetricRenderTarget.Tracing (FloatRGBA) Unused frames: 0
+   0.375MB  261x 150           1mip(s) VolumetricRenderTarget.TracingDepth (FloatRGBA) Unused frames: 0
+   0.375MB  261x 150           1mip(s) VolumetricRenderTarget.SecondaryTracing (FloatRGBA) Unused frames: 0
+   1.312MB  521x 300           1mip(s) VolumetricRenderTarget.Reconstruct (FloatRGBA) Unused frames: 0
+   0.688MB  521x 300           1mip(s) VolumetricRenderTarget.ReconstructDepth (G16R16F) Unused frames: 0
+   0.062MB    1x   1           1mip(s) EyeAdaptationTexture (A32B32G32R32F) Unused frames: 0
+   0.125MB   32x  32x 32       1mip(s) CombineLUTs (A2B10G10R10) Unused frames: 0
+   5.125MB 1044x 600           1mip(s) SceneDepthZ (DepthStencil) Unused frames: 0
+  32.000MB 4096x4096           1mip(s) Lumen.SceneDepth (G16) Unused frames: 0
+  16.000MB 4096x4096           1mip(s) Lumen.SceneAlbedo (BC7) Unused frames: 0
+  16.000MB 4096x4096           1mip(s) Lumen.SceneOpacity (G8) Unused frames: 0
+  16.000MB 4096x4096           1mip(s) Lumen.SceneNormal (BC5) Unused frames: 0
+  16.000MB 4096x4096           1mip(s) Lumen.SceneEmissive (BC6H) Unused frames: 0
+  64.000MB 4096x4096           1mip(s) Lumen.SceneDirectLighting (FloatR11G11B10) Unused frames: 0
+  64.000MB 4096x4096           1mip(s) Lumen.SceneIndirectLighting (FloatR11G11B10) Unused frames: 0
+  16.000MB 4096x4096           1mip(s) Lumen.SceneNumFramesAccumulatedAtlas (R8) Unused frames: 0
+  64.000MB 4096x4096           1mip(s) Lumen.SceneFinalLighting (FloatR11G11B10) Unused frames: 0
+   5.125MB 1044x 600           1mip(s) SceneColor (FloatRGBA) Unused frames: 1
+   5.125MB 1044x 600    [  1]  1mip(s) Lumen.ScreenProbeGather.DiffuseIndirect (FloatRGBA) Unused frames: 1
+   2.625MB 1044x 600    [  1]  1mip(s) Lumen.ScreenProbeGather.BackfaceDiffuseIndirect (FloatRGB) Unused frames: 1
+   2.625MB 1044x 600    [  1]  1mip(s) Lumen.ScreenProbeGather.RoughSpecularIndirect (FloatRGB) Unused frames: 1
+   5.125MB 1044x 600    [  1]  1mip(s) Lumen.Reflections.SpecularIndirect (FloatRGBA) Unused frames: 1
+   1.312MB 1044x 600    [  1]  1mip(s) Lumen.Reflections.AccumulatedResolveVariance (PF_R16F) Unused frames: 1
+   0.688MB 1044x 600    [  1]  1mip(s) Lumen.Reflections.NumHistoryFramesAccumulated (G8) Unused frames: 1
+   2.625MB 1044x 600           1mip(s) Lumen.DepthHistory (R32_FLOAT) Unused frames: 1
+  10.312MB 1044x 600    [  4]  1mip(s) TSR.History.Guide (A2B10G10R10) Unused frames: 0
+   2.625MB 1044x 600    [  1]  1mip(s) TSR.History.Moire (R8G8B8A8) Unused frames: 0
+  40.938MB 2084x1200    [  4]  1mip(s) TSR.History.Color (FloatR11G11B10) Unused frames: 0
+  10.312MB 2084x1200    [  4]  1mip(s) TSR.History.Metadata (R8) Unused frames: 0
+   1.312MB  521x 300           1mip(s) VolumetricRenderTarget.Reconstruct (FloatRGBA) Unused frames: 0
+   0.688MB 1041x 599           1mip(s) Final Luminance (R8) Unused frames: 0
+   0.125MB  192x 104           1mip(s) SkyAtmosphere.RealTimeSkyCapViewLut (FloatRGB) Unused frames: 0
+   0.125MB   32x  32x 16       1mip(s) SkyAtmosphere.RealTimeSkyCapCamera360APLut (FloatRGBA) Unused frames: 0
+   0.062MB    1x   1           1mip(s) Lumen.Radiosity.DummyTraceHitDistanceAtlas (PF_R16F) Unused frames: 0
+   2.250MB  192x  48x 48       1mip(s) Lumen.RadianceCache.RadianceProbeIndirectionTexture (R32_UINT) Unused frames: 0
+   0.250MB   72x  24x 24       1mip(s) Lumen.RadianceCache.RadianceProbeIndirectionTexture (R32_UINT) Unused frames: 0
+   1.062MB  528x 456           1mip(s) Lumen.ScreenProbeGather.ScreenProbeFilteredRadiance (FloatRGB) Unused frames: 0
+   0.062MB   66x  57           1mip(s) Lumen.ScreenProbeGather.ScreenProbeSceneDepth (R32_UINT) Unused frames: 0
+   0.125MB   66x  57           1mip(s) Lumen.ScreenProbeGather.ScreenProbeTranslatedWorldPosition (A32B32G32R32F) Unused frames: 0
+   0.188MB   33x  19x 26       1mip(s) Lumen.TranslucencyVolume.SHLightingNewHistory0 (FloatRGB) Unused frames: 0
+   0.312MB   33x  19x 26       1mip(s) Lumen.TranslucencyVolume.SHLightingNewHistory0 (FloatRGBA) Unused frames: 0
+   5.125MB 1044x 600           1mip(s) SceneColor (FloatRGBA) Unused frames: 0
+   5.125MB 1044x 600    [  1]  1mip(s) Lumen.ScreenProbeGather.DiffuseIndirect (FloatRGBA) Unused frames: 0
+   2.625MB 1044x 600    [  1]  1mip(s) Lumen.ScreenProbeGather.BackfaceDiffuseIndirect (FloatRGB) Unused frames: 0
+   2.625MB 1044x 600    [  1]  1mip(s) Lumen.ScreenProbeGather.RoughSpecularIndirect (FloatRGB) Unused frames: 0
+   0.688MB 1044x 600    [  1]  1mip(s) Lumen.ScreenProbeGather.NumHistoryFramesAccumulated (R8) Unused frames: 0
+   0.688MB 1044x 600    [  1]  1mip(s) Lumen.ScreenProbeGather.FastUpdateMode (R8) Unused frames: 0
+   5.125MB 1044x 600    [  1]  1mip(s) Lumen.Reflections.SpecularIndirect (FloatRGBA) Unused frames: 0
+   1.312MB 1044x 600    [  1]  1mip(s) Lumen.Reflections.AccumulatedResolveVariance (PF_R16F) Unused frames: 0
+   0.688MB 1044x 600    [  1]  1mip(s) Lumen.Reflections.NumHistoryFramesAccumulated (G8) Unused frames: 0
+   2.625MB 1044x 600           1mip(s) Lumen.DepthHistory (R32_FLOAT) Unused frames: 0
+  64.000MB 4096x4096           1mip(s) Lumen.Radiosity.TraceRadianceAtlas (FloatRGB) Unused frames: 0
+   8.000MB 1024x1024           1mip(s) Lumen.Radiosity.ProbeSHRedAtlas (FloatRGBA) Unused frames: 0
+   8.000MB 1024x1024           1mip(s) Lumen.Radiosity.ProbeSHGreenAtlas (FloatRGBA) Unused frames: 0
+   8.000MB 1024x1024           1mip(s) Lumen.Radiosity.ProbeSHBlueAtlas (FloatRGBA) Unused frames: 0
+2708.168MB total, 2676.855MB used, 0.000MB unused, 162 render targets
+Deferred Render Targets:
+0.000MB Deferred total
+MemReport: End command "r.DumpRenderTargetPoolMemory"
+
+MemReport: Begin command "ListTextures"
+Listing all textures.
+MaxAllowedSize: Width x Height (Size in KB, Authored Bias), Current/InMem: Width x Height (Size in KB), Format, LODGroup, Name, Streaming, UnknownRef, VT, Usage Count, NumMips, Uncompressed
+3813x1192 (36288 KB, 0), 3813x1192 (36288 KB), PF_FloatRGBA, TEXTUREGROUP_ColorLookupTable, /Interchange/Utilities/New_LUT.New_LUT, NO, NO, NO, 0, 1, NO
+2048x2048 (32768 KB, 0), 2048x2048 (32768 KB), PF_FloatRGBA, TEXTUREGROUP_World, /Engine/EngineMaterials/DefaultBloomKernel.DefaultBloomKernel, NO, NO, NO, 0, 1, YES
+512x512 (16448 KB, 0), 512x512 (16448 KB), PF_FloatRGBA, TEXTUREGROUP_World, /Engine/MapTemplates/Sky/DaylightAmbientCubemap.DaylightAmbientCubemap, NO, NO, NO, 0, 10, YES
+128x8192 (4096 KB, 0), 128x8192 (4096 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/EngineMaterials/STBlueNoise_vec2_128x128x64.STBlueNoise_vec2_128x128x64, NO, NO, NO, 0, 1, YES
+2048x2048 (2752 KB, 0), 2048x2048 (2752 KB), PF_DXT1, TEXTUREGROUP_Skybox, /Engine/EngineSky/T_Sky_Blue.T_Sky_Blue, YES, NO, NO, 0, 12, NO
+1024x1024 (1408 KB, 0), 1024x1024 (1408 KB), PF_G8, TEXTUREGROUP_Character, /Game/Characters/Mannequins/Textures/Shared/T_UE_Logo_M.T_UE_Logo_M, NO, NO, NO, 0, 11, YES
+128x8192 (1024 KB, 0), 128x8192 (1024 KB), PF_G8, TEXTUREGROUP_World, /Engine/EngineMaterials/STBlueNoise_scalar_128x128x64.STBlueNoise_scalar_128x128x64, NO, NO, NO, 0, 1, YES
+512x256 (704 KB, 2), 512x256 (704 KB), PF_B8G8R8A8, TEXTUREGROUP_Skybox, /Engine/EngineSky/T_Sky_Clouds_M.T_Sky_Clouds_M, YES, NO, NO, 0, 12, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/AI/S_NavLink.S_NavLink, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/EmptyActor.EmptyActor, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/LightIcons/S_LightDirectional.S_LightDirectional, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/LightIcons/S_LightDirectionalMove.S_LightDirectionalMove, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/LightIcons/S_LightError.S_LightError, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/LightIcons/S_LightPoint.S_LightPoint, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/LightIcons/S_LightPointMove.S_LightPointMove, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/LightIcons/S_LightRect.S_LightRect, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/LightIcons/S_LightSpot.S_LightSpot, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/LightIcons/S_LightSpotMove.S_LightSpotMove, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/LightIcons/SkyLight.SkyLight, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/MatInstActSprite.MatInstActSprite, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/S_AtmosphericHeightFog.S_AtmosphericHeightFog, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/S_BoxReflectionCapture.S_BoxReflectionCapture, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/S_DecalActorIcon.S_DecalActorIcon, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/S_Emitter.S_Emitter, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/S_ExpoHeightFog.S_ExpoHeightFog, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/S_Note.S_Note, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/S_Player.S_Player, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/S_RadForce.S_RadForce, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/S_ReflActorIcon.S_ReflActorIcon, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/S_SkyAtmosphere.S_SkyAtmosphere, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/S_TargetPoint.S_TargetPoint, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/S_TextRenderActorIcon.S_TextRenderActorIcon, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/S_Thruster.S_Thruster, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/S_TriggerBox.S_TriggerBox, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/S_TriggerCapsule.S_TriggerCapsule, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/S_TriggerSphere.S_TriggerSphere, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/S_VectorFieldVol.S_VectorFieldVol, NO, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 256x256 (384 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EditorResources/S_WindDirectional.S_WindDirectional, NO, NO, NO, 0, 9, YES
+512x512 (384 KB, 0), 512x512 (384 KB), PF_DXT5, TEXTUREGROUP_World, /Engine/EngineMaterials/T_Default_Material_Grid_M.T_Default_Material_Grid_M, YES, NO, NO, 4, 10, NO
+4096x1 (320 KB, 0), 4096x1 (320 KB), PF_B8G8R8A8, TEXTUREGROUP_Effects, /Engine/EditorResources/LevelGrid1DStripes.LevelGrid1DStripes, NO, NO, NO, 0, 13, NO
+256x256 (256 KB, 0), 256x256 (256 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/EngineMaterials/PreintegratedSkinBRDF.PreintegratedSkinBRDF, NO, NO, NO, 0, 1, NO
+1152x128 (192 KB, 0), 1152x128 (192 KB), PF_DXT5, TEXTUREGROUP_UI, /Engine/EditorResources/SequenceRecorder/Countdown.Countdown, NO, NO, NO, 0, 1, NO
+512x512 (192 KB, 0), 512x512 (192 KB), PF_DXT1, TEXTUREGROUP_Skybox, /Engine/EngineSky/T_Sky_Stars.T_Sky_Stars, YES, NO, NO, 0, 10, NO
+512x512 (192 KB, 0), 512x512 (192 KB), PF_DXT1, TEXTUREGROUP_World, /Game/LevelPrototyping/Textures/T_GridChecker_A.T_GridChecker_A, YES, NO, NO, 52, 10, NO
+512x256 (128 KB, 0), 512x256 (128 KB), PF_G8, TEXTUREGROUP_UI, /Engine/EngineFonts/RobotoDistanceField.RobotoDistanceField:RobotoDistanceField_PageA, NO, NO, NO, 0, 1, YES
+512x512 (128 KB, 0), 512x512 (128 KB), PF_DXT1, TEXTUREGROUP_World, /Engine/EngineSky/VolumetricClouds/CloudWeatherTexture.CloudWeatherTexture, NO, NO, NO, 0, 1, NO
+64x64 (128 KB, 0), 64x64 (128 KB), PF_DXT1, TEXTUREGROUP_World, /Engine/EngineSky/VolumetricClouds/T_VolumeNoiseShape64.T_VolumeNoiseShape64, NO, NO, NO, 0, 1, NO
+128x1024 (92 KB, 0), 128x1024 (92 KB), PF_DXT1, TEXTUREGROUP_World, /Engine/Functions/Engine_MaterialFunctions02/ExampleContent/DebugNumberStrip.DebugNumberStrip, NO, NO, NO, 0, 11, NO
+256x256 (88 KB, 0), 256x256 (88 KB), PF_BC5, TEXTUREGROUP_WorldNormalMap, /Engine/EngineMaterials/T_Default_Material_Grid_N.T_Default_Material_Grid_N, YES, NO, NO, 4, 9, NO
+128x128 (84 KB, 0), 128x128 (84 KB), PF_DXT1, TEXTUREGROUP_World, /Engine/EngineResources/DefaultTextureCube.DefaultTextureCube, NO, NO, NO, 0, 8, NO
+256x256 (64 KB, 0), 256x256 (64 KB), PF_DXT5, TEXTUREGROUP_World, /Engine/EditorResources/S_CameraShakeSource.S_CameraShakeSource, NO, NO, NO, 0, 1, NO
+256x256 (64 KB, 0), 256x256 (64 KB), PF_DXT5, TEXTUREGROUP_UI, /Engine/EditorResources/S_FTest.S_FTest, NO, NO, NO, 0, 1, NO
+256x256 (64 KB, 0), 256x256 (64 KB), PF_DXT5, TEXTUREGROUP_UI, /Engine/EditorResources/SmallFont.SmallFont:Texture2D_28, NO, NO, NO, 0, 1, NO
+256x256 (64 KB, 0), 256x256 (64 KB), PF_DXT5, TEXTUREGROUP_UI, /Engine/EngineFonts/SmallFont.SmallFont:Texture2D_28, NO, NO, NO, 0, 1, NO
+10x10 (32 KB, 0), 10x10 (32 KB), PF_FloatRGBA, TEXTUREGROUP_World, /Engine/EngineDebugMaterials/VolumeToRender.VolumeToRender, NO, NO, NO, 0, 1, YES
+256x128 (32 KB, 0), 256x128 (32 KB), PF_DXT5, TEXTUREGROUP_UI, /Engine/EngineFonts/TinyFont.TinyFont:Texture2D_29, NO, NO, NO, 0, 1, NO
+64x64 (32 KB, 0), 64x64 (32 KB), PF_FloatRGBA, TEXTUREGROUP_World, /Game/Characters/Mannequins/Materials/Functions/CA_Mannequin.CA_Mannequin, NO, NO, NO, 0, 1, YES
+64x64 (24 KB, 0), 64x64 (24 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/EditorLandscapeResources/DefaultAlphaTexture.DefaultAlphaTexture, NO, NO, NO, 0, 7, NO
+512x512 (1408 KB, 0), 64x64 (24 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/EditorMaterials/PreviewShadowIndicator.PreviewShadowIndicator, YES, NO, NO, 0, 10, YES
+256x256 (384 KB, 0), 64x64 (24 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/EditorMaterials/TargetIcon.TargetIcon, YES, NO, NO, 0, 9, YES
+128x128 (88 KB, 0), 64x64 (24 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/EditorResources/Bad.Bad, YES, NO, NO, 0, 8, YES
+128x128 (88 KB, 0), 64x64 (24 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/EditorResources/S_Actor.S_Actor, YES, NO, NO, 0, 8, YES
+128x128 (88 KB, 0), 64x64 (24 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/EditorResources/S_KBSJoint.S_KBSJoint, YES, NO, NO, 0, 8, YES
+128x128 (88 KB, 0), 64x64 (24 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/EditorResources/S_KHinge.S_KHinge, YES, NO, NO, 0, 8, YES
+128x128 (88 KB, 0), 64x64 (24 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/EditorResources/S_KPrismatic.S_KPrismatic, YES, NO, NO, 0, 8, YES
+128x128 (88 KB, 0), 64x64 (24 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/EditorResources/S_LevelSequence.S_LevelSequence, YES, NO, NO, 0, 8, YES
+256x256 (384 KB, 0), 64x64 (24 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/EditorResources/S_NavP.S_NavP, YES, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 64x64 (24 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/EditorResources/S_Solver.S_Solver, YES, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 64x64 (24 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/EditorResources/S_Terrain.S_Terrain, YES, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 64x64 (24 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/EditorResources/S_Trigger.S_Trigger, YES, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 64x64 (24 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/EditorResources/S_VolumetricCloud.S_VolumetricCloud, YES, NO, NO, 0, 9, YES
+256x256 (384 KB, 0), 64x64 (24 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/EditorResources/SceneManager.SceneManager, YES, NO, NO, 0, 9, YES
+64x64 (24 KB, 0), 64x64 (24 KB), PF_B8G8R8A8, TEXTUREGROUP_Bokeh, /Engine/EngineMaterials/DefaultBokeh.DefaultBokeh, NO, NO, NO, 0, 7, NO
+2048x2048 (5504 KB, 0), 128x128 (24 KB), PF_BC5, TEXTUREGROUP_WorldNormalMap, /Game/Characters/Mannequins/Textures/Quinn/T_Quinn_01ID_BN.T_Quinn_01ID_BN, YES, NO, NO, 2, 12, NO
+2048x2048 (5504 KB, 0), 128x128 (24 KB), PF_BC5, TEXTUREGROUP_WorldNormalMap, /Game/Characters/Mannequins/Textures/Quinn/T_Quinn_01ID_N.T_Quinn_01ID_N, YES, NO, NO, 2, 12, NO
+2048x2048 (5504 KB, 0), 128x128 (24 KB), PF_BC5, TEXTUREGROUP_WorldNormalMap, /Game/Characters/Mannequins/Textures/Quinn/T_Quinn_01ID_Tan.T_Quinn_01ID_Tan, YES, NO, NO, 2, 12, NO
+2048x2048 (5504 KB, 0), 128x128 (24 KB), PF_BC5, TEXTUREGROUP_WorldNormalMap, /Game/Characters/Mannequins/Textures/Quinn/T_Quinn_02ID_BN.T_Quinn_02ID_BN, YES, NO, NO, 2, 12, NO
+2048x2048 (5504 KB, 0), 128x128 (24 KB), PF_BC5, TEXTUREGROUP_WorldNormalMap, /Game/Characters/Mannequins/Textures/Quinn/T_Quinn_02ID_N.T_Quinn_02ID_N, YES, NO, NO, 2, 12, NO
+2048x2048 (5504 KB, 0), 128x128 (24 KB), PF_BC5, TEXTUREGROUP_WorldNormalMap, /Game/Characters/Mannequins/Textures/Quinn/T_Quinn_02ID_Tan.T_Quinn_02ID_Tan, YES, NO, NO, 2, 12, NO
+256x256 (384 KB, 0), 64x64 (24 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Niagara/Icons/S_ParticleSystem.S_ParticleSystem, YES, NO, NO, 0, 9, YES
+512x512 (1408 KB, 0), 64x64 (24 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /SpeedTreeImporter/SpeedTree9/game_wind_noise.game_wind_noise, YES, NO, NO, 0, 10, YES
+32x32 (16 KB, 0), 32x32 (16 KB), PF_DXT1, TEXTUREGROUP_World, /Engine/EngineSky/VolumetricClouds/T_VolumeNoiseErosion32.T_VolumeNoiseErosion32, NO, NO, NO, 0, 1, NO
+2048x2048 (2752 KB, 0), 128x128 (16 KB), PF_DXT1, TEXTUREGROUP_World, /Game/Characters/Mannequins/Textures/Quinn/T_Quinn_01_ASAOMASK_MSK.T_Quinn_01_ASAOMASK_MSK, YES, NO, NO, 2, 12, NO
+4096x4096 (10944 KB, 0), 128x128 (16 KB), PF_DXT1, TEXTUREGROUP_World, /Game/Characters/Mannequins/Textures/Quinn/T_Quinn_01_CCRCCPlastic_MSK.T_Quinn_01_CCRCCPlastic_MSK, YES, NO, NO, 2, 13, NO
+4096x4096 (10944 KB, 0), 128x128 (16 KB), PF_DXT1, TEXTUREGROUP_World, /Game/Characters/Mannequins/Textures/Quinn/T_Quinn_01ID_D.T_Quinn_01ID_D, YES, NO, NO, 2, 13, NO
+2048x2048 (2752 KB, 0), 128x128 (16 KB), PF_DXT1, TEXTUREGROUP_World, /Game/Characters/Mannequins/Textures/Quinn/T_Quinn_01ID_MSR_MSK.T_Quinn_01ID_MSR_MSK, YES, NO, NO, 2, 12, NO
+2048x2048 (2752 KB, 0), 128x128 (16 KB), PF_DXT1, TEXTUREGROUP_World, /Game/Characters/Mannequins/Textures/Quinn/T_Quinn_02_ASAOMASK_MSK.T_Quinn_02_ASAOMASK_MSK, YES, NO, NO, 2, 12, NO
+2048x2048 (2752 KB, 0), 128x128 (16 KB), PF_DXT1, TEXTUREGROUP_World, /Game/Characters/Mannequins/Textures/Quinn/T_Quinn_02_CCRCCPlastic_MSK.T_Quinn_02_CCRCCPlastic_MSK, YES, NO, NO, 2, 12, NO
+2048x2048 (2752 KB, 0), 128x128 (16 KB), PF_DXT1, TEXTUREGROUP_World, /Game/Characters/Mannequins/Textures/Quinn/T_Quinn_02ID_D.T_Quinn_02ID_D, YES, NO, NO, 2, 12, NO
+2048x2048 (2752 KB, 0), 128x128 (16 KB), PF_DXT1, TEXTUREGROUP_World, /Game/Characters/Mannequins/Textures/Quinn/T_Quinn_02ID_MSR_MSK.T_Quinn_02ID_MSR_MSK, YES, NO, NO, 2, 12, NO
+4096x64 (256 KB, 0), 256x4 (12 KB), PF_DXT1, TEXTUREGROUP_World, /Engine/EngineSky/VolumetricClouds/T_NoiseShape64.T_NoiseShape64, YES, NO, NO, 0, 13, NO
+256x256 (48 KB, 0), 64x64 (8 KB), PF_DXT1, TEXTUREGROUP_World, /Engine/EditorMaterials/ParticleSystems/PSysThumbnail_NoImage.PSysThumbnail_NoImage, YES, NO, NO, 0, 9, NO
+128x128 (24 KB, 0), 64x64 (8 KB), PF_DXT5, TEXTUREGROUP_World, /Engine/EditorMaterials/ParticleSystems/PSysThumbnail_OOD.PSysThumbnail_OOD, YES, NO, NO, 0, 8, NO
+256x256 (48 KB, 0), 64x64 (8 KB), PF_DXT1, TEXTUREGROUP_World, /Engine/EditorMaterials/WidgetGridVertexColorMaterial.WidgetGridVertexColorMaterial, YES, NO, NO, 0, 9, NO
+64x64 (8 KB, 0), 64x64 (8 KB), PF_DXT1, TEXTUREGROUP_World, /Engine/EditorResources/MatineeCam_D.MatineeCam_D, NO, NO, NO, 1, 7, NO
+256x256 (88 KB, 0), 64x64 (8 KB), PF_DXT5, TEXTUREGROUP_World, /Engine/EditorResources/S_PortalActorIcon2.S_PortalActorIcon2, YES, NO, NO, 0, 9, NO
+2048x2048 (5504 KB, 0), 64x64 (8 KB), PF_DXT5, TEXTUREGROUP_World, /Engine/EditorResources/T_EditorHelp.T_EditorHelp, YES, NO, NO, 1, 12, NO
+512x1 (36 KB, 0), 64x1 (8 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/EngineDebugMaterials/HeatmapGradient.HeatmapGradient, YES, NO, NO, 0, 10, NO
+32x32 (8 KB, 0), 32x32 (8 KB), PF_G8, TEXTUREGROUP_HierarchicalLOD, /Engine/EngineMaterials/BaseFlattenGrayscaleMap.BaseFlattenGrayScaleMap, NO, NO, NO, 0, 6, YES
+32x32 (8 KB, 0), 32x32 (8 KB), PF_G8, TEXTUREGROUP_HierarchicalLOD, /Engine/EngineMaterials/BaseFlattenGrayscaleMap_VT.BaseFlattenGrayscaleMap_VT, NO, NO, NO, 0, 6, YES
+1024x1024 (704 KB, 0), 64x64 (8 KB), PF_DXT1, TEXTUREGROUP_World, /Engine/EngineMaterials/DefaultDiffuse.DefaultDiffuse, YES, NO, NO, 0, 11, NO
+1024x1024 (1408 KB, 0), 64x64 (8 KB), PF_BC5, TEXTUREGROUP_WorldNormalMap, /Engine/EngineMaterials/DefaultNormal.DefaultNormal, YES, NO, NO, 0, 11, NO
+128x128 (16 KB, 0), 64x64 (8 KB), PF_DXT1, TEXTUREGROUP_World, /Engine/EngineMaterials/DefaultWhiteGrid.DefaultWhiteGrid, YES, NO, NO, 0, 8, NO
+512x512 (384 KB, 0), 64x64 (8 KB), PF_DXT5, TEXTUREGROUP_World, /Engine/EngineMaterials/Grid.Grid, YES, NO, NO, 0, 10, NO
+512x512 (384 KB, 0), 64x64 (8 KB), PF_BC5, TEXTUREGROUP_WorldNormalMap, /Engine/EngineMaterials/Grid_N.Grid_N, YES, NO, NO, 0, 10, NO
+512x512 (192 KB, 0), 64x64 (8 KB), PF_DXT1, TEXTUREGROUP_World, /Engine/EngineMaterials/InvalidLightmapSettings.InvalidLightmapSettings, YES, NO, NO, 0, 10, NO
+512x8 (8 KB, 0), 512x8 (8 KB), PF_DXT1, TEXTUREGROUP_World, /Engine/EngineMaterials/MiniFont.MiniFont, NO, NO, NO, 0, 1, NO
+64x64 (8 KB, 3), 64x64 (8 KB), PF_DXT1, TEXTUREGROUP_World, /Engine/EngineMaterials/PaperDiffuse.PaperDiffuse, NO, NO, NO, 0, 10, NO
+64x64 (8 KB, 3), 64x64 (8 KB), PF_BC5, TEXTUREGROUP_WorldNormalMap, /Engine/EngineMaterials/PaperNormal.PaperNormal, NO, NO, NO, 0, 10, NO
+128x128 (16 KB, 0), 64x64 (8 KB), PF_DXT1, TEXTUREGROUP_World, /Engine/EngineResources/DefaultTexture.DefaultTexture, YES, NO, NO, 0, 8, NO
+32x32 (8 KB, 0), 32x32 (8 KB), PF_B8G8R8A8, TEXTUREGROUP_UI, /Engine/EngineResources/GradientTexture0.GradientTexture0, NO, NO, NO, 0, 6, YES
+1024x32 (36 KB, 0), 128x4 (8 KB), PF_DXT1, TEXTUREGROUP_World, /Engine/EngineSky/VolumetricClouds/T_NoiseErosion.T_NoiseErosion, YES, NO, NO, 0, 11, NO
+128x128 (8 KB, 0), 128x128 (8 KB), PF_DXT1, TEXTUREGROUP_World, /Engine/Functions/Engine_MaterialFunctions02/ExampleContent/Textures/DebugNumberPeriod.DebugNumberPeriod, NO, NO, NO, 0, 1, NO
+128x128 (16 KB, 0), 64x64 (8 KB), PF_DXT1, TEXTUREGROUP_World, /Engine/Functions/Engine_MaterialFunctions02/ExampleContent/Textures/flipbook.flipbook, YES, NO, NO, 0, 8, NO
+512x512 (192 KB, 0), 64x64 (8 KB), PF_DXT1, TEXTUREGROUP_World, /Engine/VREditor/LaserPointer/VR_LaserPower_01.VR_LaserPower_01, YES, NO, NO, 38, 10, NO
+2048x2048 (2752 KB, 0), 64x64 (8 KB), PF_DXT1, TEXTUREGROUP_World, /Game/Characters/Mannequins/Textures/Manny/T_Manny_01_ASAOPMASK_MSK.T_Manny_01_ASAOPMASK_MSK, YES, NO, NO, 0, 12, NO
+2048x2048 (5504 KB, 0), 64x64 (8 KB), PF_BC5, TEXTUREGROUP_WorldNormalMap, /Game/Characters/Mannequins/Textures/Manny/T_Manny_01_BN.T_Manny_01_BN, YES, NO, NO, 0, 12, NO
+2048x2048 (2752 KB, 0), 64x64 (8 KB), PF_DXT1, TEXTUREGROUP_World, /Game/Characters/Mannequins/Textures/Manny/T_Manny_01_CCRCCPlastic_MSK.T_Manny_01_CCRCCPlastic_MSK, YES, NO, NO, 0, 12, NO
+2048x2048 (2752 KB, 0), 64x64 (8 KB), PF_DXT1, TEXTUREGROUP_World, /Game/Characters/Mannequins/Textures/Manny/T_Manny_01_D.T_Manny_01_D, YES, NO, NO, 0, 12, NO
+2048x2048 (2752 KB, 0), 64x64 (8 KB), PF_DXT1, TEXTUREGROUP_Character, /Game/Characters/Mannequins/Textures/Manny/T_Manny_01_MSR_MSK.T_Manny_01_MSR_MSK, YES, NO, NO, 0, 12, NO
+2048x2048 (5504 KB, 0), 64x64 (8 KB), PF_BC5, TEXTUREGROUP_WorldNormalMap, /Game/Characters/Mannequins/Textures/Manny/T_Manny_01_N.T_Manny_01_N, YES, NO, NO, 0, 12, NO
+2048x2048 (5504 KB, 0), 64x64 (8 KB), PF_BC5, TEXTUREGROUP_WorldNormalMap, /Game/Characters/Mannequins/Textures/Manny/T_Manny_01_Tan.T_Manny_01_Tan, YES, NO, NO, 0, 12, NO
+128x128 (24 KB, 0), 64x64 (8 KB), PF_DXT5, TEXTUREGROUP_World, /Paper2D/PlaceholderTextures/DummySpriteTexture.DummySpriteTexture, YES, NO, NO, 1, 8, NO
+32x32 (4 KB, 0), 32x32 (4 KB), PF_DXT5, TEXTUREGROUP_World, /Engine/EditorMaterials/Cross.Cross, NO, NO, NO, 0, 6, NO
+32x32 (4 KB, 0), 32x32 (4 KB), PF_DXT5, TEXTUREGROUP_World, /Engine/EditorMaterials/Tick.Tick, NO, NO, NO, 0, 6, NO
+16x16 (4 KB, 0), 16x16 (4 KB), PF_DXT5, TEXTUREGROUP_World, /Engine/EditorResources/BSPVertex.BSPVertex, NO, NO, NO, 0, 5, NO
+32x32 (4 KB, 0), 32x32 (4 KB), PF_DXT5, TEXTUREGROUP_UI, /Engine/EditorResources/SequenceRecorder/RecordingIndicator.RecordingIndicator, NO, NO, NO, 0, 1, NO
+32x32 (4 KB, 0), 32x32 (4 KB), PF_DXT1, TEXTUREGROUP_HierarchicalLOD, /Engine/EngineMaterials/BaseFlattenDiffuseMap.BaseFlattenDiffuseMap, NO, NO, NO, 0, 6, NO
+32x32 (4 KB, 0), 32x32 (4 KB), PF_DXT1, TEXTUREGROUP_HierarchicalLOD, /Engine/EngineMaterials/BaseFlattenDiffuseMap_VT.BaseFlattenDiffuseMap_VT, NO, NO, NO, 0, 6, NO
+32x32 (4 KB, 0), 32x32 (4 KB), PF_DXT1, TEXTUREGROUP_World, /Engine/EngineMaterials/BaseFlattenEmissiveMap.BaseFlattenEmissiveMap, NO, NO, NO, 0, 6, NO
+32x32 (4 KB, 0), 32x32 (4 KB), PF_DXT1, TEXTUREGROUP_World, /Engine/EngineMaterials/BaseFlattenEmissiveMap_VT.BaseFlattenEmissiveMap_VT, NO, NO, NO, 0, 6, NO
+32x32 (4 KB, 0), 32x32 (4 KB), PF_DXT1, TEXTUREGROUP_HierarchicalLOD, /Engine/EngineMaterials/BaseFlattenLinearColor.BaseFlattenLinearColor, NO, NO, NO, 0, 6, NO
+32x32 (4 KB, 0), 32x32 (4 KB), PF_DXT1, TEXTUREGROUP_HierarchicalLOD, /Engine/EngineMaterials/BaseFlattenLinearColor_VT.BaseFlattenLinearColor_VT, NO, NO, NO, 0, 6, NO
+1x1 (4 KB, 0), 1x1 (4 KB), PF_B8G8R8A8, TEXTUREGROUP_HierarchicalLOD, /Engine/EngineMaterials/BaseFlattenNormalMap.BaseFlattenNormalMap, NO, NO, NO, 0, 1, NO
+16x16 (4 KB, 0), 16x16 (4 KB), PF_BC5, TEXTUREGROUP_HierarchicalLOD, /Engine/EngineMaterials/BaseFlattenNormalMap_VT.BaseFlattenNormalMap_VT, NO, NO, NO, 0, 5, NO
+1x1 (4 KB, 0), 1x1 (4 KB), PF_FloatRGBA, TEXTUREGROUP_World, /Engine/EngineMaterials/Black_1x1_EXR_Texture_VT.Black_1x1_EXR_Texture_VT, NO, NO, NO, 0, 1, YES
+16x16 (4 KB, 0), 16x16 (4 KB), PF_DXT5, TEXTUREGROUP_World, /Engine/EngineMaterials/BlendFunc_DefBase.BlendFunc_DefBase, NO, NO, NO, 0, 5, NO
+16x16 (4 KB, 0), 16x16 (4 KB), PF_DXT5, TEXTUREGROUP_World, /Engine/EngineMaterials/BlendFunc_DefBlend.BlendFunc_DefBlend, NO, NO, NO, 0, 5, NO
+1x1 (4 KB, 0), 1x1 (4 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/EngineMaterials/DefaultWhiteGrid_Low.DefaultWhiteGrid_Low, NO, NO, NO, 0, 1, NO
+64x64 (4 KB, 0), 64x64 (4 KB), PF_G8, TEXTUREGROUP_UI, /Engine/EngineMaterials/Good64x64TilingNoiseHighFreq.Good64x64TilingNoiseHighFreq, NO, NO, NO, 0, 1, YES
+2x2 (4 KB, 0), 2x2 (4 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/EngineMaterials/WeightMapArrayPlaceholderTexture.WeightMapArrayPlaceholderTexture, NO, NO, NO, 0, 1, NO
+2x2 (4 KB, 0), 2x2 (4 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/EngineMaterials/WeightMapPlaceholderTexture.WeightMapPlaceholderTexture, NO, NO, NO, 0, 2, NO
+32x32 (4 KB, 0), 32x32 (4 KB), PF_DXT1, TEXTUREGROUP_World, /Engine/EngineResources/Black.Black, NO, NO, NO, 0, 6, NO
+4x4 (4 KB, 0), 4x4 (4 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/EngineResources/DefaultVolumeTexture.DefaultVolumeTexture, NO, NO, NO, 0, 1, NO
+8x8 (4 KB, 0), 8x8 (4 KB), PF_DXT1, TEXTUREGROUP_World, /Engine/EngineResources/DefaultVolumeTexture2D.DefaultVolumeTexture2D, NO, NO, NO, 0, 4, NO
+64x64 (4 KB, 0), 64x64 (4 KB), PF_DXT5, TEXTUREGROUP_UI, /Engine/EngineResources/StreamingPauseIcon.StreamingPauseIcon, NO, NO, NO, 0, 1, NO
+32x32 (4 KB, 0), 32x32 (4 KB), PF_DXT1, TEXTUREGROUP_World, /Engine/EngineResources/WhiteSquareTexture.WhiteSquareTexture, NO, NO, NO, 0, 6, NO
+32x16 (4 KB, 0), 32x16 (4 KB), PF_DXT1, TEXTUREGROUP_World, /Engine/EngineSky/VolumetricClouds/CloudGradientTexture.CloudGradientTexture, NO, NO, NO, 0, 6, NO
+1x1 (4 KB, 0), 1x1 (4 KB), PF_FloatRGBA, TEXTUREGROUP_World, /Engine/Functions/Engine_MaterialFunctions02/PivotPainter2/Black_1x1_EXR_Texture.Black_1x1_EXR_Texture, NO, NO, NO, 0, 1, YES
+32x32 (4 KB, 0), 32x32 (4 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/Transient.Texture2D_0, NO, NO, NO, 0, 1, NO
+32x32 (4 KB, 0), 32x32 (4 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/Transient.Texture2D_1, NO, NO, NO, 0, 1, NO
+32x32 (4 KB, 0), 32x32 (4 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/Transient.Texture2D_2, NO, NO, NO, 0, 1, NO
+32x32 (4 KB, 0), 32x32 (4 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/Transient.Texture2D_3, NO, NO, NO, 0, 1, NO
+32x32 (4 KB, 0), 32x32 (4 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/Transient.Texture2D_4, NO, NO, NO, 0, 1, NO
+32x32 (4 KB, 0), 32x32 (4 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Engine/Transient.Texture2D_5, NO, NO, NO, 0, 1, NO
+1x1 (4 KB, 0), 1x1 (4 KB), PF_B8G8R8A8, TEXTUREGROUP_WorldNormalMap, /Interchange/gltf/Textures/T_Generic_N.T_Generic_N, NO, NO, NO, 0, 1, NO
+1x1 (4 KB, 0), 1x1 (4 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Interchange/gltf/Textures/T_White_Linear.T_White_Linear, NO, NO, NO, 0, 1, NO
+1x1 (4 KB, 0), 1x1 (4 KB), PF_B8G8R8A8, TEXTUREGROUP_World, /Interchange/gltf/Textures/T_White_srgb.T_White_srgb, NO, NO, NO, 0, 1, NO
+4x4 (4 KB, 0), 4x4 (4 KB), PF_DXT5, TEXTUREGROUP_World, /SpeedTreeImporter/SpeedTree9/Empty.Empty, NO, NO, NO, 0, 3, NO
+4x4 (4 KB, 0), 4x4 (4 KB), PF_DXT1, TEXTUREGROUP_WorldNormalMap, /SpeedTreeImporter/SpeedTree9/EmptyNormal.EmptyNormal, NO, NO, NO, 0, 3, NO
+1x1 (0 KB, 0), 1x1 (0 KB), PF_Unknown, TEXTUREGROUP_World, /Script/LevelSequence.Default__LevelSequenceMediaController:MediaComponent.MediaTexture, NO, NO, NO, 0, 1, NO
+Total size: InMem= 108.09 MB  OnDisk= 219.29 MB  Count=161, CountApplicableToMin=61
+Total PF_B8G8R8A8 size: InMem= 16.99 MB  OnDisk= 22.91 MB 
+Total PF_G8 size: InMem= 2.52 MB  OnDisk= 2.52 MB 
+Total PF_DXT1 size: InMem= 3.81 MB  OnDisk= 53.31 MB 
+Total PF_DXT5 size: InMem= 0.91 MB  OnDisk= 6.76 MB 
+Total PF_FloatRGBA size: InMem= 83.57 MB  OnDisk= 83.57 MB 
+Total PF_BC5 size: InMem= 0.28 MB  OnDisk= 50.22 MB 
+Total TEXTUREGROUP_World size: InMem= 55.25 MB  OnDisk= 113.83 MB 
+Total TEXTUREGROUP_WorldNormalMap size: InMem= 0.28 MB  OnDisk= 50.23 MB 
+Total TEXTUREGROUP_Character size: InMem= 1.38 MB  OnDisk= 4.06 MB 
+Total TEXTUREGROUP_Effects size: InMem= 0.31 MB  OnDisk= 0.31 MB 
+Total TEXTUREGROUP_Skybox size: InMem= 3.56 MB  OnDisk= 3.56 MB 
+Total TEXTUREGROUP_UI size: InMem= 11.80 MB  OnDisk= 11.80 MB 
+Total TEXTUREGROUP_ColorLookupTable size: InMem= 35.44 MB  OnDisk= 35.44 MB 
+Total TEXTUREGROUP_Bokeh size: InMem= 0.02 MB  OnDisk= 0.02 MB 
+Total TEXTUREGROUP_HierarchicalLOD size: InMem= 0.04 MB  OnDisk= 0.04 MB 
+MemReport: End command "ListTextures"
+
+MemReport: Begin command "ListParticleSystems -alphasort"
+ParticleSystems:
+Size,Name,PSysSize,ModuleSize,ComponentSize,ComponentCount,CompResSize,CompTrueResSize
+         0,Total,0,0,0,0,0,0
+MemReport: End command "ListParticleSystems -alphasort"
+
+MemReport: Begin command "obj list class=SoundWave -alphasort"
+Obj List: class=SoundWave -alphasort
+Objects:
+
+                                                                                                                                      Object      NumKB      MaxKB   ResExcKB  ResExcDedSysKB  ResExcDedVidKB     ResExcUnkKB
+                                            SoundWave /Engine/VREditor/Sounds/UI/Drop_Item_From_ContentBrowser.Drop_Item_From_ContentBrowser       1.95       1.97       1.98            1.98            0.00            0.00
+                                                              SoundWave /Engine/VREditor/Sounds/UI/Gizmo_Handle_Clicked.Gizmo_Handle_Clicked       1.95       1.97       1.98            1.98            0.00            0.00
+                                                                            SoundWave /Engine/VREditor/Sounds/UI/Object_PickUp.Object_PickUp       1.95       1.97       1.98            1.98            0.00            0.00
+                                            SoundWave /Engine/VREditor/Sounds/UI/Object_Snaps_To_Another_Actor.Object_Snaps_To_Another_Actor       1.95       1.97       1.98            1.98            0.00            0.00
+                                                              SoundWave /Engine/VREditor/Sounds/UI/Object_Snaps_To_Grid.Object_Snaps_To_Grid       1.95       1.97       1.98            1.98            0.00            0.00
+                                                                              SoundWave /Engine/VREditor/Sounds/UI/Scaling_Down.Scaling_Down       1.95       1.97       1.98            1.98            0.00            0.00
+                                                                                  SoundWave /Engine/VREditor/Sounds/UI/Scaling_Up.Scaling_Up       1.95       1.97       1.98            1.98            0.00            0.00
+                                                                    SoundWave /Engine/VREditor/Sounds/UI/Selection_Changes.Selection_Changes       1.95       1.97       1.98            1.98            0.00            0.00
+
+                                                                                                Class    Count      NumKB      MaxKB   ResExcKB  ResExcDedSysKB  ResExcDedVidKB     ResExcUnkKB
+                                                                                            SoundWave        8      15.62      15.75      15.84           15.84            0.00            0.00
+
+8 Objects (Total: 0.015M / Max: 0.015M / Res: 0.015M | ResDedSys: 0.015M / ResDedVid: 0.000M / ResUnknown: 0.000M)
+MemReport: End command "obj list class=SoundWave -alphasort"
+
+MemReport: Begin command "obj list class=SkeletalMesh -alphasort"
+Obj List: class=SkeletalMesh -alphasort
+Objects:
+
+                                                                                                                                      Object      NumKB      MaxKB   ResExcKB  ResExcDedSysKB  ResExcDedVidKB     ResExcUnkKB
+                                                           SkeletalMesh /Game/Characters/Mannequins/Meshes/SKM_Quinn_Simple.SKM_Quinn_Simple   12997.67   12998.97    3387.45           32.52            0.00         3354.93
+
+                                                                                                Class    Count      NumKB      MaxKB   ResExcKB  ResExcDedSysKB  ResExcDedVidKB     ResExcUnkKB
+                                                                                         SkeletalMesh        1   12997.67   12998.97    3387.45           32.52            0.00         3354.93
+
+1 Objects (Total: 12.693M / Max: 12.694M / Res: 3.308M | ResDedSys: 0.032M / ResDedVid: 0.000M / ResUnknown: 3.276M)
+MemReport: End command "obj list class=SkeletalMesh -alphasort"
+
+MemReport: Begin command "obj list class=StaticMesh -alphasort"
+Obj List: class=StaticMesh -alphasort
+Objects:
+
+                                                                                                                                      Object      NumKB      MaxKB   ResExcKB  ResExcDedSysKB  ResExcDedVidKB     ResExcUnkKB
+                                                            StaticMesh /Engine/ArtTools/RenderToTexture/Meshes/S_1_Unit_Plane.S_1_Unit_Plane       3.31       3.41       5.04            2.32            0.00            2.72
+                                                                                                    StaticMesh /Engine/BasicShapes/Cone.Cone       7.90       7.99      20.74            5.84            0.00           14.90
+                                                                                                    StaticMesh /Engine/BasicShapes/Cube.Cube       3.59       3.69       9.89            5.84            0.00            4.05
+                                                                                            StaticMesh /Engine/BasicShapes/Cylinder.Cylinder       6.54       6.64      31.14            5.84            0.00           25.30
+                                                                                                  StaticMesh /Engine/BasicShapes/Plane.Plane       3.59       3.69       3.66            2.32            0.00            1.34
+                                                                                                StaticMesh /Engine/BasicShapes/Sphere.Sphere       3.53       3.62      50.42            5.84            0.00           44.57
+                                                               StaticMesh /Engine/EditorLandscapeResources/SplineEditorMesh.SplineEditorMesh       3.31       3.41       6.32            2.32            0.00            4.00
+                                                                                StaticMesh /Engine/EditorMeshes/Camera/SM_CineCam.SM_CineCam       3.42       3.52     301.72            2.32            0.00          299.41
+                                                                      StaticMesh /Engine/EditorMeshes/Camera/SM_CraneRig_Arm.SM_CraneRig_Arm       3.31       3.41       4.49            2.32            0.00            2.17
+                                                                    StaticMesh /Engine/EditorMeshes/Camera/SM_CraneRig_Base.SM_CraneRig_Base       3.31       3.41      56.46            3.83            0.00           52.63
+                                                                    StaticMesh /Engine/EditorMeshes/Camera/SM_CraneRig_Body.SM_CraneRig_Body       3.31       3.41      53.96            3.32            0.00           50.64
+                                                                  StaticMesh /Engine/EditorMeshes/Camera/SM_CraneRig_Mount.SM_CraneRig_Mount       3.31       3.41      13.44            2.32            0.00           11.12
+                                                                    StaticMesh /Engine/EditorMeshes/Camera/SM_RailRig_Mount.SM_RailRig_Mount       3.31       3.41      85.77            2.32            0.00           83.45
+                                                                    StaticMesh /Engine/EditorMeshes/Camera/SM_RailRig_Track.SM_RailRig_Track       3.31       3.41      70.64            2.32            0.00           68.33
+                                                                                       StaticMesh /Engine/EditorMeshes/EditorCube.EditorCube       3.89       3.98       8.02            5.84            0.00            2.17
+                                                                               StaticMesh /Engine/EditorMeshes/EditorCylinder.EditorCylinder       4.27       4.36      31.57            5.84            0.00           25.73
+                                                                                     StaticMesh /Engine/EditorMeshes/EditorPlane.EditorPlane       3.31       3.41       6.55            3.83            0.00            2.72
+                                                                             StaticMesh /Engine/EditorMeshes/EditorSkySphere.EditorSkySphere       3.34       3.91     259.34           64.30            0.00          195.04
+                                                                                   StaticMesh /Engine/EditorMeshes/EditorSphere.EditorSphere       3.53       3.62     205.74           15.42            0.00          190.32
+                                                                                 StaticMesh /Engine/EditorMeshes/MatineeCam_SM.MatineeCam_SM       3.31       3.41     211.89            2.32            0.00          209.58
+                                                                 StaticMesh /Engine/EditorMeshes/PlanarReflectionPlane.PlanarReflectionPlane       3.31       3.41     105.60           14.41            0.00           91.19
+                                                                                               StaticMesh /Engine/EngineMeshes/Sphere.Sphere       3.53       3.62      39.62           15.42            0.00           24.20
+                                                                                      StaticMesh /Engine/EngineSky/SM_SkySphere.SM_SkySphere       3.31       3.41     242.09           64.30            0.00          177.79
+                                                                    StaticMesh /Engine/VREditor/SnapGrid/SnapGridPlaneMesh.SnapGridPlaneMesh       3.31       3.41       4.63            1.82            0.00            2.82
+                                                              StaticMesh /Engine/VREditor/TransformGizmo/BoundingBoxCorner.BoundingBoxCorner       4.31       4.41      12.40            2.32            0.00           10.09
+                                                                  StaticMesh /Engine/VREditor/TransformGizmo/BoundingBoxEdge.BoundingBoxEdge       4.03       4.12       6.43            2.32            0.00            4.11
+                                                    StaticMesh /Engine/VREditor/TransformGizmo/PlaneTranslationHandle.PlaneTranslationHandle       4.83       4.92      10.24            2.32            0.00            7.92
+                                                            StaticMesh /Engine/VREditor/TransformGizmo/RotationHandleFull.RotationHandleFull       5.17       5.27     186.42            3.83            0.00          182.59
+                                                  StaticMesh /Engine/VREditor/TransformGizmo/RotationHandleIndicator.RotationHandleIndicator       5.03       5.12      15.89            2.32            0.00           13.58
+                                                      StaticMesh /Engine/VREditor/TransformGizmo/RotationHandleQuarter.RotationHandleQuarter       5.12       5.22      52.33            2.32            0.00           50.02
+                                                              StaticMesh /Engine/VREditor/TransformGizmo/SM_Sequencer_Node.SM_Sequencer_Node       4.38       4.47       6.83            2.32            0.00            4.52
+                                        StaticMesh /Engine/VREditor/TransformGizmo/StartRotationHandleIndicator.StartRotationHandleIndicator       5.22       5.31      28.02            2.32            0.00           25.70
+                                            StaticMesh /Engine/VREditor/TransformGizmo/TransformGizmoFreeRotation.TransformGizmoFreeRotation       5.12       5.22    1837.66            2.32            0.00         1835.34
+                                                        StaticMesh /Engine/VREditor/TransformGizmo/TranslateArrowHandle.TranslateArrowHandle       5.03       5.12      14.25            2.32            0.00           11.93
+                                                            StaticMesh /Engine/VREditor/TransformGizmo/UniformScaleHandle.UniformScaleHandle       5.16       5.25       8.86            2.32            0.00            6.55
+                                                                      StaticMesh /Game/LevelPrototyping/Meshes/SM_ChamferCube.SM_ChamferCube       5.02       5.11      13.23            2.32            0.00           10.91
+                                                                                    StaticMesh /Game/LevelPrototyping/Meshes/SM_Cube.SM_Cube       3.89       3.98       4.49            2.32            0.00            2.17
+                                                              StaticMesh /Game/LevelPrototyping/Meshes/SM_QuarterCylinder.SM_QuarterCylinder       3.98       4.08       5.79            2.32            0.00            3.48
+                                                                                    StaticMesh /Game/LevelPrototyping/Meshes/SM_Ramp.SM_Ramp       3.80       3.89       4.21            2.32            0.00            1.89
+                                                                              StaticMesh /MediaPlate/SM_MediaPlateScreen.SM_MediaPlateScreen       3.59       3.69       3.66            2.32            0.00            1.34
+
+                                                                                                Class    Count      NumKB      MaxKB   ResExcKB  ResExcDedSysKB  ResExcDedVidKB     ResExcUnkKB
+                                                                                           StaticMesh       40     163.89     168.11    4039.46          281.13            0.00         3758.33
+
+40 Objects (Total: 0.160M / Max: 0.164M / Res: 3.945M | ResDedSys: 0.275M / ResDedVid: 0.000M / ResUnknown: 3.670M)
+MemReport: End command "obj list class=StaticMesh -alphasort"
+
+MemReport: Begin command "obj list class=Level -alphasort"
+Obj List: class=Level -alphasort
+Objects:
+
+                                                                                                                                      Object      NumKB      MaxKB   ResExcKB  ResExcDedSysKB  ResExcDedVidKB     ResExcUnkKB
+                                                                  Level /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel       3.21       3.21       0.00            0.00            0.00            0.00
+                                                         Level /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel       3.31       3.43       0.00            0.00            0.00            0.00
+
+                                                                                                Class    Count      NumKB      MaxKB   ResExcKB  ResExcDedSysKB  ResExcDedVidKB     ResExcUnkKB
+                                                                                                Level        2       6.52       6.65       0.00            0.00            0.00            0.00
+
+2 Objects (Total: 0.006M / Max: 0.006M / Res: 0.000M | ResDedSys: 0.000M / ResDedVid: 0.000M / ResUnknown: 0.000M)
+MemReport: End command "obj list class=Level -alphasort"
+
+MemReport: Begin command "obj list class=StaticMeshComponent -alphasort"
+Obj List: class=StaticMeshComponent -alphasort
+Objects:
+
+                                                                                                                                      Object      NumKB      MaxKB   ResExcKB  ResExcDedSysKB  ResExcDedVidKB     ResExcUnkKB
+             StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_0.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+             StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_1.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+            StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_10.StaticMeshComponent0       2.73       2.73       2.58            2.58            0.00            0.00
+            StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_11.StaticMeshComponent0       2.73       2.73       2.58            2.58            0.00            0.00
+            StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_12.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+            StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_13.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+            StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_14.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+            StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_15.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+            StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_16.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+            StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_18.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+            StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_19.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+             StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_2.StaticMeshComponent0       2.73       2.73       2.58            2.58            0.00            0.00
+            StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_20.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+            StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_21.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+            StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_22.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+            StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_23.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+            StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_24.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+            StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_25.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+             StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_3.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+            StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_32.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+            StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_33.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+            StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_34.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+            StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_35.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+             StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_4.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+             StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_5.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+             StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_6.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+             StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_7.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+             StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_8.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+             StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_9.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+StaticMeshComponent /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_UAID_A4AE111137DC5EFB00_1110535423.StaticMeshComponent0       2.86       3.33       2.57            2.57            0.00            0.00
+StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.BP_ThirdPersonCharacter_C_0.StaticMeshComponent_0       1.80       2.27       0.00            0.00            0.00            0.00
+    StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_0.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+    StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_1.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+   StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_10.StaticMeshComponent0       2.73       2.73       2.58            2.58            0.00            0.00
+   StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_11.StaticMeshComponent0       2.73       2.73       2.58            2.58            0.00            0.00
+   StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_12.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+   StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_13.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+   StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_14.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+   StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_15.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+   StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_16.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+   StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_18.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+   StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_19.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+    StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_2.StaticMeshComponent0       2.73       2.73       2.58            2.58            0.00            0.00
+   StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_20.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+   StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_21.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+   StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_22.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+   StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_23.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+   StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_24.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+   StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_25.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+    StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_3.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+   StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_32.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+   StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_33.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+   StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_34.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+   StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_35.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+    StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_4.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+    StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_5.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+    StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_6.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+    StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_7.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+    StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_8.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+    StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_9.StaticMeshComponent0       2.74       2.74       2.58            2.58            0.00            0.00
+StaticMeshComponent /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap:PersistentLevel.StaticMeshActor_UAID_A4AE111137DC5EFB00_1110535423.StaticMeshComponent0       2.86       3.33       2.57            2.57            0.00            0.00
+
+                                                                                                Class    Count      NumKB      MaxKB   ResExcKB  ResExcDedSysKB  ResExcDedVidKB     ResExcUnkKB
+                                                                                  StaticMeshComponent       61     166.51     167.92     154.67          154.67            0.00            0.00
+
+61 Objects (Total: 0.163M / Max: 0.164M / Res: 0.151M | ResDedSys: 0.151M / ResDedVid: 0.000M / ResUnknown: 0.000M)
+MemReport: End command "obj list class=StaticMeshComponent -alphasort"
+

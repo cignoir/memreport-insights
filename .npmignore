@@ -1,0 +1,33 @@
+# Source files
+src/
+sample/
+
+# Config files
+.eslintrc.cjs
+postcss.config.js
+tailwind.config.js
+tsconfig.json
+tsconfig.node.json
+vite.config.ts
+
+# Git
+.git/
+.gitignore
+
+# Development
+node_modules/
+*.log
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test files
+*.test.ts
+*.spec.ts

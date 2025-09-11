@@ -1,0 +1,13 @@
+{
+  "id": "texture_list_extended",
+  "description": "Extended texture list analysis (NonVT, Uncompressed, etc.)",
+  "tables": [
+    {
+      "startPattern": "MemReport: Begin command \"listtextures|MemReport: Begin command \"ListTextures",
+      "endPattern": "MemReport: End command \"listtextures|MemReport: End command \"ListTextures",
+      "headers": true,
+      "separator": "\\s{2,}",
+      "numericColumns": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    }
+  ]
+}

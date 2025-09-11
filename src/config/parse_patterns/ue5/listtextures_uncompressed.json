@@ -1,0 +1,24 @@
+{
+  "id": "listtextures_uncompressed",
+  "description": "listtextures uncompressed command output",
+  "tables": [
+    {
+      "name": "Texture Details",
+      "startPattern": "MaxAllowedSize",
+      "endPattern": "Total size:.*",
+      "headers": true,
+      "separator": "",
+      "splitFormat": "(.+?) \\((.+?), (.+?)\\), (.+?) \\((.+)\\), (.+), (.+), (.+), (.+), (.+), (.+), (.+), (.+), (.+)",
+      "numericColumns": [1, 2, 11, 12]
+    },
+    {
+      "name": "Total Size Summary",
+      "startPattern": "Total size:",
+      "endPattern": "\\n",
+      "headers": false,
+      "separator": ":\\s",
+      "splitFormat": "(.+?):\\s+(InMem=.+?)\\s+(OnDisk=.+)",
+      "numericColumns": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "wp_dumpstreamingsources",
+  "description": "wp.DumpStreamingSources command output",
+  "tables": [
+    {
+      "name": "Streaming Sources",
+      "startPattern": "\\s+\\-\\s.+",
+      "endPattern": "\\n",
+      "headers": false,
+      "separator": " \\| ",
+      "numericColumns": []
+    }
+  ]
+}
