@@ -13,7 +13,7 @@ async function startServer() {
   const server = await createServer({
     root,
     server: {
-      port: 3000,
+      port: 8173,
       open: true,
     },
   });
@@ -21,7 +21,7 @@ async function startServer() {
   await server.listen();
 
   console.log('\n🚀 MemReport Insights is running!');
-  console.log(`📊 Open your browser at: http://localhost:3000`);
+  console.log(`📊 Open your browser at: http://localhost:8173`);
   console.log('\n📁 Drag and drop your .memreport file to analyze');
   console.log('Press Ctrl+C to stop the server\n');
 }

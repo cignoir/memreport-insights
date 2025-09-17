@@ -154,7 +154,7 @@ memreport
 npx memreport-insights [options]
 
 Options:
-  -p, --port <port>     Server port (default: 3000)
+  -p, --port <port>     Server port (default: 8173)
   -h, --host <host>     Server host (default: localhost)
   --no-open            Don't auto-open browser
   --help               Show help message
