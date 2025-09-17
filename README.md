@@ -31,7 +31,7 @@ Upload your `.memreport` file and instantly see beautiful, interactive analysis 
 ## 📸 Screenshots
 
 ### 🎯 Main Interface - Drag & Drop Simplicity
-![Main Interface showing file upload area with drag and drop functionality](https://via.placeholder.com/800x500/f8fafc/64748b?text=Main+Interface+-+Drag+%26+Drop+Your+.memreport+Files)
+![Main Interface showing file upload area with drag and drop functionality](https://github.com/user-attachments/assets/b25a9438-872e-48b1-96fb-f54273140cd7)
 
 *Clean, intuitive interface that makes uploading memory reports effortless*
 
