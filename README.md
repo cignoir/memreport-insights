@@ -122,7 +122,7 @@ memreport-insights
 
 ### During Gameplay (Recommended):
 1. **Launch your game** or **Play in Editor**
-2. **Open the console** (usually `~` or `Tab` key)
+2. **Open the console** (usually `^` or `@` key)
 3. **Execute the command**:
    ```
    memreport -full
