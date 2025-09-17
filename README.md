@@ -18,7 +18,8 @@
 
 ## 🚀 Quick Start
 
-**Get started in seconds with NPX - no installation required!**
+**Get started in seconds with NPX!**
+*(Requires Node.js 18+)*
 
 ```bash
 npx memreport-insights
