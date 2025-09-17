@@ -30,25 +30,19 @@ Upload your `.memreport` file and instantly see beautiful, interactive analysis 
 
 ## 📸 Screenshots
 
-### 🎯 Main Interface - Drag & Drop Simplicity
-![Main Interface showing file upload area with drag and drop functionality](https://github.com/user-attachments/assets/b25a9438-872e-48b1-96fb-f54273140cd7)
+<div align="center">
 
-*Clean, intuitive interface that makes uploading memory reports effortless*
+| 🎯 Main Interface | 📊 Parsed Report |
+|:---:|:---:|
+| <img src="https://github.com/user-attachments/assets/b25a9438-872e-48b1-96fb-f54273140cd7" width="400"> | <img src="https://github.com/user-attachments/assets/0d56eaf9-be60-4608-8cb9-5103459365f7" width="400"> |
+| *Clean drag & drop interface* | *Interactive table of contents* |
 
-### 📊 Parsed Report with Table of Contents
-![Parsed memory report showing organized table of contents with expandable sections](https://github.com/user-attachments/assets/0d56eaf9-be60-4608-8cb9-5103459365f7)
+| 📋 Memory Breakdown Tables | 🔍 Search & Filter |
+|:---:|:---:|
+| <img src="https://github.com/user-attachments/assets/14047552-92b3-4b84-bbd2-f5a72c662e3d" width="400"> | <img src="https://github.com/user-attachments/assets/c07289af-2351-4454-a79e-bae6e50ed62f" width="400"> |
+| *Sort & analyze memory patterns* | *Instant search across categories* |
 
-*Navigate massive memory reports with ease using the interactive table of contents*
-
-### 📋 Detailed Memory Breakdown Tables
-![Interactive tables showing memory usage with sorting and filtering capabilities](https://github.com/user-attachments/assets/14047552-92b3-4b84-bbd2-f5a72c662e3d)
-
-*Sort, filter, and analyze memory usage patterns with rich interactive tables*
-
-### 🔍 Search and Filter Functionality
-![Search interface highlighting filtered results across memory categories](https://github.com/user-attachments/assets/c07289af-2351-4454-a79e-bae6e50ed62f)
-
-*Quickly find specific memory allocations, textures, or objects with instant search*
+</div>
 
 ---
 
