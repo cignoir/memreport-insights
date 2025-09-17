@@ -2,6 +2,7 @@ import { useState } from 'react';
 import FileUpload from './components/FileUpload';
 import ReportDisplay from './components/ReportDisplay';
 import { ParsedDocument } from './types';
+import logo from './assets/logo.png';
 
 function App() {
   const [parsedReport, setParsedReport] = useState<ParsedDocument | null>(null);
@@ -28,13 +29,21 @@ function App() {
       <header className="bg-white border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="text-center">
-            <h1 
-              className="text-4xl font-light text-stone-800 mb-4 tracking-tight cursor-pointer hover:bg-gradient-to-r hover:from-purple-500 hover:via-pink-500 hover:via-cyan-500 hover:to-blue-500 hover:bg-clip-text hover:text-transparent transition-all duration-300 pb-2"
-              onClick={handleReset}
-            >
-              Memreport Insights
-            </h1>
-            <p className="text-lg text-stone-600 font-light max-w-2xl mx-auto leading-relaxed">
+            <div className="flex items-center justify-center mb-6">
+              <img
+                src={logo}
+                alt="Memreport Insights Logo"
+                className="w-16 h-16 mr-4 cursor-pointer hover:scale-110 transition-transform duration-300"
+                onClick={handleReset}
+              />
+              <h1
+                className="text-4xl font-light text-stone-800 tracking-tight cursor-pointer hover:bg-gradient-to-r hover:from-purple-500 hover:via-pink-500 hover:via-cyan-500 hover:to-blue-500 hover:bg-clip-text hover:text-transparent transition-all duration-300 pb-2"
+                onClick={handleReset}
+              >
+                Memreport Insights
+              </h1>
+            </div>
+            <p className="text-lg text-stone-600 font-light max-w-2xl mx-auto leading-relaxed -mt-2">
               Memory report visualization and analysis tool for Unreal Engine
             </p>
           </div>
