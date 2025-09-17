@@ -1,8 +1,7 @@
 # 🧠 Memreport Insights
 
 <div align="center">
-
-![Memreport Insights Logo](https://via.placeholder.com/600x200/2563eb/ffffff?text=Memreport+Insights)
+<img src="https://github.com/user-attachments/assets/fab58f2b-a237-4f63-802d-4c9b78b28f8d" width="200">
 
 **Transform Unreal Engine memory reports into beautiful, interactive visualizations**
 
