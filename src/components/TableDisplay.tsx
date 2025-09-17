@@ -16,6 +16,7 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table }) => {
   const [displayCount, setDisplayCount] = useState(50);
   const [isLoading, setIsLoading] = useState(false);
 
+  // Early return after all hooks to follow Rules of Hooks
   if (!table.rows || table.rows.length === 0) {
     return null;
   }
@@ -40,6 +41,7 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table }) => {
   // Sort functionality
   const handleSort = useCallback((columnIndex: number) => {
     if (sortColumn === columnIndex) {
+      // Same column clicked - cycle through asc -> desc -> none
       if (sortDirection === 'asc') {
         setSortDirection('desc');
       } else if (sortDirection === 'desc') {
@@ -49,6 +51,7 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table }) => {
         setSortDirection('asc');
       }
     } else {
+      // Different column clicked - start with asc
       setSortColumn(columnIndex);
       setSortDirection('asc');
     }
@@ -77,7 +80,7 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table }) => {
     // Apply global filter
     if (globalFilter.trim()) {
       const filterLower = globalFilter.toLowerCase();
-      filteredRows = filteredRows.filter(row => 
+      filteredRows = filteredRows.filter(row =>
         row.some(cell => cell?.toLowerCase().includes(filterLower))
       );
     }
@@ -85,20 +88,40 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table }) => {
     // Apply sort
     if (sortColumn !== null && sortDirection) {
       filteredRows = [...filteredRows].sort((a, b) => {
-        const aVal = a[sortColumn] || '';
-        const bVal = b[sortColumn] || '';
-        
+        const aVal = (a[sortColumn] || '').toString().trim();
+        const bVal = (b[sortColumn] || '').toString().trim();
+
         const isNumericColumn = numericColumns.includes(sortColumn);
-        
+
         let comparison = 0;
         if (isNumericColumn) {
-          const aNum = parseFloat(aVal.replace(/[^\d.-]/g, '')) || 0;
-          const bNum = parseFloat(bVal.replace(/[^\d.-]/g, '')) || 0;
+          // Extract numeric values - more robust extraction
+          const extractNumber = (str: string): number => {
+            // Remove all non-numeric characters except dots, commas, and negative signs
+            const cleaned = str.replace(/[^\d.,-]/g, '');
+
+            // Handle comma-separated thousands and convert to number
+            const numStr = cleaned.replace(/,/g, '');
+            const num = parseFloat(numStr);
+
+            return isNaN(num) ? 0 : num;
+          };
+
+          const aNum = extractNumber(aVal);
+          const bNum = extractNumber(bVal);
+
+          // Numeric comparison
           comparison = aNum - bNum;
+
+          // If numbers are equal, fallback to string comparison
+          if (comparison === 0) {
+            comparison = aVal.localeCompare(bVal);
+          }
         } else {
+          // String comparison
           comparison = aVal.localeCompare(bVal);
         }
-        
+
         return sortDirection === 'desc' ? -comparison : comparison;
       });
     }

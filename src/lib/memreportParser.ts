@@ -111,7 +111,7 @@ export class MemreportParser {
         headers: settings.headers,
         separator: settings.separator,
         split_format: settings.splitFormat,
-        numeric_columns: settings.numericColumns
+        numeric: settings.numericColumns
       } as TableSettings,
       headers,
       rows,
