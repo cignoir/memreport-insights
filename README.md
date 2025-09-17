@@ -30,19 +30,14 @@ Upload your `.memreport` file and instantly see beautiful, interactive analysis 
 
 ## 📸 Screenshots
 
-<div align="center">
 
-| 🎯 Main Interface | 📊 Parsed Report |
-|:---:|:---:|
-| <img src="https://github.com/user-attachments/assets/b25a9438-872e-48b1-96fb-f54273140cd7" width="400"> | <img src="https://github.com/user-attachments/assets/0d56eaf9-be60-4608-8cb9-5103459365f7" width="400"> |
-| *Clean drag & drop interface* | *Interactive table of contents* |
+### Interactive table of contents
 
-| 📋 Memory Breakdown Tables | 🔍 Search & Filter |
-|:---:|:---:|
-| <img src="https://github.com/user-attachments/assets/14047552-92b3-4b84-bbd2-f5a72c662e3d" width="400"> | <img src="https://github.com/user-attachments/assets/c07289af-2351-4454-a79e-bae6e50ed62f" width="400"> |
-| *Sort & analyze memory patterns* | *Instant search across categories* |
+<img src="https://github.com/user-attachments/assets/0d56eaf9-be60-4608-8cb9-5103459365f7" width="400">
 
-</div>
+### Sort & analyze memory patterns
+
+<img src="https://github.com/user-attachments/assets/14047552-92b3-4b84-bbd2-f5a72c662e3d" width="400">
 
 ---
 
