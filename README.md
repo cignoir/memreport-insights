@@ -30,14 +30,7 @@ Upload your `.memreport` file and instantly see beautiful, interactive analysis 
 
 ## 📸 Screenshots
 
-
-### Interactive table of contents
-
-<img src="https://github.com/user-attachments/assets/0d56eaf9-be60-4608-8cb9-5103459365f7" width="600">
-
-### Sort & analyze memory patterns
-
-<img src="https://github.com/user-attachments/assets/14047552-92b3-4b84-bbd2-f5a72c662e3d" width="600">
+<img width="1024" height="329" alt="intro" src="https://github.com/user-attachments/assets/f3530173-175c-4159-99b8-0c57333dc67b" />
 
 ---
 
