@@ -127,25 +127,29 @@ memreport-insights
 
 ## 🎮 How to Generate .memreport Files
 
-### In Unreal Engine Editor:
-1. Open your project
-2. Go to **Window** → **Developer Tools** → **Memory Analyzer**
-3. Click **"Take Memory Report"**
-4. Save the generated `.memreport` file
+### During Gameplay (Recommended):
+1. **Launch your game** or **Play in Editor**
+2. **Open the console** (usually `~` or `Tab` key)
+3. **Execute the command**:
+   ```
+   memreport -full
+   ```
+4. **Find the generated file** at:
+   ```
+   YourProject/Saved/Profiling/MemReports/
+   ```
 
-### Via Console Commands:
+### File Naming Convention:
+Generated files follow this pattern:
 ```
-# In-game console or editor
-Stat MemReport
-
-# Command line (packaged builds)
-YourGame.exe -ExecCmds="Stat MemReport"
+[ProjectName]-[Platform]-[Timestamp].memreport
 ```
+Example: `MyGame-WindowsEditor-09.16-17.17.22.memreport`
 
-### Blueprint Integration:
-```cpp
-// C++ code to generate memory reports
-FGenericPlatformMemory::DumpStats(*GLog);
+### Alternative Methods:
+```
+# Basic memory report (less detailed)
+memreport
 ```
 
 ---
