@@ -115,11 +115,11 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table }) => {
   const isLargeTable = allProcessedRows.length > 100;
 
   return (
-    <div className="border border-stone-300 rounded-xl overflow-hidden shadow-sm">
+    <div className="border border-stone-300 dark:border-stone-600 rounded-xl overflow-hidden shadow-sm transition-colors duration-200">
       {/* Pre-table text */}
       {table.preText && (
-        <div className="px-6 py-4 bg-stone-50 border-b border-stone-100">
-          <pre className="whitespace-pre-wrap text-sm text-stone-700 font-mono leading-relaxed">{table.preText}</pre>
+        <div className="px-6 py-4 bg-stone-50 dark:bg-stone-700 border-b border-stone-100 dark:border-stone-600 transition-colors duration-200">
+          <pre className="whitespace-pre-wrap text-sm text-stone-700 dark:text-stone-300 font-mono leading-relaxed">{table.preText}</pre>
         </div>
       )}
 
@@ -127,10 +127,10 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table }) => {
       <div>
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="w-full px-6 py-4 text-left bg-stone-100 hover:bg-stone-150 transition-all duration-200 flex items-center justify-between border-b border-stone-200"
+          className="w-full px-6 py-4 text-left bg-stone-100 dark:bg-stone-700 hover:bg-stone-150 dark:hover:bg-stone-600 transition-all duration-200 flex items-center justify-between border-b border-stone-200 dark:border-stone-600"
         >
           <div className="flex items-center gap-3">
-            <span className="font-semibold text-stone-900">
+            <span className="font-semibold text-stone-900 dark:text-stone-100">
               Table Details ({isLargeTable ? `${displayedRows.length} / ${allProcessedRows.length}` : `${allProcessedRows.length}`} items)
             </span>
             {globalFilter.trim() && (
@@ -139,7 +139,7 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table }) => {
                   e.stopPropagation();
                   setGlobalFilter('');
                 }}
-                className="inline-flex items-center text-xs bg-stone-200 hover:bg-stone-300 text-stone-700 px-3 py-1.5 rounded-full transition-colors"
+                className="inline-flex items-center text-xs bg-stone-200 dark:bg-stone-600 hover:bg-stone-300 dark:hover:bg-stone-500 text-stone-700 dark:text-stone-200 px-3 py-1.5 rounded-full transition-colors"
                 title="Clear filter"
               >
                 <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -150,7 +150,7 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table }) => {
             )}
           </div>
           <svg
-            className={`w-5 h-5 transition-transform duration-200 text-stone-400 ${isExpanded ? 'rotate-180' : ''}`}
+            className={`w-5 h-5 transition-transform duration-200 text-stone-400 dark:text-stone-300 ${isExpanded ? 'rotate-180' : ''}`}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -160,11 +160,11 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table }) => {
         </button>
 
         {isExpanded && (
-          <div className="bg-white">
+          <div className="bg-white dark:bg-stone-800 transition-colors duration-200">
             {/* Global Filter */}
-            <div className="px-6 py-4 border-b border-stone-100">
+            <div className="px-6 py-4 border-b border-stone-100 dark:border-stone-700 transition-colors duration-200">
               <div className="relative">
-                <svg className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-stone-400 dark:text-stone-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
                 <input
@@ -172,7 +172,7 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table }) => {
                   placeholder="Search entire table..."
                   value={globalFilter}
                   onChange={(e) => handleFilterChange(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2.5 text-sm border border-stone-200 rounded-xl focus:border-stone-300 focus:ring-2 focus:ring-stone-100 focus:outline-none transition-all duration-200"
+                  className="w-full pl-10 pr-4 py-2.5 text-sm border border-stone-200 dark:border-stone-600 bg-white dark:bg-stone-700 text-stone-900 dark:text-stone-100 placeholder-stone-500 dark:placeholder-stone-400 rounded-xl focus:border-stone-300 dark:focus:border-stone-500 focus:ring-2 focus:ring-stone-100 dark:focus:ring-stone-600 focus:outline-none transition-all duration-200"
                 />
               </div>
             </div>
@@ -181,17 +181,17 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table }) => {
               <table className="w-full">
               {/* Headers */}
               {table.headers && (
-                <thead className="bg-stone-200 sticky top-0">
+                <thead className="bg-stone-200 dark:bg-stone-600 sticky top-0 transition-colors duration-200">
                   <tr>
                     {table.headers.map((header, index) => (
                       <th
                         key={index}
-                        className="px-4 py-3 text-left text-xs font-semibold text-stone-800 border-b-2 border-stone-300 whitespace-nowrap"
+                        className="px-4 py-3 text-left text-xs font-semibold text-stone-800 dark:text-stone-200 border-b-2 border-stone-300 dark:border-stone-500 whitespace-nowrap transition-colors duration-200"
                         style={{ minWidth: '100px' }}
                       >
                         <button
                           onClick={() => handleSort(index)}
-                          className="group flex items-center gap-2 hover:text-stone-950 transition-colors w-full"
+                          className="group flex items-center gap-2 hover:text-stone-950 dark:hover:text-stone-50 transition-colors w-full"
                         >
                           <span className="truncate">{header}</span>
                           <div className="flex flex-col opacity-70 group-hover:opacity-100 transition-opacity">
@@ -220,16 +220,16 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table }) => {
               {/* Body */}
               <tbody>
                 {displayedRows.map((row, rowIndex) => (
-                  <tr key={rowIndex} className={`border-b border-stone-200 transition-colors ${
-                    rowIndex % 2 === 0 ? 'bg-white hover:bg-stone-50' : 'bg-stone-50/40 hover:bg-stone-50'
+                  <tr key={rowIndex} className={`border-b border-stone-200 dark:border-stone-700 transition-colors ${
+                    rowIndex % 2 === 0 ? 'bg-white dark:bg-stone-800 hover:bg-stone-50 dark:hover:bg-stone-700' : 'bg-stone-50/40 dark:bg-stone-700/50 hover:bg-stone-50 dark:hover:bg-stone-700'
                   }`}>
                     {row.map((cell, cellIndex) => (
                       <td
                         key={cellIndex}
-                        className={`px-4 py-3 text-xs whitespace-nowrap ${
-                          numericColumns.includes(cellIndex) 
-                            ? 'text-right font-mono text-stone-700' 
-                            : 'text-left text-stone-600'
+                        className={`px-4 py-3 text-xs whitespace-nowrap transition-colors duration-200 ${
+                          numericColumns.includes(cellIndex)
+                            ? 'text-right font-mono text-stone-700 dark:text-stone-300'
+                            : 'text-left text-stone-600 dark:text-stone-400'
                         }`}
                         style={{ minWidth: '100px' }}
                         title={cell}
@@ -245,11 +245,11 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table }) => {
                 {/* Progressive loading button */}
                 {isLargeTable && displayCount < allProcessedRows.length && (
                   <tr>
-                    <td colSpan={table.headers?.length || displayedRows[0]?.length || 1} className="text-center py-8 bg-stone-50/30">
+                    <td colSpan={table.headers?.length || displayedRows[0]?.length || 1} className="text-center py-8 bg-stone-50/30 dark:bg-stone-700/30 transition-colors duration-200">
                       <button
                         onClick={loadMore}
                         disabled={isLoading}
-                        className="inline-flex items-center px-6 py-3 bg-stone-700 hover:bg-stone-800 disabled:bg-stone-400 text-white text-sm font-medium rounded-xl transition-all duration-200 shadow-sm hover:shadow-md"
+                        className="inline-flex items-center px-6 py-3 bg-stone-700 dark:bg-stone-600 hover:bg-stone-800 dark:hover:bg-stone-500 disabled:bg-stone-400 dark:disabled:bg-stone-600 text-white text-sm font-medium rounded-xl transition-all duration-200 shadow-sm hover:shadow-md"
                       >
                         {isLoading ? (
                           <>
@@ -277,8 +277,8 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table }) => {
 
       {/* Post-table text */}
       {table.postText && (
-        <div className="px-6 py-4 bg-stone-50 border-t border-stone-100">
-          <pre className="whitespace-pre-wrap text-sm text-stone-700 font-mono leading-relaxed">{table.postText}</pre>
+        <div className="px-6 py-4 bg-stone-50 dark:bg-stone-700 border-t border-stone-100 dark:border-stone-600 transition-colors duration-200">
+          <pre className="whitespace-pre-wrap text-sm text-stone-700 dark:text-stone-300 font-mono leading-relaxed">{table.postText}</pre>
         </div>
       )}
     </div>

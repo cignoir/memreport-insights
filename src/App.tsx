@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import FileUpload from './components/FileUpload';
 import ReportDisplay from './components/ReportDisplay';
+import ThemeToggle from './components/ThemeToggle';
 import { ParsedDocument } from './types';
 import logo from './assets/logo.png';
+import { ThemeProvider } from './contexts/ThemeContext';
 
-function App() {
+function AppContent() {
   const [parsedReport, setParsedReport] = useState<ParsedDocument | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
 
@@ -24,9 +26,11 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-stone-50">
+    <div className="min-h-screen bg-stone-50 dark:bg-stone-900 transition-colors duration-200">
+      <ThemeToggle />
+
       {/* Header */}
-      <header className="bg-white border-b border-stone-200">
+      <header className="bg-white dark:bg-stone-800 border-b border-stone-200 dark:border-stone-700 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="text-center">
             <div className="flex items-center justify-center mb-6">
@@ -37,13 +41,13 @@ function App() {
                 onClick={handleReset}
               />
               <h1
-                className="text-4xl font-light text-stone-800 tracking-tight cursor-pointer hover:bg-gradient-to-r hover:from-purple-500 hover:via-pink-500 hover:via-cyan-500 hover:to-blue-500 hover:bg-clip-text hover:text-transparent transition-all duration-300 pb-2"
+                className="text-4xl font-light text-stone-800 dark:text-stone-100 tracking-tight cursor-pointer hover:bg-gradient-to-r hover:from-purple-500 hover:via-pink-500 hover:via-cyan-500 hover:to-blue-500 hover:bg-clip-text hover:text-transparent transition-all duration-300 pb-2"
                 onClick={handleReset}
               >
                 Memreport Insights
               </h1>
             </div>
-            <p className="text-lg text-stone-600 font-light max-w-2xl mx-auto leading-relaxed -mt-2">
+            <p className="text-lg text-stone-600 dark:text-stone-300 font-light max-w-2xl mx-auto leading-relaxed -mt-2">
               Memory report visualization and analysis tool for Unreal Engine
             </p>
           </div>
@@ -62,9 +66,9 @@ function App() {
         {isProcessing && (
           <div className="text-center py-20">
             <div className="inline-flex items-center justify-center w-16 h-16 mb-6">
-              <div className="animate-spin rounded-full h-8 w-8 border-2 border-stone-300 border-t-stone-600"></div>
+              <div className="animate-spin rounded-full h-8 w-8 border-2 border-stone-300 dark:border-stone-600 border-t-stone-600 dark:border-t-stone-300"></div>
             </div>
-            <p className="text-stone-600 font-light">Analyzing file...</p>
+            <p className="text-stone-600 dark:text-stone-300 font-light">Analyzing file...</p>
           </div>
         )}
 
@@ -77,14 +81,14 @@ function App() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-stone-200 bg-white">
+      <footer className="border-t border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-6 py-8 text-center">
           <div className="flex items-center justify-center space-x-4 mb-4">
             <a
               href="https://github.com/cignoir/memreport-insights"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-stone-500 hover:text-stone-700 transition-colors duration-200"
+              className="text-stone-500 dark:text-stone-400 hover:text-stone-700 dark:hover:text-stone-200 transition-colors duration-200"
               aria-label="View source on GitHub"
             >
               <svg
@@ -97,12 +101,20 @@ function App() {
               </svg>
             </a>
           </div>
-          <p className="text-stone-500 text-sm font-light">
+          <p className="text-stone-500 dark:text-stone-400 text-sm font-light">
             &copy; 2025 cignoir
           </p>
         </div>
       </footer>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   );
 }
 

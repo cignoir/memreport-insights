@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Optimize theme transitions */
+@layer base {
+  /* Smooth color transitions only where needed */
+  .theme-transition {
+    @apply transition-colors duration-200;
+  }
+
+  /* Remove transition during theme switch */
+  html.theme-switching,
+  html.theme-switching * {
+    transition: none !important;
+  }
+
+  /* Optimize scroll performance */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}

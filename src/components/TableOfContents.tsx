@@ -75,7 +75,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ report }) => {
       {/* Hamburger menu button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-4 left-4 w-10 h-10 bg-stone-800 hover:bg-stone-700 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center z-50"
+        className="fixed top-4 left-4 w-10 h-10 bg-stone-800 dark:bg-stone-700 hover:bg-stone-700 dark:hover:bg-stone-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center z-50"
         aria-label={isOpen ? "Close table of contents" : "Open table of contents"}
       >
         <svg
@@ -94,23 +94,23 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ report }) => {
 
       {/* Slide-out menu */}
       <div
-        className={`fixed top-0 left-0 h-full w-[480px] lg:w-[600px] bg-white border-r border-stone-300 shadow-2xl z-40 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 h-full w-[480px] lg:w-[600px] bg-white dark:bg-stone-800 border-r border-stone-300 dark:border-stone-600 shadow-2xl z-40 transform transition-all duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         <div className="h-full flex flex-col">
           {/* Filter input */}
-          <div className="px-4 pt-16 pb-4 border-b border-stone-200 bg-stone-50 flex-shrink-0">
+          <div className="px-4 pt-16 pb-4 border-b border-stone-200 dark:border-stone-700 bg-stone-50 dark:bg-stone-700 flex-shrink-0 transition-colors duration-200">
             <div className="relative">
               <input
                 type="text"
                 value={filterText}
                 onChange={(e) => setFilterText(e.target.value)}
                 placeholder="Search sections..."
-                className="w-full px-10 py-2.5 pr-10 bg-white border border-stone-200 rounded-lg focus:border-stone-400 focus:ring-2 focus:ring-stone-100 focus:outline-none text-sm"
+                className="w-full px-10 py-2.5 pr-10 bg-white dark:bg-stone-600 border border-stone-200 dark:border-stone-500 text-stone-900 dark:text-stone-100 placeholder-stone-500 dark:placeholder-stone-400 rounded-lg focus:border-stone-400 dark:focus:border-stone-400 focus:ring-2 focus:ring-stone-100 dark:focus:ring-stone-600 focus:outline-none text-sm transition-colors duration-200"
               />
               <svg
-                className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-stone-400"
+                className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-stone-400 dark:text-stone-300"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -120,7 +120,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ report }) => {
               {filterText && (
                 <button
                   onClick={() => setFilterText('')}
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-stone-400 hover:text-stone-600"
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-stone-400 dark:text-stone-300 hover:text-stone-600 dark:hover:text-stone-100 transition-colors duration-200"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -128,7 +128,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ report }) => {
                 </button>
               )}
             </div>
-            <div className="mt-2 text-xs text-stone-500">
+            <div className="mt-2 text-xs text-stone-500 dark:text-stone-400">
               {filteredSections.length} / {visibleSections.length} sections
             </div>
           </div>
@@ -142,12 +142,12 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ report }) => {
                   onClick={() => scrollToSection(section.title)}
                   className={`w-full text-left px-4 py-3 rounded-xl text-sm transition-all duration-200 flex items-center mb-1 ${
                     activeSection === section.title
-                      ? 'bg-stone-800 text-white shadow-sm'
-                      : 'hover:bg-stone-100 text-stone-700'
+                      ? 'bg-stone-800 dark:bg-stone-600 text-white shadow-sm'
+                      : 'hover:bg-stone-100 dark:hover:bg-stone-600 text-stone-700 dark:text-stone-200'
                   }`}
                 >
                   <div className={`w-2 h-2 rounded-full mr-3 flex-shrink-0 ${
-                    activeSection === section.title ? 'bg-white' : 'bg-stone-400'
+                    activeSection === section.title ? 'bg-white' : 'bg-stone-400 dark:bg-stone-500'
                   }`} />
                   <span className="truncate">{section.title}</span>
                 </button>

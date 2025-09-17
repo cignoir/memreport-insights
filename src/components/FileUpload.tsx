@@ -74,9 +74,9 @@ const FileUpload: React.FC<FileUploadProps> = ({ onReportParsed, onProcessingSta
   return (
     <div className="max-w-6xl mx-auto space-y-8">
       {/* Version Compatibility Card */}
-      <div className="bg-white rounded-2xl border border-stone-300 shadow-md overflow-hidden">
-        <div className="px-8 py-6 border-b border-stone-200">
-          <h2 className="text-xl font-medium text-stone-900 text-center">Supported Versions</h2>
+      <div className="bg-white dark:bg-stone-800 rounded-2xl border border-stone-300 dark:border-stone-600 shadow-md overflow-hidden transition-colors duration-200">
+        <div className="px-8 py-6 border-b border-stone-200 dark:border-stone-700">
+          <h2 className="text-xl font-medium text-stone-900 dark:text-stone-100 text-center">Supported Versions</h2>
         </div>
         <div className="p-8">
           <div className="grid grid-cols-5 gap-4 text-center">
@@ -91,7 +91,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onReportParsed, onProcessingSta
               { version: 'UE 5.6', status: 'supported' }
             ].map(({ version, status }) => (
               <div key={version} className="space-y-3">
-                <div className="text-sm font-medium text-stone-700">{version}</div>
+                <div className="text-sm font-medium text-stone-700 dark:text-stone-300">{version}</div>
                 <div className="flex justify-center">
                   {status === 'supported' ? (
                     <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center">
@@ -116,10 +116,10 @@ const FileUpload: React.FC<FileUploadProps> = ({ onReportParsed, onProcessingSta
       {/* File Upload Area */}
       <div
         className={`
-          relative rounded-2xl border-2 border-dashed transition-all duration-200 
-          ${isDragOver 
-            ? 'border-stone-400 bg-stone-50/50 shadow-lg' 
-            : 'border-stone-300 hover:border-stone-400 hover:bg-stone-50/30'
+          relative rounded-2xl border-2 border-dashed transition-all duration-200
+          ${isDragOver
+            ? 'border-stone-400 dark:border-stone-500 bg-stone-50/50 dark:bg-stone-800/50 shadow-lg'
+            : 'border-stone-300 dark:border-stone-600 hover:border-stone-400 dark:hover:border-stone-500 hover:bg-stone-50/30 dark:hover:bg-stone-800/30'
           }
         `}
         onDrop={handleDrop}
@@ -128,21 +128,21 @@ const FileUpload: React.FC<FileUploadProps> = ({ onReportParsed, onProcessingSta
       >
         <div className="px-8 py-16 text-center">
           <div className="mb-6">
-            <div className="w-16 h-16 mx-auto rounded-full bg-stone-100 flex items-center justify-center">
-              <svg className="w-8 h-8 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="w-16 h-16 mx-auto rounded-full bg-stone-100 dark:bg-stone-700 flex items-center justify-center transition-colors duration-200">
+              <svg className="w-8 h-8 text-stone-500 dark:text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
             </div>
           </div>
           
-          <h3 className="text-xl font-light text-stone-800 mb-2">
+          <h3 className="text-xl font-light text-stone-800 dark:text-stone-200 mb-2">
             Upload File
           </h3>
-          <p className="text-stone-500 mb-8 font-light">
+          <p className="text-stone-500 dark:text-stone-400 mb-8 font-light">
             Drag & drop a .memreport file or select from the button below
           </p>
-          
-          <label className="inline-flex items-center px-8 py-3 bg-stone-800 hover:bg-stone-700 text-white text-sm font-medium rounded-xl cursor-pointer transition-all duration-200 hover:shadow-md">
+
+          <label className="inline-flex items-center px-8 py-3 bg-stone-800 dark:bg-stone-700 hover:bg-stone-700 dark:hover:bg-stone-600 text-white text-sm font-medium rounded-xl cursor-pointer transition-all duration-200 hover:shadow-md">
             <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
             </svg>
@@ -159,14 +159,14 @@ const FileUpload: React.FC<FileUploadProps> = ({ onReportParsed, onProcessingSta
       </div>
 
       {error && (
-        <div className="bg-red-50 border border-red-100 rounded-xl p-6">
+        <div className="bg-red-50 dark:bg-red-900/20 border border-red-100 dark:border-red-800/30 rounded-xl p-6 transition-colors duration-200">
           <div className="flex items-center">
-            <div className="w-5 h-5 rounded-full bg-red-100 flex items-center justify-center mr-3">
-              <svg className="w-3 h-3 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+            <div className="w-5 h-5 rounded-full bg-red-100 dark:bg-red-800/50 flex items-center justify-center mr-3">
+              <svg className="w-3 h-3 text-red-500 dark:text-red-400" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
               </svg>
             </div>
-            <p className="text-red-700 font-medium">{error}</p>
+            <p className="text-red-700 dark:text-red-300 font-medium">{error}</p>
           </div>
         </div>
       )}
