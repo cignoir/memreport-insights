@@ -30,6 +30,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Copy config files for GitHub Pages
+        run: |
+          mkdir -p public/config
+          cp -r src/config/engine_settings public/config/
+          cp -r src/config/parse_patterns public/config/
+
       - name: Build for GitHub Pages
         run: npm run build:demo
 

@@ -25,3 +25,6 @@ dist-ssr
 
 # Sample files and Claude Code settings
 .claude
+
+# Auto-generated config files for GitHub Pages
+public/config/

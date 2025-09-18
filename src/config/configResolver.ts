@@ -55,7 +55,13 @@ export class ConfigResolver {
    */
   private static async loadUE427Config(): Promise<ResolvedEngineConfig> {
     try {
-      const response = await fetch('/src/config/parse_patterns/ue4/ue427.json');
+      // Use different paths for development vs production
+      const baseUrl = import.meta.env.BASE_URL || '/';
+      const configPath = import.meta.env.DEV
+        ? '/src/config/parse_patterns/ue4/ue427.json'
+        : `${baseUrl}config/parse_patterns/ue4/ue427.json`;
+
+      const response = await fetch(configPath);
       if (!response.ok) {
         throw new Error(`Failed to load UE4.27 config: ${response.statusText}`);
       }
@@ -111,7 +117,13 @@ export class ConfigResolver {
     }
 
     try {
-      const response = await fetch(`/src/config/engine_settings/${filename}`);
+      // Use different paths for development vs production
+      const baseUrl = import.meta.env.BASE_URL || '/';
+      const configPath = import.meta.env.DEV
+        ? `/src/config/engine_settings/${filename}`
+        : `${baseUrl}config/engine_settings/${filename}`;
+
+      const response = await fetch(configPath);
       if (!response.ok) {
         throw new Error(`Failed to load BaseEngine file: ${response.statusText}`);
       }
@@ -129,7 +141,13 @@ export class ConfigResolver {
 
     const patternFolder = this.getPatternFolder(version);
     try {
-      const response = await fetch(`/src/config/parse_patterns/${patternFolder}/${patternId}.json`);
+      // Use different paths for development vs production
+      const baseUrl = import.meta.env.BASE_URL || '/';
+      const configPath = import.meta.env.DEV
+        ? `/src/config/parse_patterns/${patternFolder}/${patternId}.json`
+        : `${baseUrl}config/parse_patterns/${patternFolder}/${patternId}.json`;
+
+      const response = await fetch(configPath);
       if (!response.ok) {
         return null;
       }
