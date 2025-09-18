@@ -1,6 +1,6 @@
 {
   "name": "memreport-insights",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Transform Unreal Engine memory reports into beautiful, interactive visualizations. Analyze .memreport files with ease instead of struggling through raw text.",
   "type": "module",
   "main": "./dist/index.js",
