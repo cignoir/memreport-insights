@@ -5,10 +5,11 @@ type SortDirection = 'asc' | 'desc' | null;
 
 interface TableDisplayProps {
   table: ParsedTable;
+  sectionTitle?: string;
 }
 
 
-const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table }) => {
+const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table, sectionTitle }) => {
   const [isExpanded, setIsExpanded] = useState(true);
   const [sortColumn, setSortColumn] = useState<number | null>(null);
   const [sortDirection, setSortDirection] = useState<SortDirection>(null);
@@ -439,7 +440,7 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table }) => {
   <div class="container">
     <!-- Header -->
     <div class="table-header">
-      <div class="table-title">Table Export</div>
+      <div class="table-title">${sectionTitle || 'Table Export'}</div>
       <div class="table-info">${allProcessedRows.length} items total${globalFilter.trim() ? ` • Filtered by: "${globalFilter}"` : ''}</div>
     </div>
 

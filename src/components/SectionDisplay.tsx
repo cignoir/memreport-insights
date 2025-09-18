@@ -34,7 +34,7 @@ const SectionDisplay: React.FC<SectionDisplayProps> = ({ section }) => {
         {section.tables.length > 0 && (
           <div className="space-y-6">
             {section.tables.map((table, index) => (
-              <TableDisplay key={index} table={table} />
+              <TableDisplay key={index} table={table} sectionTitle={section.title} />
             ))}
           </div>
         )}
