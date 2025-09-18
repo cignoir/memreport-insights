@@ -472,17 +472,20 @@ export class HtmlGenerator {
       }
       
       updateSortIcons() {
-        const headers = this.table.querySelectorAll('th .sort-icon');
-        headers.forEach((icon, colIndex) => {
-          const isAsc = icon.classList.contains('sort-asc');
-          const isActive = this.sortColumn === Math.floor(colIndex / 2);
-          const isCorrectDirection = isAsc ? this.sortDirection === 'asc' : this.sortDirection === 'desc';
-          
-          if (isActive && isCorrectDirection) {
-            icon.classList.add('active');
-          } else {
-            icon.classList.remove('active');
-          }
+        const headers = this.table.querySelectorAll('th');
+        headers.forEach((header, columnIndex) => {
+          const icons = header.querySelectorAll('.sort-icon');
+          icons.forEach(icon => {
+            const isAsc = icon.classList.contains('sort-asc');
+            const isActive = this.sortColumn === columnIndex;
+            const isCorrectDirection = isAsc ? this.sortDirection === 'asc' : this.sortDirection === 'desc';
+
+            if (isActive && isCorrectDirection) {
+              icon.classList.add('active');
+            } else {
+              icon.classList.remove('active');
+            }
+          });
         });
       }
       
@@ -507,9 +510,24 @@ export class HtmlGenerator {
           
           let comparison = 0;
           if (isNumericColumn) {
-            const aNum = parseFloat(aVal.replace(/[^\\d.-]/g, '')) || 0;
-            const bNum = parseFloat(bVal.replace(/[^\\d.-]/g, '')) || 0;
+            // Extract numeric values - more robust extraction
+            const extractNumber = (str) => {
+              const cleaned = str.replace(/[^0-9.,-]/g, '');
+              const numStr = cleaned.replace(/,/g, '');
+              const num = parseFloat(numStr);
+              return isNaN(num) ? 0 : num;
+            };
+
+            const aNum = extractNumber(aVal);
+            const bNum = extractNumber(bVal);
+
+            // Numeric comparison
             comparison = aNum - bNum;
+
+            // If numbers are equal, fallback to string comparison
+            if (comparison === 0) {
+              comparison = aVal.localeCompare(bVal);
+            }
           } else {
             comparison = aVal.localeCompare(bVal);
           }
@@ -547,11 +565,28 @@ export class HtmlGenerator {
           });
         });
         
-        // Toggle visibility
-        this.allRows.forEach(row => row.classList.add('hidden'));
-        processedRows.slice(0, this.displayedRows).forEach(row => {
-          row.classList.remove('hidden');
+        // Remove all rows from tbody
+        this.allRows.forEach(row => {
+          if (row.parentNode) {
+            row.parentNode.removeChild(row);
+          }
         });
+
+        // Add rows back in correct order
+        const rowsToShow = processedRows.slice(0, this.displayedRows);
+        rowsToShow.forEach(row => {
+          row.classList.remove('hidden');
+          this.tbody.appendChild(row);
+        });
+
+        // Add remaining rows as hidden (for load more functionality)
+        processedRows.slice(this.displayedRows).forEach(row => {
+          row.classList.add('hidden');
+          this.tbody.appendChild(row);
+        });
+
+        // Update allRows reference to maintain correct order
+        this.allRows = Array.from(this.tbody.querySelectorAll('tr'));
         
         // Update summary
         this.updateSummary(processedRows.length);
@@ -684,10 +719,14 @@ export class HtmlGenerator {
     html += '<div class="table-wrapper">';
     html += `<table data-table-id="${tableId}" data-numeric-columns='${numericColumns}'>`;
 
-    // Headers
-    if (table.headers && table.headers.length > 0) {
+    // Headers - Generate dummy headers if not present
+    const headers = table.headers && table.headers.length > 0
+      ? table.headers
+      : Array.from({ length: table.rows[0]?.length || 0 }, (_, i) => `Column ${i + 1}`);
+
+    if (headers.length > 0) {
       html += '<thead><tr>';
-      table.headers.forEach(header => {
+      headers.forEach(header => {
         html += `<th>
           <button class="sort-button">
             <span>${this.escapeHtml(header)}</span>
