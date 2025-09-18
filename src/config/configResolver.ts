@@ -137,7 +137,7 @@ export class ConfigResolver {
 
   private static async loadParsePattern(patternId: string, version: string): Promise<ParsePattern | null> {
     const cacheKey = `${version}:${patternId}`;
-    if (this.parsePatternCache[cacheKey]) {
+    if (this.parsePatternCache.hasOwnProperty(cacheKey)) {
       return this.parsePatternCache[cacheKey];
     }
 

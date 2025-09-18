@@ -31,7 +31,7 @@ export interface TableParsePattern {
 
 
 export interface ParsePatternCollection {
-  [patternId: string]: ParsePattern;
+  [patternId: string]: ParsePattern | null;
 }
 
 // Integrated configuration used at runtime
