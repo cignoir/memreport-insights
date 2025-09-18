@@ -31,18 +31,18 @@
     "cli-tool",
     "npx"
   ],
-  "homepage": "https://github.com/yourusername/memreport-insights#readme",
+  "homepage": "https://cignoir.github.io/memreport-insights/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/memreport-insights.git"
+    "url": "git+https://github.com/cignoir/memreport-insights.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/memreport-insights/issues"
+    "url": "https://github.com/cignoir/memreport-insights/issues"
   },
   "license": "MIT",
   "author": {
     "name": "Memreport Insights Contributors",
-    "url": "https://github.com/yourusername/memreport-insights/graphs/contributors"
+    "url": "https://github.com/cignoir/memreport-insights/graphs/contributors"
   },
   "engines": {
     "node": ">=18.0.0",
@@ -51,6 +51,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:demo": "NODE_ENV=production npm run build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "prepublishOnly": "npm run build"

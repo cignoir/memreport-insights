@@ -17,7 +17,15 @@
 
 ## 🚀 Quick Start
 
-**Get started in seconds with NPX!**
+### 🌐 **Try the Online Demo**
+**No installation required!**
+
+[**🔗 Live Demo**](https://cignoir.github.io/memreport-insights/)
+
+Try it instantly with our sample UE5.6 memreport file. Perfect for exploring the features before installing locally.
+
+### ⚡ **Install Locally with NPX**
+**Get started in seconds!**
 *(Requires Node.js 18+)*
 
 ```bash

@@ -13,6 +13,9 @@ const FileUpload: React.FC<FileUploadProps> = ({ onReportParsed, onProcessingSta
   const [isDragOver, setIsDragOver] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // Detect if running in CLI mode (localhost) vs Web demo mode (GitHub Pages)
+  const isCliMode = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
   const processFile = useCallback(async (file: File) => {
 
     // Check file extension
@@ -41,6 +44,39 @@ const FileUpload: React.FC<FileUploadProps> = ({ onReportParsed, onProcessingSta
     } catch (err) {
       setError('An error occurred while processing the file.');
       console.error('Parse error:', err);
+    }
+  }, [onReportParsed, onProcessingStart]);
+
+  const processSampleFile = useCallback(async () => {
+    setError(null);
+    onProcessingStart();
+
+    try {
+      // Fetch the sample file from public directory
+      const baseUrl = import.meta.env.BASE_URL || '/';
+      const sampleUrl = `${baseUrl}sample/demo.memreport`;
+      const response = await fetch(sampleUrl);
+      if (!response.ok) {
+        throw new Error('Failed to load sample file');
+      }
+
+      const content = await response.text();
+      const fileName = 'UE5.6_Sample.memreport';
+
+      // Detect UE version and load configuration
+      const detectedVersion = detectUEVersion(content);
+      const resolvedConfig = await ConfigResolver.loadEngineConfig(detectedVersion);
+
+      // Yield to browser to update UI before heavy parsing
+      await new Promise(resolve => setTimeout(resolve, 0));
+
+      const parser = new MemreportParser(content, fileName, resolvedConfig.sections);
+      const parsedReport = await parser.parse();
+
+      onReportParsed(parsedReport);
+    } catch (err) {
+      setError('An error occurred while loading the sample file.');
+      console.error('Sample load error:', err);
     }
   }, [onReportParsed, onProcessingStart]);
 
@@ -73,6 +109,26 @@ const FileUpload: React.FC<FileUploadProps> = ({ onReportParsed, onProcessingSta
 
   return (
     <div className="max-w-6xl mx-auto space-y-8">
+      {/* CLI Information Card - Only show in web demo mode */}
+      {!isCliMode && (
+        <div className="bg-gradient-to-r from-stone-600 to-stone-700 dark:from-stone-700 dark:to-stone-800 rounded-2xl shadow-md overflow-hidden transition-colors duration-200 mb-8">
+          <div className="px-8 py-6">
+            <div className="text-center">
+              <h2 className="text-xl font-medium text-white mb-3">Try the CLI Version</h2>
+              <p className="text-stone-200 dark:text-stone-300 mb-4 font-light">
+                For production use, install the CLI tool locally with NPX
+              </p>
+              <div className="bg-stone-800 dark:bg-stone-900 rounded-lg px-6 py-4 mb-4">
+                <code className="text-green-400 font-mono text-sm">npx memreport-insights</code>
+              </div>
+              <p className="text-stone-300 dark:text-stone-400 text-sm">
+                No installation required • Works with any .memreport file • Blazing fast
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Version Compatibility Card */}
       <div className="bg-white dark:bg-stone-800 rounded-2xl border border-stone-300 dark:border-stone-600 shadow-md overflow-hidden transition-colors duration-200">
         <div className="px-8 py-6 border-b border-stone-200 dark:border-stone-700">
@@ -139,21 +195,59 @@ const FileUpload: React.FC<FileUploadProps> = ({ onReportParsed, onProcessingSta
             Upload File
           </h3>
           <p className="text-stone-500 dark:text-stone-400 mb-8 font-light">
-            Drag & drop a .memreport file or select from the button below
+            {isCliMode
+              ? 'Drag & drop your .memreport file or select one to analyze'
+              : 'Drag & drop your .memreport file, select one, or try with our sample file'
+            }
           </p>
 
-          <label className="inline-flex items-center px-8 py-3 bg-stone-800 dark:bg-stone-700 hover:bg-stone-700 dark:hover:bg-stone-600 text-white text-sm font-medium rounded-xl cursor-pointer transition-all duration-200 hover:shadow-md">
-            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-            </svg>
-            Select File
-            <input
-              type="file"
-              accept=".memreport"
-              onChange={handleFileSelect}
-              className="hidden"
-            />
-          </label>
+          {isCliMode ? (
+            // CLI Mode - Only show file selection
+            <label className="inline-flex items-center px-8 py-3 bg-stone-800 dark:bg-stone-700 hover:bg-stone-700 dark:hover:bg-stone-600 text-white text-sm font-medium rounded-xl cursor-pointer transition-all duration-200 hover:shadow-md">
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+              </svg>
+              Select File
+              <input
+                type="file"
+                accept=".memreport"
+                onChange={handleFileSelect}
+                className="hidden"
+              />
+            </label>
+          ) : (
+            // Web Demo Mode - Show file selection AND sample option
+            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+              <label className="inline-flex items-center px-8 py-3 bg-stone-800 dark:bg-stone-700 hover:bg-stone-700 dark:hover:bg-stone-600 text-white text-sm font-medium rounded-xl cursor-pointer transition-all duration-200 hover:shadow-md">
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                </svg>
+                Select File
+                <input
+                  type="file"
+                  accept=".memreport"
+                  onChange={handleFileSelect}
+                  className="hidden"
+                />
+              </label>
+
+              <div className="flex items-center">
+                <div className="border-t border-stone-300 dark:border-stone-600 w-8 mx-3 sm:hidden"></div>
+                <span className="text-stone-400 dark:text-stone-500 text-sm font-light px-3 hidden sm:block">or</span>
+                <div className="border-t border-stone-300 dark:border-stone-600 w-8 mx-3 sm:hidden"></div>
+              </div>
+
+              <button
+                onClick={processSampleFile}
+                className="inline-flex items-center px-8 py-3 bg-stone-600 hover:bg-stone-800 dark:bg-stone-400 dark:hover:bg-stone-300 text-white dark:text-stone-900 text-sm font-medium rounded-xl transition-all duration-200 shadow-sm hover:shadow-lg transform hover:-translate-y-0.5"
+              >
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                Try with Sample
+              </button>
+            </div>
+          )}
           
         </div>
       </div>
