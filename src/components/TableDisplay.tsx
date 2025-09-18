@@ -147,6 +147,568 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table }) => {
   // Determine if this is a large table
   const isLargeTable = allProcessedRows.length > 100;
 
+  // Export functions (defined after allProcessedRows)
+  const exportToCSV = useCallback(() => {
+    const csvRows = [];
+
+    // Add headers
+    if (headers && headers.length > 0) {
+      csvRows.push(headers.map(h => `"${h.replace(/"/g, '""')}"`).join(','));
+    }
+
+    // Add filtered data rows
+    allProcessedRows.forEach(row => {
+      const csvRow = row.map(cell => {
+        const cellStr = cell || '';
+        // Escape quotes and wrap in quotes if contains comma, quote, or newline
+        if (cellStr.includes(',') || cellStr.includes('"') || cellStr.includes('\n')) {
+          return `"${cellStr.replace(/"/g, '""')}"`;
+        }
+        return cellStr;
+      });
+      csvRows.push(csvRow.join(','));
+    });
+
+    // Create blob and download
+    const csvContent = csvRows.join('\n');
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `table_export_${Date.now()}.csv`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  }, [headers, allProcessedRows]);
+
+  const exportToHTML = useCallback(() => {
+    const tableId = 'exported-table';
+    const isLargeTable = allProcessedRows.length > 100;
+    const numericColumnsJSON = JSON.stringify(numericColumns);
+
+    // Generate headers HTML
+    let headersHtml = '';
+    if (headers && headers.length > 0) {
+      headersHtml = '<thead><tr>';
+      headers.forEach(header => {
+        const escapedHeader = header.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        headersHtml += `<th>
+          <button class="sort-button">
+            <span>${escapedHeader}</span>
+            <div class="sort-indicators">
+              <svg class="sort-icon sort-asc" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path>
+              </svg>
+              <svg class="sort-icon sort-desc" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </button>
+        </th>`;
+      });
+      headersHtml += '</tr></thead>';
+    }
+
+    // Generate rows HTML
+    let rowsHtml = '<tbody>';
+    allProcessedRows.forEach(row => {
+      rowsHtml += '<tr class="table-row">';
+      row.forEach((cell, index) => {
+        const isNumeric = numericColumns.includes(index);
+        const escapedCell = (cell || '').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        rowsHtml += `<td${isNumeric ? ' class="numeric"' : ''} title="${escapedCell}">${escapedCell}</td>`;
+      });
+      rowsHtml += '</tr>';
+    });
+    rowsHtml += '</tbody>';
+
+    let htmlContent = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Export - Memreport Insights</title>
+    <style>
+      /* Base styles */
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        background-color: #f5f5f4;
+        color: #292524;
+        line-height: 1.5;
+        padding: 2rem;
+      }
+
+      /* Container */
+      .container {
+        max-width: 100%;
+        margin: 0 auto;
+        background: white;
+        border: 1px solid #d6d3d1;
+        border-radius: 0.75rem;
+        overflow: hidden;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      }
+
+      /* Header */
+      .table-header {
+        padding: 1.5rem;
+        background: #f5f5f4;
+        border-bottom: 1px solid #a8a29e;
+      }
+      .table-title {
+        font-weight: 600;
+        color: #1c1917;
+        font-size: 1.125rem;
+      }
+      .table-info {
+        font-size: 0.875rem;
+        color: #57534e;
+        margin-top: 0.25rem;
+      }
+
+      /* Filter */
+      .filter-container {
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid #f5f5f4;
+        background: white;
+      }
+      .filter-input {
+        width: 100%;
+        padding: 0.625rem 1rem 0.625rem 2.5rem;
+        font-size: 0.875rem;
+        border: 1px solid #a8a29e;
+        border-radius: 0.75rem;
+        background: white;
+        transition: all 0.2s;
+      }
+      .filter-input:focus {
+        border-color: #d6d3d1;
+        outline: 2px solid #f5f5f4;
+        outline-offset: 0;
+      }
+      .filter-icon {
+        position: absolute;
+        left: 0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1rem;
+        height: 1rem;
+        color: #78716c;
+      }
+
+      /* Summary */
+      .table-summary {
+        padding: 0.5rem 1.5rem;
+        background: #fafaf9;
+        border-bottom: 1px solid #f5f5f4;
+        font-size: 0.75rem;
+        color: #57534e;
+      }
+
+      /* Table */
+      .table-wrapper {
+        background: white;
+        overflow-x: auto;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th {
+        padding: 0.75rem 1rem;
+        text-align: left;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #292524;
+        background: #a8a29e;
+        border-bottom: 2px solid #d6d3d1;
+        white-space: nowrap;
+        min-width: 100px;
+      }
+      td {
+        padding: 0.75rem 1rem;
+        font-size: 0.75rem;
+        border-bottom: 1px solid #a8a29e;
+        white-space: nowrap;
+        min-width: 100px;
+      }
+      tbody tr:nth-child(even) {
+        background: rgba(250, 250, 249, 0.4);
+      }
+      tbody tr:nth-child(odd) {
+        background: white;
+      }
+      tbody tr:hover {
+        background: #fafaf9;
+      }
+      .numeric {
+        text-align: right;
+        font-family: "SF Mono", Monaco, "Cascadia Code", monospace;
+        color: #44403c;
+      }
+
+      /* Sort buttons */
+      .sort-button {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+        background: none;
+        border: none;
+        text-align: left;
+        cursor: pointer;
+        font-weight: 600;
+        color: #292524;
+        transition: color 0.2s;
+      }
+      .sort-button:hover {
+        color: #1c1917;
+      }
+      .sort-indicators {
+        display: flex;
+        flex-direction: column;
+        opacity: 0.6;
+        transition: opacity 0.2s;
+      }
+      .sort-button:hover .sort-indicators {
+        opacity: 1;
+      }
+      .sort-icon {
+        width: 0.75rem;
+        height: 0.75rem;
+        color: #78716c;
+      }
+      .sort-icon.active {
+        color: #292524;
+      }
+
+      /* Load more */
+      .load-more-container {
+        text-align: center;
+        padding: 1.5rem;
+        background: rgba(250, 250, 249, 0.3);
+      }
+      .load-more-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        background: #44403c;
+        color: white;
+        border: none;
+        border-radius: 0.75rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s;
+        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+      }
+      .load-more-button:hover {
+        background: #292524;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      }
+      .load-more-button:disabled {
+        background: #a8a29e;
+        color: #78716c;
+        cursor: not-allowed;
+      }
+      .loading-spinner {
+        width: 1rem;
+        height: 1rem;
+        border: 2px solid transparent;
+        border-top: 2px solid currentColor;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+
+      /* Visibility */
+      .table-row {
+        transition: background-color 0.2s;
+      }
+      .table-row.hidden {
+        display: none;
+      }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="table-header">
+      <div class="table-title">Table Export</div>
+      <div class="table-info">${allProcessedRows.length} items total${globalFilter.trim() ? ` • Filtered by: "${globalFilter}"` : ''}</div>
+    </div>
+
+    <!-- Filter -->
+    <div class="filter-container">
+      <div style="position: relative;">
+        <svg class="filter-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+        <input type="text" class="filter-input" placeholder="Search entire table..." value="${globalFilter || ''}">
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="table-summary">${allProcessedRows.length} items</div>
+
+    <!-- Table -->
+    <div class="table-wrapper">
+      <table data-table-id="${tableId}" data-numeric-columns='${numericColumnsJSON}'>
+        ${headersHtml}
+        ${rowsHtml}
+      </table>
+    </div>
+
+    ${isLargeTable ? `
+    <!-- Load More -->
+    <div class="load-more-container" style="display: none;">
+      <button class="load-more-button">
+        <svg style="width: 1rem; height: 1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+        Load More
+      </button>
+    </div>` : ''}
+  </div>
+
+  <script>
+    // Table management class (reused from htmlGenerator.ts)
+    class TableManager {
+      constructor(tableElement) {
+        this.table = tableElement;
+        this.tableId = tableElement.getAttribute('data-table-id');
+        this.tbody = tableElement.querySelector('tbody');
+        this.allRows = Array.from(this.tbody.querySelectorAll('tr'));
+        this.displayedRows = 50;
+        this.sortColumn = null;
+        this.sortDirection = null;
+        this.filterValue = document.querySelector('.filter-input')?.value?.toLowerCase() || '';
+        this.numericColumns = this.parseNumericColumns();
+        this.init();
+      }
+
+      parseNumericColumns() {
+        const numericAttr = this.table.getAttribute('data-numeric-columns');
+        return numericAttr ? JSON.parse(numericAttr) : [];
+      }
+
+      init() {
+        this.setupSortHeaders();
+        this.setupFilter();
+        this.setupLoadMore();
+        this.updateDisplay();
+      }
+
+      setupSortHeaders() {
+        const headers = this.table.querySelectorAll('th button.sort-button');
+        headers.forEach((button, index) => {
+          button.addEventListener('click', () => this.handleSort(index));
+        });
+      }
+
+      setupFilter() {
+        const filterInput = document.querySelector('.filter-input');
+        if (filterInput) {
+          filterInput.addEventListener('input', (e) => {
+            this.filterValue = e.target.value.toLowerCase();
+            this.displayedRows = 50;
+            this.updateDisplay();
+          });
+        }
+      }
+
+      setupLoadMore() {
+        const loadMoreBtn = document.querySelector('.load-more-button');
+        if (loadMoreBtn) {
+          loadMoreBtn.addEventListener('click', () => this.loadMore());
+        }
+      }
+
+      handleSort(columnIndex) {
+        if (this.sortColumn === columnIndex) {
+          if (this.sortDirection === 'asc') {
+            this.sortDirection = 'desc';
+          } else if (this.sortDirection === 'desc') {
+            this.sortColumn = null;
+            this.sortDirection = null;
+          } else {
+            this.sortDirection = 'asc';
+          }
+        } else {
+          this.sortColumn = columnIndex;
+          this.sortDirection = 'asc';
+        }
+        this.displayedRows = 50;
+        this.updateSortIcons();
+        this.updateDisplay();
+      }
+
+      updateSortIcons() {
+        const headers = this.table.querySelectorAll('th');
+        headers.forEach((header, columnIndex) => {
+          const icons = header.querySelectorAll('.sort-icon');
+          icons.forEach(icon => {
+            const isAsc = icon.classList.contains('sort-asc');
+            const isActive = this.sortColumn === columnIndex;
+            const isCorrectDirection = isAsc ? this.sortDirection === 'asc' : this.sortDirection === 'desc';
+
+            if (isActive && isCorrectDirection) {
+              icon.classList.add('active');
+            } else {
+              icon.classList.remove('active');
+            }
+          });
+        });
+      }
+
+      filterRows(rows) {
+        if (!this.filterValue.trim()) return rows;
+        return rows.filter(row => {
+          return Array.from(row.cells).some(cell =>
+            cell.textContent.toLowerCase().includes(this.filterValue)
+          );
+        });
+      }
+
+      sortRows(rows) {
+        if (this.sortColumn === null || this.sortDirection === null) return rows;
+
+        return [...rows].sort((a, b) => {
+          const aVal = (a.cells[this.sortColumn]?.textContent || '').toString().trim();
+          const bVal = (b.cells[this.sortColumn]?.textContent || '').toString().trim();
+          const isNumericColumn = this.numericColumns.includes(this.sortColumn);
+
+          let comparison = 0;
+          if (isNumericColumn) {
+            // Extract numeric values
+            const extractNumber = (str) => {
+              const cleaned = str.replace(/[^0-9.,-]/g, '');
+              const numStr = cleaned.replace(/,/g, '');
+              const num = parseFloat(numStr);
+              return isNaN(num) ? 0 : num;
+            };
+
+            const aNum = extractNumber(aVal);
+            const bNum = extractNumber(bVal);
+
+            // Numeric comparison
+            comparison = aNum - bNum;
+
+            // If numbers are equal, fallback to string comparison
+            if (comparison === 0) {
+              comparison = aVal.localeCompare(bVal);
+            }
+          } else {
+            // String comparison
+            comparison = aVal.localeCompare(bVal);
+          }
+
+          return this.sortDirection === 'desc' ? -comparison : comparison;
+        });
+      }
+
+      updateDisplay() {
+        let processedRows = this.filterRows(this.allRows);
+        processedRows = this.sortRows(processedRows);
+
+        // Remove all rows from tbody
+        this.allRows.forEach(row => {
+          if (row.parentNode) {
+            row.parentNode.removeChild(row);
+          }
+        });
+
+        // Add rows back in correct order
+        const rowsToShow = processedRows.slice(0, this.displayedRows);
+        rowsToShow.forEach(row => {
+          row.classList.remove('hidden');
+          this.tbody.appendChild(row);
+        });
+
+        // Add remaining rows as hidden (for load more functionality)
+        processedRows.slice(this.displayedRows).forEach(row => {
+          row.classList.add('hidden');
+          this.tbody.appendChild(row);
+        });
+
+        // Update allRows reference to maintain correct order
+        this.allRows = Array.from(this.tbody.querySelectorAll('tr'));
+
+        this.updateSummary(processedRows.length);
+        this.updateLoadMoreButton(processedRows.length);
+      }
+
+      updateSummary(totalFiltered) {
+        const summary = document.querySelector('.table-summary');
+        if (summary) {
+          const displayed = Math.min(this.displayedRows, totalFiltered);
+          const isLargeTable = totalFiltered > 100;
+
+          if (isLargeTable) {
+            summary.textContent = \`Showing: \${displayed} / \${totalFiltered} items\`;
+          } else {
+            summary.textContent = \`\${totalFiltered} items\`;
+          }
+        }
+      }
+
+      updateLoadMoreButton(totalFiltered) {
+        const loadMoreContainer = document.querySelector('.load-more-container');
+        const loadMoreBtn = loadMoreContainer?.querySelector('.load-more-button');
+
+        if (loadMoreContainer && loadMoreBtn) {
+          if (totalFiltered > 100 && this.displayedRows < totalFiltered) {
+            loadMoreContainer.style.display = 'block';
+            loadMoreBtn.textContent = \`Load More (\${this.displayedRows} / \${totalFiltered})\`;
+          } else {
+            loadMoreContainer.style.display = 'none';
+          }
+        }
+      }
+
+      loadMore() {
+        const loadMoreBtn = document.querySelector('.load-more-button');
+        if (loadMoreBtn) {
+          loadMoreBtn.innerHTML = '<div class="loading-spinner"></div>Loading...';
+          loadMoreBtn.disabled = true;
+
+          setTimeout(() => {
+            this.displayedRows += 100;
+            this.updateDisplay();
+            loadMoreBtn.disabled = false;
+          }, 100);
+        }
+      }
+    }
+
+    // Initialize on DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', function() {
+      const table = document.querySelector('table[data-table-id]');
+      if (table) {
+        new TableManager(table);
+      }
+    });
+  </script>
+</body>
+</html>`;
+
+    // Create blob and download
+    const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `table_export_${Date.now()}.html`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  }, [headers, allProcessedRows, globalFilter, numericColumns]);
+
   return (
     <div className="border border-stone-300 dark:border-stone-600 rounded-xl overflow-hidden shadow-sm transition-colors duration-200">
       {/* Pre-table text */}
@@ -158,11 +720,11 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table }) => {
 
       {/* Collapsible table */}
       <div>
-        <button
-          onClick={() => setIsExpanded(!isExpanded)}
-          className="w-full px-6 py-4 text-left bg-stone-100 dark:bg-stone-700 hover:bg-stone-150 dark:hover:bg-stone-600 transition-all duration-200 flex items-center justify-between border-b border-stone-200 dark:border-stone-600"
-        >
-          <div className="flex items-center gap-3">
+        <div className="w-full px-6 py-4 bg-stone-100 dark:bg-stone-700 border-b border-stone-200 dark:border-stone-600 flex items-center justify-between">
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+          >
             <span className="font-semibold text-stone-900 dark:text-stone-100">
               Table Details ({isLargeTable ? `${displayedRows.length} / ${allProcessedRows.length}` : `${allProcessedRows.length}`} items)
             </span>
@@ -181,16 +743,42 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table }) => {
                 Clear
               </button>
             )}
+            <svg
+              className={`w-5 h-5 transition-transform duration-200 text-stone-400 dark:text-stone-300 ml-2 ${isExpanded ? 'rotate-180' : ''}`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          <div className="flex items-center gap-2">
+            {/* CSV Export Button */}
+            <button
+              onClick={exportToCSV}
+              className="inline-flex items-center px-3 py-1.5 bg-green-600 hover:bg-green-700 text-white text-xs font-medium rounded-lg transition-colors duration-200"
+              title="Download as CSV"
+            >
+              <svg className="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              CSV
+            </button>
+
+            {/* HTML Export Button */}
+            <button
+              onClick={exportToHTML}
+              className="inline-flex items-center px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium rounded-lg transition-colors duration-200"
+              title="Download as HTML"
+            >
+              <svg className="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              HTML
+            </button>
           </div>
-          <svg
-            className={`w-5 h-5 transition-transform duration-200 text-stone-400 dark:text-stone-300 ${isExpanded ? 'rotate-180' : ''}`}
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
+        </div>
 
         {isExpanded && (
           <div className="bg-white dark:bg-stone-800 transition-colors duration-200">
