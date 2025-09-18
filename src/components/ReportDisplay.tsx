@@ -66,7 +66,7 @@ const ReportDisplay: React.FC<ReportDisplayProps> = ({ report }) => {
               <div className="flex gap-3 flex-shrink-0">
                 <button
                   onClick={handleDownloadClick}
-                  className="inline-flex items-center px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-700 dark:hover:bg-emerald-600 text-white text-sm font-medium rounded-xl transition-all duration-200 shadow-sm hover:shadow-md"
+                  className="inline-flex items-center px-6 py-2.5 bg-stone-600 hover:bg-stone-800 dark:bg-stone-400 dark:hover:bg-stone-300 text-white dark:text-stone-900 text-sm font-medium rounded-xl transition-all duration-200 shadow-sm hover:shadow-lg transform hover:-translate-y-0.5"
                 >
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -131,7 +131,7 @@ const ReportDisplay: React.FC<ReportDisplayProps> = ({ report }) => {
                 <button
                   onClick={handleDownloadConfirm}
                   disabled={!fileName.trim()}
-                  className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-700 dark:hover:bg-emerald-600 disabled:bg-stone-300 dark:disabled:bg-stone-600 disabled:text-stone-500 dark:disabled:text-stone-400 text-white text-sm font-medium rounded-xl transition-all duration-200 shadow-sm hover:shadow-md"
+                  className="px-6 py-2.5 bg-stone-600 hover:bg-stone-800 dark:bg-stone-400 dark:hover:bg-stone-300 disabled:bg-stone-300 dark:disabled:bg-stone-600 disabled:text-stone-500 dark:disabled:text-stone-400 text-white dark:text-stone-900 text-sm font-medium rounded-xl transition-all duration-200 shadow-sm hover:shadow-lg transform hover:-translate-y-0.5 disabled:transform-none disabled:shadow-sm"
                 >
                   Download
                 </button>

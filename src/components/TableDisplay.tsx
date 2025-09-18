@@ -791,7 +791,7 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table, sectionTi
             {/* CSV Export Button */}
             <button
               onClick={exportToCSV}
-              className="inline-flex items-center px-3 py-1.5 bg-green-600 hover:bg-green-700 text-white text-xs font-medium rounded-lg transition-colors duration-200"
+              className="inline-flex items-center px-3 py-1.5 bg-stone-600 hover:bg-stone-800 dark:bg-stone-400 dark:hover:bg-stone-300 text-white dark:text-stone-900 text-xs font-medium rounded-lg transition-all duration-200 shadow-sm hover:shadow-lg transform hover:-translate-y-0.5"
               title="Download as CSV"
             >
               <svg className="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -803,7 +803,7 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table, sectionTi
             {/* HTML Export Button */}
             <button
               onClick={exportToHTML}
-              className="inline-flex items-center px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium rounded-lg transition-colors duration-200"
+              className="inline-flex items-center px-3 py-1.5 bg-stone-600 hover:bg-stone-800 dark:bg-stone-400 dark:hover:bg-stone-300 text-white dark:text-stone-900 text-xs font-medium rounded-lg transition-all duration-200 shadow-sm hover:shadow-lg transform hover:-translate-y-0.5"
               title="Download as HTML"
             >
               <svg className="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
