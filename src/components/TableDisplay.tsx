@@ -21,6 +21,16 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table }) => {
     return null;
   }
 
+  // Generate dummy headers if not present
+  const headers = useMemo(() => {
+    if (table.headers && table.headers.length > 0) {
+      return table.headers;
+    }
+    // Create dummy headers based on the number of columns
+    const columnCount = table.rows[0]?.length || 0;
+    return Array.from({ length: columnCount }, (_, i) => `Column ${i + 1}`);
+  }, [table.headers, table.rows]);
+
   const formatCellValue = useCallback((value: string, colIndex: number): string => {
     if (table.settings.numeric?.includes(colIndex)) {
       // Process formats like "Used 1234.56MB"
@@ -203,10 +213,10 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table }) => {
             <div className="overflow-x-auto">
               <table className="w-full">
               {/* Headers */}
-              {table.headers && (
+              {headers && headers.length > 0 && (
                 <thead className="bg-stone-200 dark:bg-stone-600 sticky top-0 transition-colors duration-200">
                   <tr>
-                    {table.headers.map((header, index) => (
+                    {headers.map((header, index) => (
                       <th
                         key={index}
                         className="px-4 py-3 text-left text-xs font-semibold text-stone-800 dark:text-stone-200 border-b-2 border-stone-300 dark:border-stone-500 whitespace-nowrap transition-colors duration-200"
@@ -268,7 +278,7 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table }) => {
                 {/* Progressive loading button */}
                 {isLargeTable && displayCount < allProcessedRows.length && (
                   <tr>
-                    <td colSpan={table.headers?.length || displayedRows[0]?.length || 1} className="text-center py-8 bg-stone-50/30 dark:bg-stone-700/30 transition-colors duration-200">
+                    <td colSpan={headers?.length || displayedRows[0]?.length || 1} className="text-center py-8 bg-stone-50/30 dark:bg-stone-700/30 transition-colors duration-200">
                       <button
                         onClick={loadMore}
                         disabled={isLoading}
