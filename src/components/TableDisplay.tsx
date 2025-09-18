@@ -197,11 +197,11 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table, sectionTi
         headersHtml += `<th>
           <button class="sort-button">
             <span>${escapedHeader}</span>
-            <div class="sort-indicators">
-              <svg class="sort-icon sort-asc" fill="currentColor" viewBox="0 0 20 20">
+            <div class="sort-indicators inactive">
+              <svg class="sort-icon small" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path>
               </svg>
-              <svg class="sort-icon sort-desc" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="sort-icon small" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
               </svg>
             </div>
@@ -369,12 +369,15 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table, sectionTi
       }
       .sort-indicators {
         display: flex;
-        flex-direction: column;
-        opacity: 0.6;
-        transition: opacity 0.2s;
+        align-items: center;
+        gap: 0.25rem;
       }
-      .sort-button:hover .sort-indicators {
-        opacity: 1;
+      .sort-indicators.inactive {
+        flex-direction: column;
+        opacity: 0.5;
+      }
+      .sort-button:hover .sort-indicators.inactive {
+        opacity: 0.8;
       }
       .sort-icon {
         width: 0.75rem;
@@ -382,7 +385,19 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table, sectionTi
         color: #78716c;
       }
       .sort-icon.active {
-        color: #292524;
+        width: 1rem;
+        height: 1rem;
+        color: #2563eb;
+      }
+      .sort-icon.small {
+        width: 0.625rem;
+        height: 0.625rem;
+        margin-top: -0.125rem;
+      }
+      .sort-label {
+        font-size: 0.625rem;
+        font-weight: 500;
+        color: #2563eb;
       }
 
       /* Load more */
@@ -552,18 +567,36 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table, sectionTi
       updateSortIcons() {
         const headers = this.table.querySelectorAll('th');
         headers.forEach((header, columnIndex) => {
-          const icons = header.querySelectorAll('.sort-icon');
-          icons.forEach(icon => {
-            const isAsc = icon.classList.contains('sort-asc');
-            const isActive = this.sortColumn === columnIndex;
-            const isCorrectDirection = isAsc ? this.sortDirection === 'asc' : this.sortDirection === 'desc';
+          const button = header.querySelector('.sort-button');
+          const indicators = header.querySelector('.sort-indicators');
 
-            if (isActive && isCorrectDirection) {
-              icon.classList.add('active');
+          if (button && indicators) {
+            if (this.sortColumn === columnIndex && this.sortDirection) {
+              // Active state - show single arrow with direction label
+              const isAsc = this.sortDirection === 'asc';
+              indicators.className = 'sort-indicators';
+              indicators.innerHTML = \`
+                <svg class="sort-icon active" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="\${isAsc
+                    ? 'M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z'
+                    : 'M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z'
+                  }" clip-rule="evenodd"></path>
+                </svg>
+                <span class="sort-label">\${isAsc ? 'ASC' : 'DESC'}</span>
+              \`;
             } else {
-              icon.classList.remove('active');
+              // Inactive state - show dual arrows
+              indicators.className = 'sort-indicators inactive';
+              indicators.innerHTML = \`
+                <svg class="sort-icon small" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path>
+                </svg>
+                <svg class="sort-icon small" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+              \`;
             }
-          });
+          }
         });
       }
 
@@ -816,21 +849,35 @@ const TableDisplay: React.FC<TableDisplayProps> = React.memo(({ table, sectionTi
                           className="group flex items-center gap-2 hover:text-stone-950 dark:hover:text-stone-50 transition-colors w-full"
                         >
                           <span className="truncate">{header}</span>
-                          <div className="flex flex-col opacity-70 group-hover:opacity-100 transition-opacity">
-                            <svg 
-                              className={`w-3 h-3 ${sortColumn === index && sortDirection === 'asc' ? 'text-stone-900' : 'text-stone-500'}`}
-                              fill="currentColor" 
-                              viewBox="0 0 20 20"
-                            >
-                              <path fillRule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clipRule="evenodd" />
-                            </svg>
-                            <svg 
-                              className={`w-3 h-3 -mt-0.5 ${sortColumn === index && sortDirection === 'desc' ? 'text-stone-900' : 'text-stone-500'}`}
-                              fill="currentColor" 
-                              viewBox="0 0 20 20"
-                            >
-                              <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                            </svg>
+                          <div className="flex items-center">
+                            {sortColumn === index ? (
+                              // Active sort state - show single arrow with clear direction
+                              sortDirection === 'asc' ? (
+                                <div className="flex items-center gap-1">
+                                  <svg className="w-4 h-4 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fillRule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clipRule="evenodd" />
+                                  </svg>
+                                  <span className="text-xs text-blue-600 dark:text-blue-400 font-medium">ASC</span>
+                                </div>
+                              ) : (
+                                <div className="flex items-center gap-1">
+                                  <svg className="w-4 h-4 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                                  </svg>
+                                  <span className="text-xs text-blue-600 dark:text-blue-400 font-medium">DESC</span>
+                                </div>
+                              )
+                            ) : (
+                              // Inactive state - show neutral sort icon
+                              <div className="flex flex-col opacity-50 group-hover:opacity-80 transition-opacity">
+                                <svg className="w-3 h-3 text-stone-400 dark:text-stone-500" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fillRule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clipRule="evenodd" />
+                                </svg>
+                                <svg className="w-3 h-3 -mt-0.5 text-stone-400 dark:text-stone-500" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                                </svg>
+                              </div>
+                            )}
                           </div>
                         </button>
                       </th>

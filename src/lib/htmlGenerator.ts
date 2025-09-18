@@ -274,13 +274,17 @@ export class HtmlGenerator {
 
     .sort-indicators {
       display: flex;
-      flex-direction: column;
-      opacity: 0.6;
-      transition: opacity 0.2s;
+      align-items: center;
+      gap: 0.25rem;
     }
 
-    .sort-button:hover .sort-indicators {
-      opacity: 1;
+    .sort-indicators.inactive {
+      flex-direction: column;
+      opacity: 0.5;
+    }
+
+    .sort-button:hover .sort-indicators.inactive {
+      opacity: 0.8;
     }
 
     .sort-icon {
@@ -290,7 +294,21 @@ export class HtmlGenerator {
     }
 
     .sort-icon.active {
-      color: rgb(41, 37, 36); /* stone-800 */
+      width: 1rem;
+      height: 1rem;
+      color: rgb(37, 99, 235); /* blue-600 */
+    }
+
+    .sort-icon.small {
+      width: 0.625rem;
+      height: 0.625rem;
+      margin-top: -0.125rem;
+    }
+
+    .sort-label {
+      font-size: 0.625rem;
+      font-weight: 500;
+      color: rgb(37, 99, 235); /* blue-600 */
     }
 
     .load-more-container {
@@ -474,18 +492,36 @@ export class HtmlGenerator {
       updateSortIcons() {
         const headers = this.table.querySelectorAll('th');
         headers.forEach((header, columnIndex) => {
-          const icons = header.querySelectorAll('.sort-icon');
-          icons.forEach(icon => {
-            const isAsc = icon.classList.contains('sort-asc');
-            const isActive = this.sortColumn === columnIndex;
-            const isCorrectDirection = isAsc ? this.sortDirection === 'asc' : this.sortDirection === 'desc';
+          const button = header.querySelector('.sort-button');
+          const indicators = header.querySelector('.sort-indicators');
 
-            if (isActive && isCorrectDirection) {
-              icon.classList.add('active');
+          if (button && indicators) {
+            if (this.sortColumn === columnIndex && this.sortDirection) {
+              // Active state - show single arrow with direction label
+              const isAsc = this.sortDirection === 'asc';
+              indicators.className = 'sort-indicators';
+              indicators.innerHTML = \`
+                <svg class="sort-icon active" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="\${isAsc
+                    ? 'M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z'
+                    : 'M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z'
+                  }" clip-rule="evenodd"></path>
+                </svg>
+                <span class="sort-label">\${isAsc ? 'ASC' : 'DESC'}</span>
+              \`;
             } else {
-              icon.classList.remove('active');
+              // Inactive state - show dual arrows
+              indicators.className = 'sort-indicators inactive';
+              indicators.innerHTML = \`
+                <svg class="sort-icon small" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path>
+                </svg>
+                <svg class="sort-icon small" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+              \`;
             }
-          });
+          }
         });
       }
       
@@ -730,11 +766,11 @@ export class HtmlGenerator {
         html += `<th>
           <button class="sort-button">
             <span>${this.escapeHtml(header)}</span>
-            <div class="sort-indicators">
-              <svg class="sort-icon sort-asc" fill="currentColor" viewBox="0 0 20 20">
+            <div class="sort-indicators inactive">
+              <svg class="sort-icon small" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path>
               </svg>
-              <svg class="sort-icon sort-desc" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="sort-icon small" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
               </svg>
             </div>
