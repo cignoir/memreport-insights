@@ -1,4 +1,5 @@
 import { BaseEngineReader } from './baseEngineReader';
+import { PatternManifest } from './patternManifest';
 import {
   ParsePattern,
   ParsePatternCollection,
@@ -28,20 +29,21 @@ export class ConfigResolver {
     const baseEngineContent = await this.loadBaseEngineFile(version);
     const engineConfig = BaseEngineReader.parseEngineConfig(baseEngineContent, version);
 
-    const resolvedSections: ResolvedSectionConfig[] = [];
-
-    for (const section of engineConfig.sections) {
+    // Parallel loading of pattern files for better performance
+    const patternPromises = engineConfig.sections.map(async (section) => {
       const parsePattern = section.parsePatternId
         ? await this.loadParsePattern(section.parsePatternId, version)
         : null;
 
-      resolvedSections.push({
+      return {
         name: section.name,
         startPattern: section.startPattern,
         endPattern: section.endPattern,
         tables: parsePattern?.tables || []
-      });
-    }
+      };
+    });
+
+    const resolvedSections = await Promise.all(patternPromises);
 
     return {
       version: engineConfig.version,
@@ -140,6 +142,15 @@ export class ConfigResolver {
     }
 
     const patternFolder = this.getPatternFolder(version);
+
+    // Check if pattern exists before making HTTP request
+    const exists = await PatternManifest.patternExists(patternFolder, patternId);
+    if (!exists) {
+      // Pattern doesn't exist, cache null result and return
+      this.parsePatternCache[cacheKey] = null;
+      return null;
+    }
+
     try {
       // Use different paths for development vs production
       const baseUrl = import.meta.env.BASE_URL || '/';
@@ -149,6 +160,8 @@ export class ConfigResolver {
 
       const response = await fetch(configPath);
       if (!response.ok) {
+        // This should rarely happen now that we check manifest first
+        this.parsePatternCache[cacheKey] = null;
         return null;
       }
 
