@@ -90,7 +90,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onReportParsed, onProcessingSta
   const handleDrop = useCallback((event: React.DragEvent<HTMLDivElement>) => {
     event.preventDefault();
     setIsDragOver(false);
-    
+
     const file = event.dataTransfer.files[0];
     if (file) {
       processFile(file);
@@ -109,67 +109,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onReportParsed, onProcessingSta
 
   return (
     <div className="max-w-6xl mx-auto space-y-8">
-      {/* CLI Information Card - Only show in web demo mode */}
-      {!isCliMode && (
-        <div className="bg-gradient-to-r from-stone-600 to-stone-700 dark:from-stone-700 dark:to-stone-800 rounded-2xl shadow-md overflow-hidden transition-colors duration-200 mb-8">
-          <div className="px-8 py-6">
-            <div className="text-center">
-              <h2 className="text-xl font-medium text-white mb-3">Try the CLI Version</h2>
-              <p className="text-stone-200 dark:text-stone-300 mb-4 font-light">
-                For production use, install the CLI tool locally with NPX
-              </p>
-              <div className="bg-stone-800 dark:bg-stone-900 rounded-lg px-6 py-4 mb-4">
-                <code className="text-green-400 font-mono text-sm">npx memreport-insights</code>
-              </div>
-              <p className="text-stone-300 dark:text-stone-400 text-sm">
-                No installation required • Works with any .memreport file • Blazing fast
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Version Compatibility Card */}
-      <div className="bg-white dark:bg-stone-800 rounded-2xl border border-stone-300 dark:border-stone-600 shadow-md overflow-hidden transition-colors duration-200">
-        <div className="px-8 py-6 border-b border-stone-200 dark:border-stone-700">
-          <h2 className="text-xl font-medium text-stone-900 dark:text-stone-100 text-center">Supported Versions</h2>
-        </div>
-        <div className="p-8">
-          <div className="grid grid-cols-5 gap-4 text-center">
-            {[
-              { version: 'UE 4.27', status: 'supported' },
-              { version: 'UE 5.0', status: 'unsupported' },
-              { version: 'UE 5.1', status: 'supported' },
-              { version: 'UE 5.2', status: 'supported' },
-              { version: 'UE 5.3', status: 'supported' },
-              { version: 'UE 5.4', status: 'partial' },
-              { version: 'UE 5.5', status: 'supported' },
-              { version: 'UE 5.6', status: 'supported' }
-            ].map(({ version, status }) => (
-              <div key={version} className="space-y-3">
-                <div className="text-sm font-medium text-stone-700 dark:text-stone-300">{version}</div>
-                <div className="flex justify-center">
-                  {status === 'supported' ? (
-                    <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center">
-                      <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
-                    </div>
-                  ) : status === 'partial' ? (
-                    <div className="w-6 h-6 rounded-full bg-yellow-100 flex items-center justify-center">
-                      <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                    </div>
-                  ) : (
-                    <div className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center">
-                      <div className="w-3 h-3 rounded-full bg-gray-400"></div>
-                    </div>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* File Upload Area */}
+      {/* Upload Area - First for immediate action */}
       <div
         className={`
           relative rounded-2xl border-2 border-dashed transition-all duration-200
@@ -190,7 +130,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onReportParsed, onProcessingSta
               </svg>
             </div>
           </div>
-          
+
           <h3 className="text-xl font-light text-stone-800 dark:text-stone-200 mb-2">
             Upload File
           </h3>
@@ -248,9 +188,69 @@ const FileUpload: React.FC<FileUploadProps> = ({ onReportParsed, onProcessingSta
               </button>
             </div>
           )}
-          
+
         </div>
       </div>
+
+      {/* Version Compatibility Card - Second for reference */}
+      <div className="bg-white dark:bg-stone-800 rounded-2xl border border-stone-300 dark:border-stone-600 shadow-md overflow-hidden transition-colors duration-200">
+        <div className="px-8 py-6 border-b border-stone-200 dark:border-stone-700">
+          <h2 className="text-xl font-medium text-stone-900 dark:text-stone-100 text-center">Supported Versions</h2>
+        </div>
+        <div className="p-8">
+          <div className="grid grid-cols-5 gap-4 text-center">
+            {[
+              { version: 'UE 4.27', status: 'supported' },
+              { version: 'UE 5.0', status: 'unsupported' },
+              { version: 'UE 5.1', status: 'supported' },
+              { version: 'UE 5.2', status: 'supported' },
+              { version: 'UE 5.3', status: 'supported' },
+              { version: 'UE 5.4', status: 'partial' },
+              { version: 'UE 5.5', status: 'supported' },
+              { version: 'UE 5.6', status: 'supported' }
+            ].map(({ version, status }) => (
+              <div key={version} className="space-y-3">
+                <div className="text-sm font-medium text-stone-700 dark:text-stone-300">{version}</div>
+                <div className="flex justify-center">
+                  {status === 'supported' ? (
+                    <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center">
+                      <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
+                    </div>
+                  ) : status === 'partial' ? (
+                    <div className="w-6 h-6 rounded-full bg-yellow-100 flex items-center justify-center">
+                      <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    </div>
+                  ) : (
+                    <div className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center">
+                      <div className="w-3 h-3 rounded-full bg-gray-400"></div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* CLI Information Card - Third, only in web demo mode */}
+      {!isCliMode && (
+        <div className="bg-gradient-to-r from-stone-600 to-stone-700 dark:from-stone-700 dark:to-stone-800 rounded-2xl shadow-md overflow-hidden transition-colors duration-200">
+          <div className="px-8 py-6">
+            <div className="text-center">
+              <h2 className="text-xl font-medium text-white mb-3">Try the CLI Version</h2>
+              <p className="text-stone-200 dark:text-stone-300 mb-4 font-light">
+                For production use, install the CLI tool locally with NPX
+              </p>
+              <div className="bg-stone-800 dark:bg-stone-900 rounded-lg px-6 py-4 mb-4">
+                <code className="text-green-400 font-mono text-sm">npx memreport-insights</code>
+              </div>
+              <p className="text-stone-300 dark:text-stone-400 text-sm">
+                No installation required • Works with any .memreport file • Blazing fast
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {error && (
         <div className="bg-red-50 dark:bg-red-900/20 border border-red-100 dark:border-red-800/30 rounded-xl p-6 transition-colors duration-200">
