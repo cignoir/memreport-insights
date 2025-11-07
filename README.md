@@ -139,19 +139,6 @@ MEMREPORT_THEME=dark
 
 ---
 
-## 🛠️ Tech Stack
-
-<div align="center">
-
-| Frontend | Build Tools | Quality |
-|----------|-------------|---------|
-| ![React](https://img.shields.io/badge/React-18+-61dafb?style=for-the-badge&logo=react) | ![Vite](https://img.shields.io/badge/Vite-Latest-646CFF?style=for-the-badge&logo=vite) | ![TypeScript](https://img.shields.io/badge/TypeScript-5+-3178C6?style=for-the-badge&logo=typescript) |
-| ![Tailwind](https://img.shields.io/badge/Tailwind-CSS-06B6D4?style=for-the-badge&logo=tailwindcss) | ![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=for-the-badge&logo=node.js) | ![ESLint](https://img.shields.io/badge/ESLint-Configured-4B32C3?style=for-the-badge&logo=eslint) |
-
-</div>
-
----
-
 ## 📄 License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
